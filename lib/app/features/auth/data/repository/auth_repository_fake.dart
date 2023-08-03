@@ -1,3 +1,5 @@
+import 'package:flutter_application_1/app/core/services/remote/config/config.dart';
+
 import '../../domain/model/user.dart';
 import '../../domain/repository/auth_repository.dart';
 import '../source/local.dart';
@@ -8,7 +10,7 @@ class AuthRepositoryFake extends AuthRepository {
   AuthRepositoryFake(this.local);
 
   @override
-  Future<User> loginGoogle() async {
+  Future<Result<String>> loginGoogle() async {
     // TODO: implement loginGoogle
     await Future.delayed(const Duration(seconds: 3));
 
@@ -20,14 +22,12 @@ class AuthRepositoryFake extends AuthRepository {
 
     await local.saveUser(user);
 
-    return user;
+    return const Result.success("user");
   }
-  
+
   @override
   Future<void> logout() {
     // TODO: implement logout
     throw UnimplementedError();
   }
-  
-
 }

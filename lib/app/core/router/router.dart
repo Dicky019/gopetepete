@@ -1,10 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../services/local/hive_service.dart';
 import '../../features/auth/view/login_view.dart';
 import '../../features/main/view/main_view.dart';
 import '../../features/sign_in_driver/view/sign_in_driver_view.dart';
-import '../local_storage/app_storage.dart';
 
 ///
 /// for getting routers that are present in the app
@@ -17,7 +17,7 @@ final routerProvider = Provider<GoRouter>(
       initialLocation: MainView.routeName,
       // refreshListenable: ref.watch(appStorageProvider),
       redirect: (context, state) {
-        final user = ref.read(appStorageProvider).getUser();
+        final user = ref.read(hiveServiceProvider).getUser();
 
         if (user == null) {
           return LoginView.routeName;

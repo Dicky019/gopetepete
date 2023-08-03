@@ -6,4 +6,8 @@ abstract class Local {
   Future<void> deleteUser();
 
   Future<void> saveUser(User user);
+
+  Future<void> saveToken(String token);
+
+  Future<void> deleteToken();
 }

@@ -1,11 +1,10 @@
-import 'package:flutter_application_1/app/core/local_storage/key_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../features/auth/domain/model/user.dart';
+import '../../../features/auth/domain/model/user.dart';
+import 'key_storage.dart';
 
-class AppStorage {
-  // ignore: unused_field
+class HiveService {
   Box? _box;
 
   /// for initialling app local storage
@@ -42,13 +41,13 @@ class AppStorage {
   }
 
   /// for getting string from box
-  String? getAuth() {
-    return _box?.get(KeyStorage.auth) as String?;
+  String? getUserToken() {
+    return _box?.get(KeyStorage.token) as String?;
   }
 
   /// for storing User to app
-  Future<void> putAuth(String auth) async {
-    await _box?.put(KeyStorage.auth, auth);
+  Future<void> putUserToken(String token) async {
+    await _box?.put(KeyStorage.token, token);
   }
 
   /// for clearing all data in box
@@ -57,7 +56,7 @@ class AppStorage {
   }
 }
 
-final appStorageProvider = Provider<AppStorage>(
+final hiveServiceProvider = Provider<HiveService>(
   (_) {
     throw UnimplementedError();
   },

@@ -1,20 +1,34 @@
-import 'package:dio/dio.dart';
-
-import '../../domain/model/user.dart';
+import '../../../../core/utils/extension/string_extension.dart';
+import '../../../../core/services/remote/config/config.dart';
+import '../../../../core/services/remote/api/auth_api.dart';
+import '../request/user_request.dart';
 import 'network.dart';
 
 class NetworkImpl extends Network {
-  final Dio dio;
+  final AuthApi _authApi;
 
-  NetworkImpl(this.dio);
+  NetworkImpl(this._authApi);
 
   @override
-  Future<User?> loginGoogle(String email) async {
+  Future<Result<String>> loginGoogle() async {
     // TODO: implement loginGoogle
-    final data = {
-      "email": email,
-    };
-    await dio.get("/auth/login", data: data);
-    return null;
+    final firebaseAuthResult = await _authApi.signInWithGoogle();
+
+    return await firebaseAuthResult.when(
+      success: (data) async {
+        final userRequest = UserRequest(
+          email: data.email.toEmpty,
+          image: data.photoURL.imageDefault,
+          name: data.displayName.toEmpty,
+        );
+
+        final result = await _authApi.register(userRequest: userRequest);
+
+        return result;
+      },
+      failure: (error, stackTrace) {
+        return Result.failure(error, stackTrace);
+      },
+    );
   }
 }
