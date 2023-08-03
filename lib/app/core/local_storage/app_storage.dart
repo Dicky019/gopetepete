@@ -1,7 +1,8 @@
 import 'package:flutter_application_1/app/core/local_storage/key_storage.dart';
-import 'package:flutter_application_1/app/features/login/model/user_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../features/auth/domain/model/user.dart';
 
 class AppStorage {
   // ignore: unused_field
@@ -25,14 +26,19 @@ class AppStorage {
   }
 
   /// for getting string from box
-  UserModel? getUser() {
+  User? getUser() {
     final json = _box?.get(KeyStorage.user) as Map<String, dynamic>?;
-    return json != null ? UserModel.fromJson(json) : null;
+    return json != null ? User.fromJson(json) : null;
   }
 
   /// for storing User to app
-  Future<void> putUser(UserModel user) async {
+  Future<void> putUser(User user) async {
     await _box?.put(KeyStorage.user, user.toJson());
+  }
+
+  /// for delete User to app
+  Future<void> deleteUser() async {
+    await _box?.delete(KeyStorage.user);
   }
 
   /// for getting string from box

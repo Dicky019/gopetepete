@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../features/login/view/login_view.dart';
+import '../../features/auth/view/login_view.dart';
 import '../../features/main/view/main_view.dart';
 import '../../features/sign_in_driver/view/sign_in_driver_view.dart';
 import '../local_storage/app_storage.dart';
