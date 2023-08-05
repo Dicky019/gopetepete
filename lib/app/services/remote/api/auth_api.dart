@@ -1,12 +1,12 @@
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_application_1/app/core/utils/extension/dynamic_extension.dart';
-import 'package:flutter_application_1/app/core/utils/extension/string_extension.dart';
-import 'package:flutter_application_1/app/features/auth/data/request/user_request.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../features/auth/data/response/user_response.dart';
+import '/app/utils/extension/dynamic_extension.dart';
+import '/app/utils/extension/string_extension.dart';
+import '/app/features/auth/data/request/user_request.dart';
+import '/app/features/auth/data/response/user_response.dart';
 import '../config/config.dart';
 
 class AuthApi {

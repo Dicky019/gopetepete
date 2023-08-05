@@ -1,7 +1,7 @@
-import 'package:flutter_application_1/app/features/auth/data/response/user_response.dart';
-import 'package:flutter_application_1/app/features/auth/domain/model/user.dart';
 
-import '../../../../core/services/remote/config/config.dart';
+import '/app/services/remote/config/result.dart';
+import '../../domain/model/user.dart';
+import '../response/user_response.dart';
 import '../../domain/repository/auth_repository.dart';
 import '../source/local.dart';
 import '../source/network.dart';

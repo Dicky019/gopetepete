@@ -1,4 +1,4 @@
-import '/app/core/services/local/hive_service.dart';
+import '/app/services/local/hive_service.dart';
 import '../../domain/model/user.dart';
 import 'local.dart';
 

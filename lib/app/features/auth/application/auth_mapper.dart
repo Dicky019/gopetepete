@@ -1,5 +1,5 @@
-import '../../../core/utils/extension/string_extension.dart';
-import '../../../core/services/remote/config/result.dart';
+import '/app/services/remote/config/result.dart';
+import '/app/utils/extension/string_extension.dart';
 import '../domain/model/user.dart';
 import '../data/response/user_response.dart';
 

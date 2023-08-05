@@ -1,6 +1,5 @@
-import 'package:flutter_application_1/app/features/auth/data/response/user_response.dart';
-
-import '../../../../core/services/remote/config/config.dart';
+import '/app/services/remote/config/result.dart';
+import '../../data/response/user_response.dart';
 import '../model/user.dart';
 
 abstract class AuthRepository {

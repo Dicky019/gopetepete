@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/services/remote/config/result.dart';
+import '/app/services/remote/config/result.dart';
 import '../domain/model/user.dart';
 import '../domain/repository/auth_repository.dart';
 import 'auth_mapper.dart';

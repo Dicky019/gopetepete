@@ -1,9 +1,8 @@
 import 'dart:developer';
 
-import '../../../../core/utils/extension/string_extension.dart';
-import '../../../../core/services/remote/config/config.dart';
-import '../../../../core/services/remote/api/auth_api.dart';
-
+import '/app/services/remote/config/result.dart';
+import '/app/services/remote/api/auth_api.dart';
+import '/app/utils/extension/string_extension.dart';
 import '../response/user_response.dart';
 import '../request/user_request.dart';
 import 'network.dart';

@@ -6,16 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'app/core/services/remote/api/auth_api.dart';
-import 'app/core/services/remote/config/config.dart';
 import 'app/features/auth/application/authentication_service.dart';
 import 'app/features/auth/data/repository/auth_repository_impl.dart';
 import 'app/features/auth/data/source/module.dart';
 import 'app/features/auth/data/source/network_impl.dart';
+import 'app/features/auth/data/source/local_impl.dart';
 
 import 'app/app.dart';
-import 'app/core/services/local/hive_service.dart';
-import 'app/features/auth/data/source/local_impl.dart';
+import 'app/services/local/hive_service.dart';
+import 'app/services/remote/api/auth_api.dart';
+import 'app/services/remote/config/dio_client.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -29,7 +29,7 @@ Future<void> main() async {
 
   // for initializing local storage
   final hiveService = HiveService();
-  await hiveService.initAppStorage();
+  await hiveService.hiveInit();
 
   final dio = Dio();
   final httpClient = HttpClient();

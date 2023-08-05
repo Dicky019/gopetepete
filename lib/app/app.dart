@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'core/router/router.dart';
-import 'core/theme/app_theme.dart';
+import 'constants/theme/app_theme.dart';
+import 'router/router.dart';
 
 class App extends ConsumerWidget {
   /// [App]

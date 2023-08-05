@@ -1,5 +1,5 @@
-import 'package:flutter_application_1/app/core/services/remote/config/config.dart';
-import 'package:flutter_application_1/app/features/auth/data/response/user_response.dart';
+import '../response/user_response.dart';
+import '/app/services/remote/config/result.dart';
 
 abstract class Network {
   // TODO: add your impl here
