@@ -7,7 +7,9 @@ abstract class Local {
 
   Future<void> saveUser(User user);
 
-  Future<void> saveToken(String token);
+  User? get getUser;
+
+  Future<void> saveUserToken(String token);
 
   Future<void> deleteToken();
 }

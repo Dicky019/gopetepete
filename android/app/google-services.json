@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "804627606545",
+    "project_id": "skripsi-gopetepete",
+    "storage_bucket": "skripsi-gopetepete.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804627606545:android:aea8438f820ef573e555b0",
+        "android_client_info": {
+          "package_name": "com.go.pete.pete.gopetepete"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804627606545-a5j3vkj4m9h0al6gdvegmprmjuveo9p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxhVx_Oqv5IBEZji26OB_xHZ3qF3pMMmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804627606545-a5j3vkj4m9h0al6gdvegmprmjuveo9p4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

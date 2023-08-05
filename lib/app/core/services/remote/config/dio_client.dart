@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../local/hive_service.dart';
 
@@ -21,9 +22,9 @@ class DioClient {
     String baseUrl;
 
     if (Platform.isIOS) {
-      baseUrl = 'https://petcare-web-zeta.vercel.app/';
+      baseUrl = dotenv.get("BASE_URL");
     } else {
-      baseUrl = 'https://petcare-web-zeta.vercel.app/';
+      baseUrl = dotenv.get("BASE_URL");
     }
 
     return baseUrl;
@@ -191,13 +192,6 @@ class DioClient {
   }
 }
 
-final dioClientProvider = Provider<DioClient>((ref) {
-  final dio = Dio();
-  final httpClient = HttpClient();
-  final hiveService = ref.read(hiveServiceProvider);
-  return DioClient(
-    dio: dio,
-    httpClient: httpClient,
-    hiveService: hiveService,
-  );
+final dioClientProvider = Provider<DioClient>((_) {
+  throw UnimplementedError(); 
 });

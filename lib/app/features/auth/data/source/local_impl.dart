@@ -3,31 +3,34 @@ import '../../domain/model/user.dart';
 import 'local.dart';
 
 class LocalImpl extends Local {
-  final HiveService appStorage;
+  final HiveService _hiveService;
 
-  LocalImpl(this.appStorage);
+  LocalImpl(this._hiveService);
 
   @override
   Future<void> deleteUser() {
     // TODO: implement deleteUser
-    return appStorage.deleteUser();
+    return _hiveService.deleteUser();
   }
 
   @override
   Future<void> saveUser(User user) {
     // TODO: implement saveUser
-    return appStorage.putUser(user);
+    return _hiveService.putUser(user);
   }
 
   @override
-  Future<void> saveToken(String token) {
+  Future<void> saveUserToken(String token) {
     // TODO: implement saveToken
-    return appStorage.putUserToken(token);
+    return _hiveService.putUserToken(token);
   }
 
   @override
   Future<void> deleteToken() {
     // TODO: implement deleteToken
-    return appStorage.deleteUser();
+    return _hiveService.deleteUser();
   }
+
+  @override
+  User? get getUser => _hiveService.getUser();
 }

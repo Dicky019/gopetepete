@@ -6,12 +6,13 @@ part 'user.g.dart';
 @freezed
 class User with _$User {
   const factory User({
-    required String userName,
+    required String name,
     required String email,
+    required String image,
     required UserRole userRole,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 
-enum UserRole { driver, user }
+enum UserRole { driver, passenger }

@@ -7,18 +7,20 @@ part of 'user.dart';
 // **************************************************************************
 
 _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
-      userName: json['userName'] as String,
+      name: json['name'] as String,
       email: json['email'] as String,
+      image: json['image'] as String,
       userRole: $enumDecode(_$UserRoleEnumMap, json['userRole']),
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
-      'userName': instance.userName,
+      'name': instance.name,
       'email': instance.email,
+      'image': instance.image,
       'userRole': _$UserRoleEnumMap[instance.userRole]!,
     };
 
 const _$UserRoleEnumMap = {
   UserRole.driver: 'driver',
-  UserRole.user: 'user',
+  UserRole.passenger: 'passenger',
 };

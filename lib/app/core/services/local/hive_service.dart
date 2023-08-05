@@ -26,8 +26,8 @@ class HiveService {
 
   /// for getting string from box
   User? getUser() {
-    final json = _box?.get(KeyStorage.user) as Map<String, dynamic>?;
-    return json != null ? User.fromJson(json) : null;
+    final userJson = _box?.get(KeyStorage.user) as Map<String,dynamic>?;
+    return userJson != null ? User.fromJson(userJson) : null;
   }
 
   /// for storing User to app
