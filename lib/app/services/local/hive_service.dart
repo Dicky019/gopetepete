@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../constants/key/hive_key.dart';
-import '../../features/auth/domain/model/user.dart';
+import '/app/features/auth/domain/model/user.dart';
 import '/app/utils/extension/string_extension.dart';
 
 class HiveService {
@@ -16,7 +16,7 @@ class HiveService {
     _box = _box ?? await Hive.openBox("local storage");
   }
 
-  bool isFirstInstall() {
+  bool get isFirstInstall {
     final hiveBool = _box?.get(HiveKey.firstInstall);
     return hiveBool != null ? false : true;
   }
@@ -27,7 +27,7 @@ class HiveService {
   }
 
   /// for getting string from box
-  User? getUser() {
+  User? get getUser {
     try {
       final hiveJson = _box?.get(HiveKey.user);
       if (hiveJson.isNullOrEmpty) return null;
@@ -53,7 +53,7 @@ class HiveService {
   }
 
   /// for getting string from box
-  String? getUserToken() {
+  String? get getUserToken {
     return _box?.get(HiveKey.userToken);
   }
 
@@ -63,7 +63,7 @@ class HiveService {
   }
 
   /// for getting string from box
-  String? getEmail() {
+  String? get getEmail {
     return _box?.get(HiveKey.email);
   }
 

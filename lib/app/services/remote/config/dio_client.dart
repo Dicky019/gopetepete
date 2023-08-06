@@ -60,7 +60,7 @@ class DioClient {
           RequestOptions options,
           RequestInterceptorHandler handler,
         ) async {
-          final token = hiveService.getUserToken();
+          final token = hiveService.getUserToken;
           if (token != null) {
             options.headers['Authorization'] = 'Bearer $token';
           }

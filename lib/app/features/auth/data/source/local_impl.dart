@@ -32,5 +32,21 @@ class LocalImpl extends Local {
   }
 
   @override
-  User? get getUser => _hiveService.getUser();
+  User? get getUser => _hiveService.getUser;
+
+  @override
+  // TODO: implement getEmail
+  String? get getEmail => _hiveService.getEmail;
+
+  @override
+  Future<void> saveEmail(String token) {
+    // TODO: implement saveEmail
+    return _hiveService.putEmail(token);
+  }
+  
+  @override
+  Future<void> deleteEmail() {
+    // TODO: implement deleteEmail
+    return _hiveService.deleteEmail();
+  }
 }

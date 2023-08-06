@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'app/features/auth/application/authentication_service.dart';
+import 'app/features/auth/application/auth_service_impl.dart';
 import 'app/features/auth/data/repository/auth_repository_impl.dart';
 import 'app/features/auth/data/source/module.dart';
 import 'app/features/auth/data/source/network_impl.dart';
@@ -14,7 +14,6 @@ import 'app/features/auth/data/source/local_impl.dart';
 
 import 'app/app.dart';
 import 'app/services/local/hive_service.dart';
-import 'app/services/remote/api/auth_api.dart';
 import 'app/services/remote/config/dio_client.dart';
 import 'firebase_options.dart';
 
@@ -40,8 +39,7 @@ Future<void> main() async {
     httpClient: httpClient,
   );
 
-  final api = AuthApi(dioClient);
-  final authNetwork = NetworkImpl(api);
+  final authNetwork = NetworkImpl(dioClient);
   final authLocal = LocalImpl(hiveService);
 
   final authRepository = AuthRepositoryImpl(
@@ -49,7 +47,8 @@ Future<void> main() async {
     network: authNetwork,
   );
 
-  final authService = AuthService(authRepository);
+  final authService = AuthServiceImpl(authRepository);
+  await authService.initLogin();
 
   runApp(
     ProviderScope(

@@ -8,8 +8,11 @@ abstract class Local {
   Future<void> saveUser(User user);
 
   User? get getUser;
+  String? get getEmail;
 
   Future<void> saveUserToken(String token);
+  Future<void> saveEmail(String token);
 
   Future<void> deleteToken();
+  Future<void> deleteEmail();
 }
