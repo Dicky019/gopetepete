@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app/widgets/upload_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '/app/constants/theme/app_size.dart';
-import '/app/widgets/text_field.dart';
 
 import '../daftar_driver_controller.dart';
 import '../../../../../widgets/input_form.dart';
@@ -32,24 +32,35 @@ class DaftarDriverLanjutan extends ConsumerWidget {
           title: 'Lanjutan',
           children: [
             Gap.h4,
-            TextFieldWidget(
-              controller: controller.fotoC,
-              hintText: 'Foto',
+            UploadImageWidget(
+              title: 'foto',
+              foto: controller.foto,
+              onTap: () => controller.getImage(controller.foto),
             ),
-            TextFieldWidget(
-              controller: controller.fotoKtpC,
-              hintText: 'Foto Ktp',
+            UploadImageWidget(
+              title: 'Foto Ktp',
+              foto: controller.foto,
+              onTap: () => controller.getImage(controller.foto),
             ),
-            TextFieldWidget(
-              controller: controller.fotoMobilC,
-              hintText: 'Foto Mobil',
-              onClick: () {
-                
-              },
+            UploadImageWidget(
+              title: 'Foto Mobil',
+              foto: controller.foto,
+              onTap: () => controller.getImage(controller.foto),
             ),
+            // TextFieldWidget(
+            //   controller: controller.fotoKtpC,
+            //   hintText: 'Foto Ktp',
+            // ),
+            // TextFieldWidget(
+            //   controller: controller.fotoMobilC,
+            //   hintText: 'Foto Mobil',
+            //   onClick: () {},
+            // ),
           ],
         ),
       ),
     );
   }
 }
+
+

@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../application/daftar_driver_service_impl.dart';
 import '../../application/module.dart';
@@ -55,9 +58,24 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
   }
 
   // form lanjutan
-  final fotoC = TextEditingController();
-  final fotoKtpC = TextEditingController();
-  final fotoMobilC = TextEditingController();
+  File? foto;
+  File? fotoKtpC;
+  File? fotoMobilC;
+
+  final ImagePicker picker = ImagePicker();
+
+  void getImage(File? image) async {
+    final LostDataResponse response = await picker.retrieveLostData();
+    if (response.isEmpty) {
+      return;
+    }
+    // final List<XFile>? files = response.files;
+    // if (files != null) {
+    //   _handleLostFiles(files);
+    // } else {
+    //   _handleError(response.exception);
+    // }
+  }
 
   void daftarDriver(
     DaftarDriverFormAwal driverFormAwal,
@@ -78,7 +96,6 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
 
     state = state.copyWith(value: const AsyncData(null));
   }
-  
 }
 
 final daftarDriverControllerProvider = StateNotifierProvider.autoDispose<

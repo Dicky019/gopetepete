@@ -63,5 +63,14 @@
 		</dict>
 	</array>
 	<!-- End of the Google Sign-In section -->
+	
+	<!--  Camera -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to photo library</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Need to upload image</string>
+    <key>NSMicrophoneUsageDescription</key>
+	
+	<!-- end Camera -->
 </dict>
 </plist>
