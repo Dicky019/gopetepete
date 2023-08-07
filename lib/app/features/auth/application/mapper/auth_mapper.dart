@@ -16,6 +16,7 @@ class AuthenticationMapper {
             name: data.name.toEmpty,
             email: data.email.toEmpty,
             image: data.image.toEmpty,
+            status: data.status ?? false,
             userRole: userRole,
           ),
         );

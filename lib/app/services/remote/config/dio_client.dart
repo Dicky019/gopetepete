@@ -47,6 +47,7 @@ class DioClient {
         'Content-Type': 'application/json; charset=UTF-8',
       };
 
+    // ignore: deprecated_member_use
     (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
         (HttpClient client) {
       client.badCertificateCallback =

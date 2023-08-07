@@ -1,9 +1,11 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'app/features/auth/application/auth_service_impl.dart';
@@ -49,6 +51,9 @@ Future<void> main() async {
 
   final authService = AuthServiceImpl(authRepository);
   await authService.initLogin();
+  log(hiveService.getUser?.toJson().toString() ?? "getUser Kosong");
+
+  configLoading();
 
   runApp(
     ProviderScope(
@@ -65,4 +70,18 @@ Future<void> main() async {
       child: const App(),
     ),
   );
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..animationDuration = const Duration(milliseconds: 300)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.dark
+    ..maskType = EasyLoadingMaskType.black
+    ..indicatorSize = 45.0
+    ..radius = 8
+    // ..userInteractions = true
+    ..dismissOnTap = false
+    ..animationStyle = EasyLoadingAnimationStyle.opacity;
 }

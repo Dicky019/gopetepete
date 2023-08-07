@@ -65,11 +65,19 @@
 	<!-- End of the Google Sign-In section -->
 	
 	<!--  Camera -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow access to the location for distance calculation</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow access to the location for distance calculation</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow access to camera for profile picture</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow access to photo library</string>
-    <key>NSCameraUsageDescription</key>
-    <string>Need to upload image</string>
-    <key>NSMicrophoneUsageDescription</key>
+	<string>Allow access to photo library for profile picture</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    	<true/>
+	</dict>
 	
 	<!-- end Camera -->
 </dict>

@@ -10,6 +10,7 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       name: json['name'] as String,
       email: json['email'] as String,
       image: json['image'] as String,
+      status: json['status'] as bool,
       userRole: $enumDecode(_$UserRoleEnumMap, json['userRole']),
     );
 
@@ -17,6 +18,7 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'image': instance.image,
+      'status': instance.status,
       'userRole': _$UserRoleEnumMap[instance.userRole]!,
     };
 

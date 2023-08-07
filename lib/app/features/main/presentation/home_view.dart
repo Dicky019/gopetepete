@@ -6,7 +6,7 @@ class HomeView extends ConsumerWidget {
   /// TODO add your comment here
   const HomeView({super.key});
 
-  static const routeName = '/home';
+  static const routeName = '/';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -59,6 +59,7 @@ class LoginWidget extends ConsumerWidget {
             Gap.h8,
             ButtonWidget(
               isPrimary: false,
+              isLoading: state.isLoading,
               onTap: () => context.push(DaftarDriverView.routeName),
               text: 'Daftar',
             )

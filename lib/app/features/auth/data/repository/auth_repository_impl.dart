@@ -1,18 +1,18 @@
-import 'package:flutter_application_1/app/utils/extension/string_extension.dart';
+import '../../../../utils/extension/string_extension.dart';
 
 import '../request/user_request.dart';
 import '/app/services/remote/config/result.dart';
 import '../../domain/model/user.dart';
 import '../response/user_response.dart';
 import '../../domain/repository/auth_repository.dart';
-import '../source/local.dart';
-import '../source/network.dart';
+import '../source/local_impl.dart';
+import '../source/network_impl.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
-  final Local _local;
-  final Network _network;
+  final LocalImpl _local;
+  final NetworkImpl _network;
 
-  AuthRepositoryImpl({required Local local, required Network network})
+  AuthRepositoryImpl({required LocalImpl local, required NetworkImpl network})
       : _network = network,
         _local = local;
 
@@ -44,6 +44,9 @@ class AuthRepositoryImpl extends AuthRepository {
   User? get getUser => _local.getUser;
 
   @override
+  String? get getUserToken => _local.getUserToken;
+
+  @override
   Future<void> saveUser(User user) async {
     await _local.saveUser(user);
     await _local.saveEmail(user.email);
@@ -59,5 +62,3 @@ class AuthRepositoryImpl extends AuthRepository {
   Future<Result<String>> register({required UserRequest userRequest}) =>
       _network.register(userRequest: userRequest);
 }
-
-

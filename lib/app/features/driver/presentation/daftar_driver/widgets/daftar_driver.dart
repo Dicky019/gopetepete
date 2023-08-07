@@ -23,9 +23,9 @@ class DaftarDriver extends ConsumerWidget {
           isLoading: state.isLoading,
           keyForm: keyForm,
           onSubmit: () {
-            // if (!(keyForm.currentState?.validate() ?? true)) {
-            //   return;
-            // }
+            if (!(keyForm.currentState?.validate() ?? true)) {
+              return;
+            }
             controller.toLanjutan(context);
           },
           // onSubmit: () => ,

@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter_application_1/app/features/driver/data/response/daftar_driver_response.dart';
 
 import '../request/daftar_driver_request.dart';
 
@@ -35,7 +36,7 @@ class NetworkImpl extends Network {
   }
 
   @override
-  Future<Result<String>> daftarDriver({
+  Future<Result<DaftarDriverResponse>> daftarDriver({
     required DaftarDriverRequest daftarDriverRequest,
   }) async {
     try {
@@ -43,7 +44,7 @@ class NetworkImpl extends Network {
         Endpoint.driver,
         data: daftarDriverRequest.toJson(),
       );
-      return Result.success(response['code']);
+      return Result.success(DaftarDriverResponse.fromJson(response));
     } catch (error, stackTrace) {
       return Result.failure(
         NetworkExceptions.getDioException(error, stackTrace),

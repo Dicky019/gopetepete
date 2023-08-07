@@ -28,10 +28,14 @@ class NetworkImpl extends Network {
   Future<Result<UserResponse>> loginResponse() async {
     try {
       final response = await _dioClient.get(Endpoint.login);
+      if (response['code'] == "404") {
+        log("loginResponse", error: response,name: "loginResponse");
+      }
       return Result.success(UserResponse.fromJson(response['data']));
     } catch (e, st) {
+      log("loginResponse", error: e,name: "loginResponse");
       return Result.failure(
-        NetworkExceptions.getDioException(e, st),
+        const NetworkExceptions.defaultError("error"),
         st,
       );
     }
@@ -88,6 +92,7 @@ class NetworkImpl extends Network {
       log(response.toString(), name: "response");
       return Result.success(response['data']['accessToken'] ?? "");
     } catch (e, st) {
+      log("register message",error: e);
       return Result.failure(
         NetworkExceptions.getDioException(e, st),
         st,

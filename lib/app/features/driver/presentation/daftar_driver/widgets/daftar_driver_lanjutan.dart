@@ -3,13 +3,16 @@ import 'package:flutter_application_1/app/widgets/upload_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../data/request/daftar_driver_request.dart';
 import '/app/constants/theme/app_size.dart';
 
 import '../daftar_driver_controller.dart';
 import '../../../../../widgets/input_form.dart';
 
 class DaftarDriverLanjutan extends ConsumerWidget {
-  const DaftarDriverLanjutan({super.key});
+  const DaftarDriverLanjutan(this.driverFormAwal, {super.key, required});
+
+  final DaftarDriverFormAwal driverFormAwal;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,39 +31,44 @@ class DaftarDriverLanjutan extends ConsumerWidget {
             if (!(keyFormLanjutan.currentState?.validate() ?? true)) {
               return;
             }
+            controller.daftarDriver(driverFormAwal, context: context);
           },
           title: 'Lanjutan',
           children: [
             Gap.h4,
-            UploadImageWidget(
-              title: 'foto',
-              foto: controller.foto,
-              onTap: () => controller.getImage(controller.foto),
-            ),
-            UploadImageWidget(
-              title: 'Foto Ktp',
-              foto: controller.foto,
-              onTap: () => controller.getImage(controller.foto),
+            Row(
+              children: [
+                Expanded(
+                  child: UploadImageWidget(
+                    title: 'Foto',
+                    foto: state.foto,
+                    onTap: () async {
+                      await controller.getImage(FotoEnum.foto);
+                    },
+                  ),
+                ),
+                Gap.w16,
+                Expanded(
+                  child: UploadImageWidget(
+                    title: 'Foto Ktp',
+                    foto: state.fotoKtp,
+                    onTap: () async {
+                      await controller.getImage(FotoEnum.fotoKtp);
+                    },
+                  ),
+                ),
+              ],
             ),
             UploadImageWidget(
               title: 'Foto Mobil',
-              foto: controller.foto,
-              onTap: () => controller.getImage(controller.foto),
+              foto: state.fotoMobil,
+              onTap: () async {
+                await controller.getImage(FotoEnum.fotoMobil);
+              },
             ),
-            // TextFieldWidget(
-            //   controller: controller.fotoKtpC,
-            //   hintText: 'Foto Ktp',
-            // ),
-            // TextFieldWidget(
-            //   controller: controller.fotoMobilC,
-            //   hintText: 'Foto Mobil',
-            //   onClick: () {},
-            // ),
           ],
         ),
       ),
     );
   }
 }
-
-

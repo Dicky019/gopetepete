@@ -20,35 +20,40 @@ class UploadImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: Theme.of(context).textTheme.labelLarge,
-        ),
-        InkWell(
-          onTap: onTap,
-          child: CardWidget(
-            // height: 200.h,
-            height: 160.h,
-            marginBottom: 4.h,
-            marginTop: 4.h,
-            marginLeft: 0,
-            marginRight: 0,
-            widget: image(),
+    return CardWidget(
+      margin: EdgeInsets.symmetric(vertical: 4.h),
+      padding: EdgeInsets.all(8.h),
+      widget: Column(
+        children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
-        ),
-      ],
+          const Divider(),
+          InkWell(
+            onTap: onTap,
+            child: SizedBox(
+              height: 160.h,
+              child: foto.isNotNull ? image : imageNull,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  Widget image() => foto.isNotNull
-      ? Image.file(
-          foto!,
-          fit: BoxFit.fitHeight,
-        )
-      : Icon(
-          Icons.camera_alt,
-          color: Colors.grey[800],
-        );
+  Widget get image {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8.r),
+      child: Image.file(
+        foto!,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  Widget get imageNull => Icon(
+        Icons.camera_alt,
+        color: Colors.grey[800],
+      );
 }

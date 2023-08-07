@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:flutter_application_1/app/features/auth/domain/model/user.dart';
 import 'package:flutter_application_1/app/features/driver/application/mapper/daftar_driver_mapper.dart';
 
 import '../data/request/daftar_driver_request.dart';
@@ -25,8 +28,30 @@ class DaftarDriverServiceImpl implements DaftarDriverService {
 
     return await response.when(
       success: (daftarDriverRequest) async {
-        return await _daftarDriverRepository.daftarDriver(
+        final daftarDriver = await _daftarDriverRepository.daftarDriver(
           daftarDriverRequest: daftarDriverRequest,
+        );
+        return daftarDriver.when(
+          success: (data) {
+            log(
+              data.toJson().toString(),
+            );
+            final user = data.data!.user!;
+
+            _daftarDriverRepository.saveUser(User(
+              name: user.name!,
+              email: user.email!,
+              image: user.image!,
+              status: user.status!,
+              userRole: UserRole.driver,
+            ));
+
+            _daftarDriverRepository.saveUserToken(data.data!.accessToken!);
+            _daftarDriverRepository.saveEmail(user.email!);
+
+            return const Result.success(null);
+          },
+          failure: (error, stackTrace) => Result.failure(error, stackTrace),
         );
       },
       failure: (error, stackTrace) {
@@ -34,5 +59,4 @@ class DaftarDriverServiceImpl implements DaftarDriverService {
       },
     );
   }
-  
 }

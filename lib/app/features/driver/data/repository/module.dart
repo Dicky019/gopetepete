@@ -5,5 +5,6 @@ import '../source/module.dart';
 
 final daftarDriverRepositoryProvider = Provider<DaftarDriverRepositoryImpl>((ref) {
   final network = ref.read(daftarDriverNetworkProvider);
-  return DaftarDriverRepositoryImpl(network);
+  final local = ref.read(daftarDriverLocalProvider);
+  return DaftarDriverRepositoryImpl(network,local);
 });
