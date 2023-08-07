@@ -1,3 +1,6 @@
+import 'package:flutter_application_1/app/features/auth/domain/model/user.dart';
+import 'package:flutter_application_1/app/features/driver/presentation/driver_verivication/driver_verification_view.dart';
+import 'package:flutter_application_1/app/features/driver/presentation/driver_view.dart';
 import 'package:flutter_application_1/app/utils/extension/dynamic_extension.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -20,7 +23,6 @@ bool invalidAuth(List<String> listPath, GoRouterState state) =>
 final routerProvider = Provider<GoRouter>(
   (ref) {
     return GoRouter(
-      // TODO: add your router here
       debugLogDiagnostics: true,
       initialLocation: HomeView.routeName,
       // refreshListenable: ref.watch(appStorageProvider),
@@ -29,7 +31,8 @@ final routerProvider = Provider<GoRouter>(
 
         final isInvalidAuth = invalidAuth([
           DaftarDriverView.routeName,
-          '/driver/lanjutan',
+          DaftarDriverLanjutanView.path,
+          DriverVerificationView.routeName,
         ], state);
 
         if (isInvalidAuth) {
@@ -39,6 +42,15 @@ final routerProvider = Provider<GoRouter>(
         if (user == null) {
           return LoginView.routeName;
         }
+
+        if (user.userRole == UserRole.passenger) {
+          return HomeView.routeName;
+        }
+
+        if (user.userRole == UserRole.driver) {
+          return DriverView.routeName;
+        }
+
         return null;
       },
       routes: [
@@ -68,6 +80,23 @@ final routerProvider = Provider<GoRouter>(
               ),
             ),
           ],
+        ),
+        GoRoute(
+          path: DriverVerificationView.routeName,
+          builder: (context, state) => const DriverVerificationView(),
+        ),
+        GoRoute(
+          path: DriverView.routeName,
+          builder: (context, state) => const DriverView(),
+          redirect: (context, state) {
+            final user = ref.read(authServiceProvider).getCurrentUser;
+            if (user != null &&
+                user.userRole == UserRole.driver &&
+                user.status == false) {
+              return DriverVerificationView.routeName;
+            }
+            return null;
+          },
         ),
       ],
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 // ignore: depend_on_referenced_packages
@@ -21,9 +22,7 @@ class App extends ConsumerWidget {
       designSize: const Size(360, 640),
       minTextAdapt: true,
       child: MaterialApp.router(
-        // TODO: add your app name here
         title: 'Go Pete Pete',
-        // TODO: add your theme here
         theme: appTheme.lightTheme,
         darkTheme: appTheme.darkTheme,
         routeInformationParser: router.routeInformationParser,
@@ -35,6 +34,7 @@ class App extends ConsumerWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
+        builder: EasyLoading.init(),
       ),
     );
   }

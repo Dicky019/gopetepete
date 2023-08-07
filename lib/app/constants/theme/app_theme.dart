@@ -4,13 +4,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class AppTheme {
   /// for getting light theme
   ThemeData get lightTheme {
-    // TODO: add light theme here
     return ThemeData.light();
   }
 
   /// for getting dark theme
   ThemeData get darkTheme {
-    // TODO: add dark theme here
     return ThemeData.dark();
   }
 }
