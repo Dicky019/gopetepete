@@ -7,13 +7,13 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../driver/presentation/driver_verivication/driver_verification_view.dart';
+import '../application/daftar_driver_service_impl.dart';
+import '../application/module.dart';
+import '../data/request/daftar_driver_request.dart';
 import '/app/utils/extension/dynamic_extension.dart';
-import '../../application/daftar_driver_service_impl.dart';
-import '../../application/module.dart';
-import '../../data/request/daftar_driver_request.dart';
 
 import 'daftar_driver_state.dart';
-import '../driver_verivication/driver_verification_view.dart';
 import 'views/daftar_driver_lanjutan_view.dart';
 
 class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
@@ -22,6 +22,7 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
 
   final DaftarDriverServiceImpl _driverService;
 
+  // final keyFormAwal = GlobalKey<FormState>();
   final usernameC = TextEditingController(text: "Dicky19");
   final nikC = TextEditingController(text: "2123123312313132");
   final noKKC = TextEditingController(text: "213312312321231");
@@ -59,11 +60,10 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
       DaftarDriverLanjutanView.path,
       extra: driverFormAwal,
     );
-    //  context.go(DriverVerificationView.path);
   }
 
   // form lanjutan
-
+    final keyForm = GlobalKey<FormState>();
   final ImagePicker picker = ImagePicker();
 
   Future<void> getImage(FotoEnum image) async {

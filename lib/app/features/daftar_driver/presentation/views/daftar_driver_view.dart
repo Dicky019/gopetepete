@@ -6,7 +6,6 @@ class DaftarDriverView extends StatelessWidget {
   const DaftarDriverView({Key? key}) : super(key: key);
 
   static const routeName = '/daftar-driver';
-  // static const path = '${DriverView.routeName}/daftar';
 
   @override
   Widget build(BuildContext context) {

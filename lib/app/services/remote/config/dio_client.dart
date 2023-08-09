@@ -194,5 +194,5 @@ class DioClient {
 }
 
 final dioClientProvider = Provider<DioClient>((_) {
-  throw UnimplementedError(); 
+  throw UnimplementedError("dioClientProvider"); 
 });

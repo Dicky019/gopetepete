@@ -83,14 +83,14 @@ class NetworkImpl extends Network {
   }
 
   @override
-  Future<Result<String>> register({required UserRequest userRequest}) async {
+  Future<Result<UserResponse>> register({required UserRequest userRequest}) async {
     try {
       log(userRequest.toString(), name: "data");
 
       final response =
           await _dioClient.post(Endpoint.register, data: userRequest.toJson());
-      log(response.toString(), name: "response");
-      return Result.success(response['data']['accessToken'] ?? "");
+      // log(response.toString(), name: "response");
+      return Result.success(UserResponse.fromJson(response['data']));
     } catch (e, st) {
       log("register message",error: e);
       return Result.failure(

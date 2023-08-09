@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -10,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'app/features/auth/application/auth_service_impl.dart';
 import 'app/features/auth/data/repository/auth_repository_impl.dart';
+import 'app/features/auth/data/repository/module.dart';
 import 'app/features/auth/data/source/module.dart';
 import 'app/features/auth/data/source/network_impl.dart';
 import 'app/features/auth/data/source/local_impl.dart';
@@ -32,26 +32,26 @@ Future<void> main() async {
   final hiveService = HiveService();
   await hiveService.hiveInit();
 
+  // dioClient
   final dio = Dio();
   final httpClient = HttpClient();
-
   final dioClient = DioClient(
     dio: dio,
     hiveService: hiveService,
     httpClient: httpClient,
   );
 
+  // authRepository
   final authNetwork = NetworkImpl(dioClient);
   final authLocal = LocalImpl(hiveService);
-
   final authRepository = AuthRepositoryImpl(
     local: authLocal,
     network: authNetwork,
   );
 
+  // authService
   final authService = AuthServiceImpl(authRepository);
-  await authService.initLogin();
-  log(hiveService.getUser?.toJson().toString() ?? "getUser Kosong");
+  await authService.initLogin();  
 
   configLoading();
 
@@ -66,6 +66,7 @@ Future<void> main() async {
         authNetworkProvider.overrideWithValue(authNetwork),
         authLocalProvider.overrideWithValue(authLocal),
         authServiceProvider.overrideWithValue(authService),
+        authRepositoryProvider.overrideWithValue(authRepository),
       ],
       child: const App(),
     ),

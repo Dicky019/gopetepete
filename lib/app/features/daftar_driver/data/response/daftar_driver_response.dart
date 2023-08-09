@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:flutter_application_1/app/features/auth/data/response/user_response.dart';
+import '/app/features/auth/data/response/user_response.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'daftar_driver_response.freezed.dart';

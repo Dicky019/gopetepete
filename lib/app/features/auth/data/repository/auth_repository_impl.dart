@@ -17,7 +17,7 @@ class AuthRepositoryImpl extends AuthRepository {
         _local = local;
 
   @override
-  Future<Result<String>> loginGoogle() async {
+  Future<Result<UserResponse>> loginGoogle() async {
     final resultFirebaseGoogle = await _network.loginFirebaseGoogle();
 
     return await resultFirebaseGoogle.when(
@@ -59,6 +59,6 @@ class AuthRepositoryImpl extends AuthRepository {
   Future<Result<UserResponse>> loginResponse() => _network.loginResponse();
 
   @override
-  Future<Result<String>> register({required UserRequest userRequest}) =>
+  Future<Result<UserResponse>> register({required UserRequest userRequest}) =>
       _network.register(userRequest: userRequest);
 }

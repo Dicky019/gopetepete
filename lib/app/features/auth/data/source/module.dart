@@ -9,10 +9,10 @@ import 'network.dart';
 
 final authNetworkProvider = Provider<Network>((_) {
   // return NetworkImpl(ref.read(authApiProvider));
-  throw UnimplementedError();
+  throw UnimplementedError("authNetworkProvider");
 });
 
 final authLocalProvider = Provider<Local>((_) {
   // return LocalImpl(ref.read(hiveServiceProvider));
-  throw UnimplementedError();
+  throw UnimplementedError("authLocalProvider");
 });

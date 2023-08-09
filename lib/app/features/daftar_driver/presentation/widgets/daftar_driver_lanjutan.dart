@@ -3,11 +3,10 @@ import 'package:flutter_application_1/app/widgets/upload_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../data/request/daftar_driver_request.dart';
+import '../../data/request/daftar_driver_request.dart';
 import '/app/constants/theme/app_size.dart';
-
+import '/app/widgets/input_form.dart';
 import '../daftar_driver_controller.dart';
-import '../../../../../widgets/input_form.dart';
 
 class DaftarDriverLanjutan extends ConsumerWidget {
   const DaftarDriverLanjutan(this.driverFormAwal, {super.key, required});
@@ -19,21 +18,19 @@ class DaftarDriverLanjutan extends ConsumerWidget {
     final controller = ref.read(daftarDriverControllerProvider.notifier);
     final state = ref.watch(daftarDriverControllerProvider);
 
-    final keyFormLanjutan = GlobalKey<FormState>(debugLabel: "Daftar Driver");
-
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: InputFormWidget(
           isLoading: state.isLoading,
-          keyForm: keyFormLanjutan,
+          keyForm: controller.keyForm,
           onSubmit: () {
-            if (!(keyFormLanjutan.currentState?.validate() ?? true)) {
-              return;
-            }
+            // if (!(keyFormLanjutan.currentState?.validate() ?? true)) {
+            //   return;
+            // }
             controller.daftarDriver(driverFormAwal, context: context);
           },
-          title: 'Lanjutan',
+          title: 'Daftar',
           children: [
             Gap.h4,
             Row(

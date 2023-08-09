@@ -6,6 +6,6 @@ import '/app/services/remote/config/result.dart';
 
 abstract class Network {
   Future<Result<User>> loginFirebaseGoogle();
-  Future<Result<String>> register({required UserRequest userRequest});
+  Future<Result<UserResponse>> register({required UserRequest userRequest});
   Future<Result<UserResponse>> loginResponse();
 }

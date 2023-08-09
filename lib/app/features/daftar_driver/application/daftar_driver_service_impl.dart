@@ -1,17 +1,16 @@
-import 'dart:developer';
-
-import 'package:flutter_application_1/app/features/auth/domain/model/user.dart';
-import 'package:flutter_application_1/app/features/driver/application/mapper/daftar_driver_mapper.dart';
-
+import '../../auth/application/mapper/auth_mapper.dart';
+import '../../auth/data/repository/auth_repository_impl.dart';
+import '../data/repository/daftar_driver_repository_impl.dart';
 import '../data/request/daftar_driver_request.dart';
 import '/app/services/remote/config/result.dart';
-import '../data/repository/daftar_driver_repository_impl.dart';
 
 import 'daftar_driver_service.dart';
+import 'mapper/daftar_driver_mapper.dart';
 
 class DaftarDriverServiceImpl implements DaftarDriverService {
   final DaftarDriverRepositoryImpl _daftarDriverRepository;
-  DaftarDriverServiceImpl(this._daftarDriverRepository);
+  final AuthRepositoryImpl _authRepository;
+  DaftarDriverServiceImpl(this._daftarDriverRepository, this._authRepository);
 
   @override
   Future<Result<void>> daftarDriver(
@@ -33,22 +32,9 @@ class DaftarDriverServiceImpl implements DaftarDriverService {
         );
         return daftarDriver.when(
           success: (data) {
-            log(
-              data.toJson().toString(),
-            );
             final user = data.data!.user!;
-
-            _daftarDriverRepository.saveUser(User(
-              name: user.name!,
-              email: user.email!,
-              image: user.image!,
-              status: user.status!,
-              userRole: UserRole.driver,
-            ));
-
-            _daftarDriverRepository.saveUserToken(data.data!.accessToken!);
-            _daftarDriverRepository.saveEmail(user.email!);
-
+            _authRepository.saveUser(AuthenticationMapper.mapToUser(user));
+            _authRepository.saveUserToken(data.data!.accessToken!);
             return const Result.success(null);
           },
           failure: (error, stackTrace) => Result.failure(error, stackTrace),

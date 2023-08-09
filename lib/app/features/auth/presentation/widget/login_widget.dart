@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../driver/presentation/daftar_driver/views/daftar_driver_view.dart';
+import '/app/features/daftar_driver/presentation/views/daftar_driver_view.dart';
 import '/app/constants/theme/app_size.dart';
 import '/gen/assets.gen.dart';
 import '/app/widgets/button.dart';

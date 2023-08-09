@@ -1,6 +1,5 @@
-import '../../../auth/domain/model/user.dart';
+import '../../data/request/daftar_driver_request.dart';
 import '../../data/response/daftar_driver_response.dart';
-import '/app/features/driver/data/request/daftar_driver_request.dart';
 import '/app/services/remote/config/result.dart';
 
 abstract class DaftarDriverRepository {
@@ -13,10 +12,10 @@ abstract class DaftarDriverRepository {
     required DaftarDriverFormAkhir driverFormAkhir,
   });
 
-  Future<void> saveUser(User user);
+  // Future<void> saveUser(User user);
 
-  User? get getUser;
+  // User? get getUser;
 
-  Future<void> saveUserToken(String token);
-  Future<void> saveEmail(String token);
+  // Future<void> saveUserToken(String token);
+  // Future<void> saveEmail(String token);
 }

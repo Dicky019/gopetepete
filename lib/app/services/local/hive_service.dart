@@ -85,6 +85,6 @@ class HiveService {
 
 final hiveServiceProvider = Provider<HiveService>(
   (_) {
-    throw UnimplementedError();
+    throw UnimplementedError("hiveServiceProvider");
   },
 );

@@ -19,9 +19,9 @@ class AuthServiceImpl implements AuthService {
     final resultLogin = await _authRepository.loginGoogle();
 
     return await resultLogin.when(
-      success: (token) async {
-        _authRepository.saveUserToken(token);
-        await getAndSaveLogin();
+      success: (user) async {
+        await _authRepository.saveUser(AuthenticationMapper.mapToUser(user));
+        _authRepository.saveUserToken(user.accessToken ?? "");
         return const Result.success(null);
       },
       failure: (error, stackTrace) => Result.failure(error, stackTrace),
@@ -37,7 +37,7 @@ class AuthServiceImpl implements AuthService {
   @override
   Future<Result<User>> getAndSaveLogin() async {
     final responseProfile = await _authRepository.loginResponse();
-    final resultProfile = AuthenticationMapper.mapToUser(responseProfile);
+    final resultProfile = AuthenticationMapper.mapToUserResult(responseProfile);
 
     return await resultProfile.when(
       success: (user) async {
@@ -53,8 +53,6 @@ class AuthServiceImpl implements AuthService {
 
   @override
   Future initLogin() async {
-    log(getCurrentUser?.toJson().toString() ?? "User Kosong");
-    log(_authRepository.getUserToken?.toString() ?? "getUserToken Kosong");
     if (getCurrentUser.isNotNull && _authRepository.getUserToken.isNotNull) {
       final registerResult = await _authRepository.register(
         userRequest: UserRequest(
@@ -65,7 +63,10 @@ class AuthServiceImpl implements AuthService {
       );
 
       await registerResult.whenOrNull(
-        success: (user) async => await _authRepository.saveUserToken(user),
+        success: (user) async {
+          await _authRepository.saveUser(AuthenticationMapper.mapToUser(user));
+          await _authRepository.saveUserToken(user.accessToken ?? "");
+        },
         failure: (error, stackTrace) async {
           error.whenOrNull(
             notFound: (reason) => log(reason),
@@ -83,5 +84,5 @@ class AuthServiceImpl implements AuthService {
 }
 
 final authServiceProvider = Provider<AuthServiceImpl>((_) {
-  throw UnimplementedError();
+  throw UnimplementedError("authServiceProvider");
 });

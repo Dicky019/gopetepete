@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../widget/driver_widget.dart';
+import 'driver_controller.dart';
+
 class DriverView extends ConsumerWidget {
-  /// TODO add your comment here
   const DriverView({Key? key}) : super(key: key);
 
   static const routeName = '/driver';
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(context, ref) {
+    final controller = ref.read(driverControllerProvider.notifier);
     return Scaffold(
       appBar: AppBar(
-        title: Text(routeName),
+        title: const Text("Driver"),
+        actions: [
+          IconButton(
+            onPressed: () => controller.logout(context),
+            icon: const Icon(Icons.logout),
+          )
+        ],
       ),
+      body: const DriverWidget(),
     );
   }
 }

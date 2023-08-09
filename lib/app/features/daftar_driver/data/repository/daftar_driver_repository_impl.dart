@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../auth/domain/model/user.dart';
 import '../response/daftar_driver_response.dart';
-import '../source/local_impl.dart';
 import '/app/services/remote/config/network_exceptions.dart';
 import '/app/utils/extension/dynamic_extension.dart';
 
@@ -16,8 +14,8 @@ import '/app/services/remote/config/result.dart';
 
 class DaftarDriverRepositoryImpl implements DaftarDriverRepository {
   final NetworkImpl _network;
-  final LocalImpl _local;
-  DaftarDriverRepositoryImpl(this._network, this._local);
+  // final LocalImpl _local;
+  DaftarDriverRepositoryImpl(this._network);
 
   @override
   Future<Result<DaftarDriverResponse>> daftarDriver({
@@ -57,24 +55,6 @@ class DaftarDriverRepositoryImpl implements DaftarDriverRepository {
     } catch (e, st) {
       return Result.failure(const NetworkExceptions.internalServerError(), st);
     }
-  }
-
-  @override
-  User? get getUser => _local.getUser;
-
-  @override
-  Future<void> saveEmail(String token) {
-    return _local.saveEmail(token);
-  }
-
-  @override
-  Future<void> saveUser(User user) {
-    return _local.saveUser(user);
-  }
-
-  @override
-  Future<void> saveUserToken(String token) {
-    return _local.saveUserToken(token);
   }
 
 }

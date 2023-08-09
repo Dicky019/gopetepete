@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'daftar_driver_view.dart';
 
+import '../../data/request/daftar_driver_request.dart';
 import '../widgets/daftar_driver_lanjutan.dart';
-import '../../../data/request/daftar_driver_request.dart';
+import 'daftar_driver_view.dart';
 
 class DaftarDriverLanjutanView extends StatelessWidget {
   const DaftarDriverLanjutanView({Key? key, required this.daftarDriverFormAwal})

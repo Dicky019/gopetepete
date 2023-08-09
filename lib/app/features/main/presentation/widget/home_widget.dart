@@ -8,24 +8,11 @@ class HomeWidget extends ConsumerWidget {
 
   @override
   Widget build(context, ref) {
+    /// TODO add your comment here
     final controller = ref.read(homeControllerProvider.notifier);
     final state = ref.read(homeControllerProvider);
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-        actions: [
-          IconButton(
-              onPressed: () => controller.logout(context),
-              icon: const Icon(Icons.abc))
-        ],
-      ),
-      body: state.isLoading
-          ? const Center(
-              child: CircularProgressIndicator(),
-            )
-          : const Center(
-              child: Text(HomeView.routeName),
-            ),
+    return const Center(
+      child: Text(HomeView.routeName),
     );
   }
 }
