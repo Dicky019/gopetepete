@@ -80,5 +80,21 @@
 	</dict>
 	
 	<!-- end Camera -->
-</dict>
+
+	<!-- Location -->
+	<!-- Permission while running on backgroud -->
+	<!-- <key>UIBackgroundModes</key>
+    <string>location</string> -->
+	<!-- Permission options for the `location` group -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location in the background.</string>    
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location when in the background.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open and in the background.</string>
+	<key>EnableBackgroundLocationUpdates</key> <true/>
+	<!-- <key>UIBackgroundModes</key>
+	<string>location</string> -->
+	</dict>
+	<!-- End Location -->
 </plist>

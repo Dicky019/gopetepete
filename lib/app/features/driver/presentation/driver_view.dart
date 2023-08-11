@@ -12,6 +12,7 @@ class DriverView extends ConsumerWidget {
   @override
   Widget build(context, ref) {
     final controller = ref.read(driverControllerProvider.notifier);
+    controller.initLocation();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Driver"),

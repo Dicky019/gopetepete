@@ -1,3 +1,4 @@
+import 'package:flutter_application_1/app/features/driver/presentation/driver_active/driver_active_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -33,7 +34,6 @@ final routerProvider = Provider<GoRouter>(
         final isInvalidAuth = invalidAuth([
           DaftarDriverView.routeName,
           DaftarDriverLanjutanView.path,
-          // DriverVerificationView.routeName,
         ], state);
 
         if (isInvalidAuth) {
@@ -52,6 +52,15 @@ final routerProvider = Provider<GoRouter>(
           if (!user.status) {
             return DriverVerificationView.routeName;
           }
+          
+          final isInvalidAuth = invalidAuth([
+            DriverActiveView.path,
+          ], state);
+
+          if (isInvalidAuth) {
+            return null;
+          }
+
           return DriverView.routeName;
         }
 
@@ -92,6 +101,12 @@ final routerProvider = Provider<GoRouter>(
         GoRoute(
           path: DriverView.routeName,
           builder: (context, state) => const DriverView(),
+          routes: [
+            GoRoute(
+              path: DriverActiveView.routeName,
+              builder: (context, state) => const DriverActiveView(),
+            ),
+          ],
         ),
       ],
     );

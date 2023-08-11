@@ -13,6 +13,7 @@ class AuthenticationMapper {
             data.role == "passenger" ? UserRole.passenger : UserRole.driver;
         return Result.success(
           User(
+            id: data.id.toEmpty,
             name: data.name.toEmpty,
             email: data.email.toEmpty,
             image: data.image.toEmpty,
@@ -31,6 +32,7 @@ class AuthenticationMapper {
     final userRole =
         data.role == "passenger" ? UserRole.passenger : UserRole.driver;
     return User(
+      id: data.id.toEmpty,
       name: data.name.toEmpty,
       email: data.email.toEmpty,
       image: data.image.toEmpty,
