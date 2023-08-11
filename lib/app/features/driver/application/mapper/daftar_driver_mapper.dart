@@ -1,3 +1,0 @@
-class DaftarDriverMapper {
-  DaftarDriverMapper._();
-}

@@ -12,6 +12,7 @@ class DriverActiveView extends ConsumerWidget {
 
   @override
   Widget build(context, ref) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Active Location"),

@@ -14,7 +14,6 @@ _$_UserResponse _$$_UserResponseFromJson(Map<String, dynamic> json) =>
       status: json['status'] as bool?,
       role: json['role'] as String?,
       image: json['image'] as String?,
-      noHP: json['noHP'] as String?,
       accessToken: json['accessToken'] as String?,
     );
 
@@ -26,6 +25,5 @@ Map<String, dynamic> _$$_UserResponseToJson(_$_UserResponse instance) =>
       'status': instance.status,
       'role': instance.role,
       'image': instance.image,
-      'noHP': instance.noHP,
       'accessToken': instance.accessToken,
     };

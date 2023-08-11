@@ -25,7 +25,7 @@ class Driver with _$Driver {
     required String nokk,
     required String noHp,
     required String noPlatMobil,
-    required String maxPenumpang,
+    required int maxPenumpang,
     required String fotoKtp,
     required String fotoMobil,
     required User user,

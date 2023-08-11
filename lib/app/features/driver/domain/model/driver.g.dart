@@ -14,7 +14,7 @@ _$_Driver _$$_DriverFromJson(Map<String, dynamic> json) => _$_Driver(
       nokk: json['nokk'] as String,
       noHp: json['noHp'] as String,
       noPlatMobil: json['noPlatMobil'] as String,
-      maxPenumpang: json['maxPenumpang'] as String,
+      maxPenumpang: json['maxPenumpang'] as int,
       fotoKtp: json['fotoKtp'] as String,
       fotoMobil: json['fotoMobil'] as String,
       user: User.fromJson(json['user'] as Map<String, dynamic>),

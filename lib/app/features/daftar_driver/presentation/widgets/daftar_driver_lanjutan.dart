@@ -22,12 +22,12 @@ class DaftarDriverLanjutan extends ConsumerWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: InputFormWidget(
-          isLoading: state.isLoading,
+          isLoading: false,
           keyForm: controller.keyForm,
           onSubmit: () {
-            // if (!(keyFormLanjutan.currentState?.validate() ?? true)) {
-            //   return;
-            // }
+            if (!(controller.keyForm.currentState?.validate() ?? true)) {
+              return;
+            }
             controller.daftarDriver(driverFormAwal, context: context);
           },
           title: 'Daftar',

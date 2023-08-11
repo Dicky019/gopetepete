@@ -31,9 +31,8 @@ mixin _$UserResponse {
   @JsonKey(name: "role")
   String? get role => throw _privateConstructorUsedError;
   @JsonKey(name: "image")
-  String? get image => throw _privateConstructorUsedError;
-  @JsonKey(name: "noHP")
-  String? get noHP => throw _privateConstructorUsedError;
+  String? get image =>
+      throw _privateConstructorUsedError; // @JsonKey(name: "noHP") String? noHP,
   @JsonKey(name: "accessToken")
   String? get accessToken => throw _privateConstructorUsedError;
 
@@ -56,7 +55,6 @@ abstract class $UserResponseCopyWith<$Res> {
       @JsonKey(name: "status") bool? status,
       @JsonKey(name: "role") String? role,
       @JsonKey(name: "image") String? image,
-      @JsonKey(name: "noHP") String? noHP,
       @JsonKey(name: "accessToken") String? accessToken});
 }
 
@@ -79,7 +77,6 @@ class _$UserResponseCopyWithImpl<$Res, $Val extends UserResponse>
     Object? status = freezed,
     Object? role = freezed,
     Object? image = freezed,
-    Object? noHP = freezed,
     Object? accessToken = freezed,
   }) {
     return _then(_value.copyWith(
@@ -107,10 +104,6 @@ class _$UserResponseCopyWithImpl<$Res, $Val extends UserResponse>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
-      noHP: freezed == noHP
-          ? _value.noHP
-          : noHP // ignore: cast_nullable_to_non_nullable
-              as String?,
       accessToken: freezed == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
@@ -134,7 +127,6 @@ abstract class _$$_UserResponseCopyWith<$Res>
       @JsonKey(name: "status") bool? status,
       @JsonKey(name: "role") String? role,
       @JsonKey(name: "image") String? image,
-      @JsonKey(name: "noHP") String? noHP,
       @JsonKey(name: "accessToken") String? accessToken});
 }
 
@@ -155,7 +147,6 @@ class __$$_UserResponseCopyWithImpl<$Res>
     Object? status = freezed,
     Object? role = freezed,
     Object? image = freezed,
-    Object? noHP = freezed,
     Object? accessToken = freezed,
   }) {
     return _then(_$_UserResponse(
@@ -183,10 +174,6 @@ class __$$_UserResponseCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
-      noHP: freezed == noHP
-          ? _value.noHP
-          : noHP // ignore: cast_nullable_to_non_nullable
-              as String?,
       accessToken: freezed == accessToken
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
@@ -205,7 +192,6 @@ class _$_UserResponse implements _UserResponse {
       @JsonKey(name: "status") this.status,
       @JsonKey(name: "role") this.role,
       @JsonKey(name: "image") this.image,
-      @JsonKey(name: "noHP") this.noHP,
       @JsonKey(name: "accessToken") this.accessToken});
 
   factory _$_UserResponse.fromJson(Map<String, dynamic> json) =>
@@ -229,16 +215,14 @@ class _$_UserResponse implements _UserResponse {
   @override
   @JsonKey(name: "image")
   final String? image;
-  @override
-  @JsonKey(name: "noHP")
-  final String? noHP;
+// @JsonKey(name: "noHP") String? noHP,
   @override
   @JsonKey(name: "accessToken")
   final String? accessToken;
 
   @override
   String toString() {
-    return 'UserResponse(id: $id, name: $name, email: $email, status: $status, role: $role, image: $image, noHP: $noHP, accessToken: $accessToken)';
+    return 'UserResponse(id: $id, name: $name, email: $email, status: $status, role: $role, image: $image, accessToken: $accessToken)';
   }
 
   @override
@@ -252,7 +236,6 @@ class _$_UserResponse implements _UserResponse {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.noHP, noHP) || other.noHP == noHP) &&
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken));
   }
@@ -260,7 +243,7 @@ class _$_UserResponse implements _UserResponse {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, email, status, role, image, noHP, accessToken);
+      runtimeType, id, name, email, status, role, image, accessToken);
 
   @JsonKey(ignore: true)
   @override
@@ -284,7 +267,6 @@ abstract class _UserResponse implements UserResponse {
           @JsonKey(name: "status") final bool? status,
           @JsonKey(name: "role") final String? role,
           @JsonKey(name: "image") final String? image,
-          @JsonKey(name: "noHP") final String? noHP,
           @JsonKey(name: "accessToken") final String? accessToken}) =
       _$_UserResponse;
 
@@ -309,10 +291,7 @@ abstract class _UserResponse implements UserResponse {
   @override
   @JsonKey(name: "image")
   String? get image;
-  @override
-  @JsonKey(name: "noHP")
-  String? get noHP;
-  @override
+  @override // @JsonKey(name: "noHP") String? noHP,
   @JsonKey(name: "accessToken")
   String? get accessToken;
   @override

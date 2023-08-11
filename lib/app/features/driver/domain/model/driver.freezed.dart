@@ -27,7 +27,7 @@ mixin _$Driver {
   String get nokk => throw _privateConstructorUsedError;
   String get noHp => throw _privateConstructorUsedError;
   String get noPlatMobil => throw _privateConstructorUsedError;
-  String get maxPenumpang => throw _privateConstructorUsedError;
+  int get maxPenumpang => throw _privateConstructorUsedError;
   String get fotoKtp => throw _privateConstructorUsedError;
   String get fotoMobil => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
@@ -50,7 +50,7 @@ abstract class $DriverCopyWith<$Res> {
       String nokk,
       String noHp,
       String noPlatMobil,
-      String maxPenumpang,
+      int maxPenumpang,
       String fotoKtp,
       String fotoMobil,
       User user});
@@ -115,7 +115,7 @@ class _$DriverCopyWithImpl<$Res, $Val extends Driver>
       maxPenumpang: null == maxPenumpang
           ? _value.maxPenumpang
           : maxPenumpang // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       fotoKtp: null == fotoKtp
           ? _value.fotoKtp
           : fotoKtp // ignore: cast_nullable_to_non_nullable
@@ -154,7 +154,7 @@ abstract class _$$_DriverCopyWith<$Res> implements $DriverCopyWith<$Res> {
       String nokk,
       String noHp,
       String noPlatMobil,
-      String maxPenumpang,
+      int maxPenumpang,
       String fotoKtp,
       String fotoMobil,
       User user});
@@ -217,7 +217,7 @@ class __$$_DriverCopyWithImpl<$Res>
       maxPenumpang: null == maxPenumpang
           ? _value.maxPenumpang
           : maxPenumpang // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       fotoKtp: null == fotoKtp
           ? _value.fotoKtp
           : fotoKtp // ignore: cast_nullable_to_non_nullable
@@ -268,7 +268,7 @@ class _$_Driver implements _Driver {
   @override
   final String noPlatMobil;
   @override
-  final String maxPenumpang;
+  final int maxPenumpang;
   @override
   final String fotoKtp;
   @override
@@ -331,7 +331,7 @@ abstract class _Driver implements Driver {
       required final String nokk,
       required final String noHp,
       required final String noPlatMobil,
-      required final String maxPenumpang,
+      required final int maxPenumpang,
       required final String fotoKtp,
       required final String fotoMobil,
       required final User user}) = _$_Driver;
@@ -353,7 +353,7 @@ abstract class _Driver implements Driver {
   @override
   String get noPlatMobil;
   @override
-  String get maxPenumpang;
+  int get maxPenumpang;
   @override
   String get fotoKtp;
   @override

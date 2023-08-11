@@ -15,7 +15,7 @@ class UserResponse with _$UserResponse {
     @JsonKey(name: "status") bool? status,
     @JsonKey(name: "role") String? role,
     @JsonKey(name: "image") String? image,
-    @JsonKey(name: "noHP") String? noHP,
+    // @JsonKey(name: "noHP") String? noHP,
     @JsonKey(name: "accessToken") String? accessToken,
   }) = _UserResponse;
 

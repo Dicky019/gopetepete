@@ -37,7 +37,7 @@ class LoginWidget extends ConsumerWidget {
             ),
             Gap.h28,
             ButtonWidget(
-              isLoading: state.isLoading,
+              // isLoading: state.isLoading,
               onTap:
                   state.isLoading ? null : () => controller.fetchLogin(context),
               text: 'Login',
@@ -59,8 +59,8 @@ class LoginWidget extends ConsumerWidget {
             Gap.h8,
             ButtonWidget(
               isPrimary: false,
-              isLoading: state.isLoading,
-              onTap: () => context.push(DaftarDriverView.routeName),
+              // isLoading: state.isLoading,
+              onTap: state.isLoading ? null :  () => context.push(DaftarDriverView.routeName),
               text: 'Daftar',
             )
           ],

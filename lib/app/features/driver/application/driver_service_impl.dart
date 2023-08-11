@@ -1,6 +1,9 @@
 import 'dart:developer';
 
-import 'package:location/location.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_1/app/features/driver/application/mapper/driver_mapper.dart';
+import 'package:flutter_application_1/app/features/driver/domain/model/driver.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '/app/services/remote/config/result.dart';
 import '../../auth/data/repository/auth_repository_impl.dart';
@@ -11,52 +14,103 @@ import 'driver_service.dart';
 class DriverServiceImpl implements DriverService {
   final DriverRepositoryImpl _driverRepository;
   final AuthRepositoryImpl _authRepository;
-  final _location = Location.instance;
+  final stream = Geolocator.getPositionStream();
   DriverServiceImpl(this._driverRepository, this._authRepository);
 
   @override
   Future<Result<void>> updateLocation() async {
-    final id = _authRepository.getUser!.id;
+    final locationData = await _determinePosition();
 
-    log(id);
+    log(locationData.toString(), name: "updateLocation");
 
-    // await _location.changeSettings(accuracy: LocationAccuracy.navigation);
-
-    final locationData = await _location.getLocation();
-
-    final driverLocation = DriverLocationRequest(
-      id: id,
-      lat: locationData.latitude.toString(),
-      long: locationData.longitude.toString(),
+    final driverLocation = DriverLocation(
+      id: getDriverLocal.id,
+      lat: locationData?.latitude.toString() ?? "",
+      long: locationData?.longitude.toString() ?? "",
+      maxPenumpang: getDriverLocal.maxPenumpang,
+      jumlahPenumpang: 0,
     );
 
-    return _driverRepository.updateLocation(driverLocation);
+    return _driverRepository.updateLocation(
+      getDriverLocal.id,
+      driverLocation.toJson(),
+    );
+  }
+
+  Future<void> streamLocationDriver(String latitude, String longitude) async {
+    if (_driverRepository.getDriver != null) {
+      await _driverRepository.updateLocation(getDriverLocal.id, {
+        "lat": latitude,
+        "long": longitude,
+      });
+    }
   }
 
   @override
   Future<void> logout() {
+    _driverRepository.deleteDriver();
     return _authRepository.logout();
   }
 
   @override
   Future<void> locationPermision() async {
-    bool serviceEnabled = false;
-    PermissionStatus permissionGranted;
+    bool serviceEnabled;
+    LocationPermission permission;
 
-    serviceEnabled = await _location.serviceEnabled();
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      serviceEnabled = await _location.requestService();
-      if (!serviceEnabled) {
-        return;
+      return Future.error('Location services are disabled.');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
       }
     }
 
-    permissionGranted = await _location.hasPermission();
-    if (permissionGranted == PermissionStatus.denied) {
-      permissionGranted = await _location.requestPermission();
-      if (permissionGranted != PermissionStatus.granted) {
-        return;
-      }
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+        'Location permissions are permanently denied, we cannot request permissions.',
+      );
     }
+  }
+
+  Future<Position?> _determinePosition() async {
+    await locationPermision();
+    return await Geolocator.getLastKnownPosition();
+  }
+
+  @override
+  Future<Result<void>> getDriverApi() async {
+    final id = _authRepository.getUser?.id;
+    final response = await _driverRepository.getDriverApi(id ?? "");
+    final result = DriverMapper.mapToUserResult(response);
+
+    return result.when(
+      success: (driver) {
+        _driverRepository.saveDriver(driver);
+        return const Result.success(null);
+      },
+      failure: (error, stackTrace) => Result.failure(error, stackTrace),
+    );
+  }
+
+  @override
+  Driver get getDriverLocal => _driverRepository.getDriver!;
+
+  @override
+  Stream<DocumentSnapshot<DriverLocation>> get streamLocation {
+    return _driverRepository.streamLocation(getDriverLocal.id);
+  }
+
+  @override
+  Future<Result<void>> updatePenumpang(int jumlahPenumpang) {
+    log(jumlahPenumpang.toString(), name: "jumlahPenumpang");
+    return _driverRepository.updatePenumpang(
+      getDriverLocal.id,
+      jumlahPenumpang,
+    );
   }
 }

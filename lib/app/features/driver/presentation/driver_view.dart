@@ -4,15 +4,25 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../widget/driver_widget.dart';
 import 'driver_controller.dart';
 
-class DriverView extends ConsumerWidget {
-  const DriverView({Key? key}) : super(key: key);
-
+class DriverView extends ConsumerStatefulWidget {
+  const DriverView({super.key});
   static const routeName = '/driver';
 
   @override
-  Widget build(context, ref) {
-    final controller = ref.read(driverControllerProvider.notifier);
-    controller.initLocation();
+  ConsumerState<ConsumerStatefulWidget> createState() => _DriverViewState();
+}
+
+class _DriverViewState extends ConsumerState<DriverView> {
+  late DriverControllerNotifier controller =
+      ref.read(driverControllerProvider.notifier);
+  @override
+  void initState() {
+    controller.init();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Driver"),
