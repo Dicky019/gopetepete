@@ -32,14 +32,8 @@ mixin _$RuteResponse {
   String? get kode => throw _privateConstructorUsedError;
   @JsonKey(name: "color")
   String? get color => throw _privateConstructorUsedError;
-  @JsonKey(name: "latAwal")
-  String? get latAwal => throw _privateConstructorUsedError;
-  @JsonKey(name: "longAwal")
-  String? get longAwal => throw _privateConstructorUsedError;
-  @JsonKey(name: "latAkhir")
-  String? get latAkhir => throw _privateConstructorUsedError;
-  @JsonKey(name: "longAkhir")
-  String? get longAkhir => throw _privateConstructorUsedError;
+  @JsonKey(name: "locations")
+  List<LocationsResponse>? get locations => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -60,10 +54,7 @@ abstract class $RuteResponseCopyWith<$Res> {
       @JsonKey(name: "name") String? name,
       @JsonKey(name: "kode") String? kode,
       @JsonKey(name: "color") String? color,
-      @JsonKey(name: "latAwal") String? latAwal,
-      @JsonKey(name: "longAwal") String? longAwal,
-      @JsonKey(name: "latAkhir") String? latAkhir,
-      @JsonKey(name: "longAkhir") String? longAkhir});
+      @JsonKey(name: "locations") List<LocationsResponse>? locations});
 }
 
 /// @nodoc
@@ -85,10 +76,7 @@ class _$RuteResponseCopyWithImpl<$Res, $Val extends RuteResponse>
     Object? name = freezed,
     Object? kode = freezed,
     Object? color = freezed,
-    Object? latAwal = freezed,
-    Object? longAwal = freezed,
-    Object? latAkhir = freezed,
-    Object? longAkhir = freezed,
+    Object? locations = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -115,22 +103,10 @@ class _$RuteResponseCopyWithImpl<$Res, $Val extends RuteResponse>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-      latAwal: freezed == latAwal
-          ? _value.latAwal
-          : latAwal // ignore: cast_nullable_to_non_nullable
-              as String?,
-      longAwal: freezed == longAwal
-          ? _value.longAwal
-          : longAwal // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latAkhir: freezed == latAkhir
-          ? _value.latAkhir
-          : latAkhir // ignore: cast_nullable_to_non_nullable
-              as String?,
-      longAkhir: freezed == longAkhir
-          ? _value.longAkhir
-          : longAkhir // ignore: cast_nullable_to_non_nullable
-              as String?,
+      locations: freezed == locations
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<LocationsResponse>?,
     ) as $Val);
   }
 }
@@ -150,10 +126,7 @@ abstract class _$$_RuteResponseCopyWith<$Res>
       @JsonKey(name: "name") String? name,
       @JsonKey(name: "kode") String? kode,
       @JsonKey(name: "color") String? color,
-      @JsonKey(name: "latAwal") String? latAwal,
-      @JsonKey(name: "longAwal") String? longAwal,
-      @JsonKey(name: "latAkhir") String? latAkhir,
-      @JsonKey(name: "longAkhir") String? longAkhir});
+      @JsonKey(name: "locations") List<LocationsResponse>? locations});
 }
 
 /// @nodoc
@@ -173,10 +146,7 @@ class __$$_RuteResponseCopyWithImpl<$Res>
     Object? name = freezed,
     Object? kode = freezed,
     Object? color = freezed,
-    Object? latAwal = freezed,
-    Object? longAwal = freezed,
-    Object? latAkhir = freezed,
-    Object? longAkhir = freezed,
+    Object? locations = freezed,
   }) {
     return _then(_$_RuteResponse(
       id: freezed == id
@@ -203,22 +173,10 @@ class __$$_RuteResponseCopyWithImpl<$Res>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-      latAwal: freezed == latAwal
-          ? _value.latAwal
-          : latAwal // ignore: cast_nullable_to_non_nullable
-              as String?,
-      longAwal: freezed == longAwal
-          ? _value.longAwal
-          : longAwal // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latAkhir: freezed == latAkhir
-          ? _value.latAkhir
-          : latAkhir // ignore: cast_nullable_to_non_nullable
-              as String?,
-      longAkhir: freezed == longAkhir
-          ? _value.longAkhir
-          : longAkhir // ignore: cast_nullable_to_non_nullable
-              as String?,
+      locations: freezed == locations
+          ? _value._locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<LocationsResponse>?,
     ));
   }
 }
@@ -233,10 +191,8 @@ class _$_RuteResponse implements _RuteResponse {
       @JsonKey(name: "name") this.name,
       @JsonKey(name: "kode") this.kode,
       @JsonKey(name: "color") this.color,
-      @JsonKey(name: "latAwal") this.latAwal,
-      @JsonKey(name: "longAwal") this.longAwal,
-      @JsonKey(name: "latAkhir") this.latAkhir,
-      @JsonKey(name: "longAkhir") this.longAkhir});
+      @JsonKey(name: "locations") final List<LocationsResponse>? locations})
+      : _locations = locations;
 
   factory _$_RuteResponse.fromJson(Map<String, dynamic> json) =>
       _$$_RuteResponseFromJson(json);
@@ -259,22 +215,20 @@ class _$_RuteResponse implements _RuteResponse {
   @override
   @JsonKey(name: "color")
   final String? color;
+  final List<LocationsResponse>? _locations;
   @override
-  @JsonKey(name: "latAwal")
-  final String? latAwal;
-  @override
-  @JsonKey(name: "longAwal")
-  final String? longAwal;
-  @override
-  @JsonKey(name: "latAkhir")
-  final String? latAkhir;
-  @override
-  @JsonKey(name: "longAkhir")
-  final String? longAkhir;
+  @JsonKey(name: "locations")
+  List<LocationsResponse>? get locations {
+    final value = _locations;
+    if (value == null) return null;
+    if (_locations is EqualUnmodifiableListView) return _locations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'RuteResponse(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, kode: $kode, color: $color, latAwal: $latAwal, longAwal: $longAwal, latAkhir: $latAkhir, longAkhir: $longAkhir)';
+    return 'RuteResponse(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, kode: $kode, color: $color, locations: $locations)';
   }
 
   @override
@@ -290,19 +244,14 @@ class _$_RuteResponse implements _RuteResponse {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.kode, kode) || other.kode == kode) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.latAwal, latAwal) || other.latAwal == latAwal) &&
-            (identical(other.longAwal, longAwal) ||
-                other.longAwal == longAwal) &&
-            (identical(other.latAkhir, latAkhir) ||
-                other.latAkhir == latAkhir) &&
-            (identical(other.longAkhir, longAkhir) ||
-                other.longAkhir == longAkhir));
+            const DeepCollectionEquality()
+                .equals(other._locations, _locations));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, name,
-      kode, color, latAwal, longAwal, latAkhir, longAkhir);
+      kode, color, const DeepCollectionEquality().hash(_locations));
 
   @JsonKey(ignore: true)
   @override
@@ -326,10 +275,8 @@ abstract class _RuteResponse implements RuteResponse {
       @JsonKey(name: "name") final String? name,
       @JsonKey(name: "kode") final String? kode,
       @JsonKey(name: "color") final String? color,
-      @JsonKey(name: "latAwal") final String? latAwal,
-      @JsonKey(name: "longAwal") final String? longAwal,
-      @JsonKey(name: "latAkhir") final String? latAkhir,
-      @JsonKey(name: "longAkhir") final String? longAkhir}) = _$_RuteResponse;
+      @JsonKey(name: "locations")
+      final List<LocationsResponse>? locations}) = _$_RuteResponse;
 
   factory _RuteResponse.fromJson(Map<String, dynamic> json) =
       _$_RuteResponse.fromJson;
@@ -353,6 +300,238 @@ abstract class _RuteResponse implements RuteResponse {
   @JsonKey(name: "color")
   String? get color;
   @override
+  @JsonKey(name: "locations")
+  List<LocationsResponse>? get locations;
+  @override
+  @JsonKey(ignore: true)
+  _$$_RuteResponseCopyWith<_$_RuteResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LocationsResponse _$LocationsResponseFromJson(Map<String, dynamic> json) {
+  return _LocationsResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LocationsResponse {
+  @JsonKey(name: "id")
+  String? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "latAwal")
+  String? get latAwal => throw _privateConstructorUsedError;
+  @JsonKey(name: "longAwal")
+  String? get longAwal => throw _privateConstructorUsedError;
+  @JsonKey(name: "latAkhir")
+  String? get latAkhir => throw _privateConstructorUsedError;
+  @JsonKey(name: "longAkhir")
+  String? get longAkhir => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LocationsResponseCopyWith<LocationsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocationsResponseCopyWith<$Res> {
+  factory $LocationsResponseCopyWith(
+          LocationsResponse value, $Res Function(LocationsResponse) then) =
+      _$LocationsResponseCopyWithImpl<$Res, LocationsResponse>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") String? id,
+      @JsonKey(name: "latAwal") String? latAwal,
+      @JsonKey(name: "longAwal") String? longAwal,
+      @JsonKey(name: "latAkhir") String? latAkhir,
+      @JsonKey(name: "longAkhir") String? longAkhir});
+}
+
+/// @nodoc
+class _$LocationsResponseCopyWithImpl<$Res, $Val extends LocationsResponse>
+    implements $LocationsResponseCopyWith<$Res> {
+  _$LocationsResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? latAwal = freezed,
+    Object? longAwal = freezed,
+    Object? latAkhir = freezed,
+    Object? longAkhir = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latAwal: freezed == latAwal
+          ? _value.latAwal
+          : latAwal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      longAwal: freezed == longAwal
+          ? _value.longAwal
+          : longAwal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latAkhir: freezed == latAkhir
+          ? _value.latAkhir
+          : latAkhir // ignore: cast_nullable_to_non_nullable
+              as String?,
+      longAkhir: freezed == longAkhir
+          ? _value.longAkhir
+          : longAkhir // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_LocationsResponseCopyWith<$Res>
+    implements $LocationsResponseCopyWith<$Res> {
+  factory _$$_LocationsResponseCopyWith(_$_LocationsResponse value,
+          $Res Function(_$_LocationsResponse) then) =
+      __$$_LocationsResponseCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") String? id,
+      @JsonKey(name: "latAwal") String? latAwal,
+      @JsonKey(name: "longAwal") String? longAwal,
+      @JsonKey(name: "latAkhir") String? latAkhir,
+      @JsonKey(name: "longAkhir") String? longAkhir});
+}
+
+/// @nodoc
+class __$$_LocationsResponseCopyWithImpl<$Res>
+    extends _$LocationsResponseCopyWithImpl<$Res, _$_LocationsResponse>
+    implements _$$_LocationsResponseCopyWith<$Res> {
+  __$$_LocationsResponseCopyWithImpl(
+      _$_LocationsResponse _value, $Res Function(_$_LocationsResponse) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? latAwal = freezed,
+    Object? longAwal = freezed,
+    Object? latAkhir = freezed,
+    Object? longAkhir = freezed,
+  }) {
+    return _then(_$_LocationsResponse(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latAwal: freezed == latAwal
+          ? _value.latAwal
+          : latAwal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      longAwal: freezed == longAwal
+          ? _value.longAwal
+          : longAwal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latAkhir: freezed == latAkhir
+          ? _value.latAkhir
+          : latAkhir // ignore: cast_nullable_to_non_nullable
+              as String?,
+      longAkhir: freezed == longAkhir
+          ? _value.longAkhir
+          : longAkhir // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_LocationsResponse implements _LocationsResponse {
+  const _$_LocationsResponse(
+      {@JsonKey(name: "id") this.id,
+      @JsonKey(name: "latAwal") this.latAwal,
+      @JsonKey(name: "longAwal") this.longAwal,
+      @JsonKey(name: "latAkhir") this.latAkhir,
+      @JsonKey(name: "longAkhir") this.longAkhir});
+
+  factory _$_LocationsResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_LocationsResponseFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final String? id;
+  @override
+  @JsonKey(name: "latAwal")
+  final String? latAwal;
+  @override
+  @JsonKey(name: "longAwal")
+  final String? longAwal;
+  @override
+  @JsonKey(name: "latAkhir")
+  final String? latAkhir;
+  @override
+  @JsonKey(name: "longAkhir")
+  final String? longAkhir;
+
+  @override
+  String toString() {
+    return 'LocationsResponse(id: $id, latAwal: $latAwal, longAwal: $longAwal, latAkhir: $latAkhir, longAkhir: $longAkhir)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LocationsResponse &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.latAwal, latAwal) || other.latAwal == latAwal) &&
+            (identical(other.longAwal, longAwal) ||
+                other.longAwal == longAwal) &&
+            (identical(other.latAkhir, latAkhir) ||
+                other.latAkhir == latAkhir) &&
+            (identical(other.longAkhir, longAkhir) ||
+                other.longAkhir == longAkhir));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, latAwal, longAwal, latAkhir, longAkhir);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LocationsResponseCopyWith<_$_LocationsResponse> get copyWith =>
+      __$$_LocationsResponseCopyWithImpl<_$_LocationsResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_LocationsResponseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LocationsResponse implements LocationsResponse {
+  const factory _LocationsResponse(
+          {@JsonKey(name: "id") final String? id,
+          @JsonKey(name: "latAwal") final String? latAwal,
+          @JsonKey(name: "longAwal") final String? longAwal,
+          @JsonKey(name: "latAkhir") final String? latAkhir,
+          @JsonKey(name: "longAkhir") final String? longAkhir}) =
+      _$_LocationsResponse;
+
+  factory _LocationsResponse.fromJson(Map<String, dynamic> json) =
+      _$_LocationsResponse.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  String? get id;
+  @override
   @JsonKey(name: "latAwal")
   String? get latAwal;
   @override
@@ -366,6 +545,6 @@ abstract class _RuteResponse implements RuteResponse {
   String? get longAkhir;
   @override
   @JsonKey(ignore: true)
-  _$$_RuteResponseCopyWith<_$_RuteResponse> get copyWith =>
+  _$$_LocationsResponseCopyWith<_$_LocationsResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

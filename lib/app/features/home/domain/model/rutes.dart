@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'rute.dart';
 
@@ -10,5 +11,6 @@ class Rutes with _$Rutes {
   const factory Rutes({
     required String code,
     required List<Rute> data,
+    required Set<Polyline> locations,
   }) = _Rutes;
 }

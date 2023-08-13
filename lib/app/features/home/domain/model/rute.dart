@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 part 'rute.freezed.dart';
 
@@ -11,9 +12,6 @@ class Rute with _$Rute {
     required String name,
     required String kode,
     required String color,
-    required String latAwal,
-    required String longAwal,
-    required String latAkhir,
-    required String longAkhir,
+    required Polyline locations,
   }) = _Rute;
 }

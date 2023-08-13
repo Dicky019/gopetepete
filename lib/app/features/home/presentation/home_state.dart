@@ -1,14 +1,14 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class HomeState {
-  final AsyncValue<bool?> value;
+  final AsyncValue<int> value;
 
   const HomeState({
-    this.value = const AsyncData(null),
+    this.value = const AsyncData(0),
   });
 
   HomeState copyWith({
-    AsyncValue<bool?>? value,
+    AsyncValue<int>? value,
   }) {
     return HomeState(
       value: value ?? this.value,

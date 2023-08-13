@@ -1,3 +1,5 @@
+import '../response/rute_response.dart';
+import '../response/rutes_response.dart';
 import '/app/services/remote/config/result.dart';
 import '../../domain/repository/home_repository.dart';
 import '../source/network.dart';
@@ -13,7 +15,7 @@ class HomeRepositoryImpl extends HomeRepository {
   }
 
   @override
-  Future<Result<String>> getRutes() {
+  Future<Result<RutesResponse>> getRutes() {
     return _network.getRutes();
   }
 
@@ -23,7 +25,7 @@ class HomeRepositoryImpl extends HomeRepository {
   }
 
   @override
-  Future<Result<String>> getRute(String id) {
+  Future<Result<RuteResponse>> getRute(String id) {
     return _network.getRute(id);
   }
 }

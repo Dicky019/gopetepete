@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardProfilWidget extends StatelessWidget {
-  final double height;
-  final double width;
+  // final double height;
+  final double size;
   final Widget child;
   final double border;
   const CardProfilWidget({
     Key? key,
-    required this.height,
-    required this.width,
+    // required this.height,
+    required this.size,
     required this.child,
     required this.border,
   }) : super(key: key);
@@ -17,8 +17,8 @@ class CardProfilWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      width: width,
+      width: size,
+      height: size,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(border),
         color: Theme.of(context).colorScheme.background,

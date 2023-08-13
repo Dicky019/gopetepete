@@ -1,3 +1,6 @@
+import 'package:flutter_application_1/app/features/home/data/response/rutes_response.dart';
+
+import '../response/rute_response.dart';
 import '/app/services/remote/config/config.dart';
 import 'network.dart';
 
@@ -9,10 +12,10 @@ class NetworkImpl extends Network {
   );
 
   @override
-  Future<Result<String>> getRute(String id) async {
+  Future<Result<RuteResponse>> getRute(String id) async {
     try {
       final response = await _dioClient.get("${Endpoint.rute}/$id");
-      return Result.success(response['data']);
+      return Result.success(RuteResponse.fromJson(response['data']));
     } catch (e, st) {
       return Result.failure(
         NetworkExceptions.getDioException(e, st),
@@ -22,10 +25,10 @@ class NetworkImpl extends Network {
   }
 
   @override
-  Future<Result<String>> getRutes() async {
+  Future<Result<RutesResponse>> getRutes() async {
     try {
       final response = await _dioClient.get(Endpoint.rute);
-      return Result.success(response['data']);
+      return Result.success(RutesResponse.fromJson(response));
     } catch (e, st) {
       return Result.failure(
         NetworkExceptions.getDioException(e, st),

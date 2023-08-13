@@ -14,8 +14,7 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardProfilWidget(
-      height: 124.h,
-      width: 124.w,
+      size: 124.w,
       border: (124 / 2).r,
       child: Padding(
         padding: const EdgeInsets.all(8.0).w,

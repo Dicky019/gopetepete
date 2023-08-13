@@ -22,10 +22,7 @@ mixin _$Rute {
   String get name => throw _privateConstructorUsedError;
   String get kode => throw _privateConstructorUsedError;
   String get color => throw _privateConstructorUsedError;
-  String get latAwal => throw _privateConstructorUsedError;
-  String get longAwal => throw _privateConstructorUsedError;
-  String get latAkhir => throw _privateConstructorUsedError;
-  String get longAkhir => throw _privateConstructorUsedError;
+  Polyline get locations => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RuteCopyWith<Rute> get copyWith => throw _privateConstructorUsedError;
@@ -43,10 +40,7 @@ abstract class $RuteCopyWith<$Res> {
       String name,
       String kode,
       String color,
-      String latAwal,
-      String longAwal,
-      String latAkhir,
-      String longAkhir});
+      Polyline locations});
 }
 
 /// @nodoc
@@ -68,10 +62,7 @@ class _$RuteCopyWithImpl<$Res, $Val extends Rute>
     Object? name = null,
     Object? kode = null,
     Object? color = null,
-    Object? latAwal = null,
-    Object? longAwal = null,
-    Object? latAkhir = null,
-    Object? longAkhir = null,
+    Object? locations = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -98,22 +89,10 @@ class _$RuteCopyWithImpl<$Res, $Val extends Rute>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String,
-      latAwal: null == latAwal
-          ? _value.latAwal
-          : latAwal // ignore: cast_nullable_to_non_nullable
-              as String,
-      longAwal: null == longAwal
-          ? _value.longAwal
-          : longAwal // ignore: cast_nullable_to_non_nullable
-              as String,
-      latAkhir: null == latAkhir
-          ? _value.latAkhir
-          : latAkhir // ignore: cast_nullable_to_non_nullable
-              as String,
-      longAkhir: null == longAkhir
-          ? _value.longAkhir
-          : longAkhir // ignore: cast_nullable_to_non_nullable
-              as String,
+      locations: null == locations
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as Polyline,
     ) as $Val);
   }
 }
@@ -131,10 +110,7 @@ abstract class _$$_RuteCopyWith<$Res> implements $RuteCopyWith<$Res> {
       String name,
       String kode,
       String color,
-      String latAwal,
-      String longAwal,
-      String latAkhir,
-      String longAkhir});
+      Polyline locations});
 }
 
 /// @nodoc
@@ -152,10 +128,7 @@ class __$$_RuteCopyWithImpl<$Res> extends _$RuteCopyWithImpl<$Res, _$_Rute>
     Object? name = null,
     Object? kode = null,
     Object? color = null,
-    Object? latAwal = null,
-    Object? longAwal = null,
-    Object? latAkhir = null,
-    Object? longAkhir = null,
+    Object? locations = null,
   }) {
     return _then(_$_Rute(
       id: null == id
@@ -182,22 +155,10 @@ class __$$_RuteCopyWithImpl<$Res> extends _$RuteCopyWithImpl<$Res, _$_Rute>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String,
-      latAwal: null == latAwal
-          ? _value.latAwal
-          : latAwal // ignore: cast_nullable_to_non_nullable
-              as String,
-      longAwal: null == longAwal
-          ? _value.longAwal
-          : longAwal // ignore: cast_nullable_to_non_nullable
-              as String,
-      latAkhir: null == latAkhir
-          ? _value.latAkhir
-          : latAkhir // ignore: cast_nullable_to_non_nullable
-              as String,
-      longAkhir: null == longAkhir
-          ? _value.longAkhir
-          : longAkhir // ignore: cast_nullable_to_non_nullable
-              as String,
+      locations: null == locations
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as Polyline,
     ));
   }
 }
@@ -212,10 +173,7 @@ class _$_Rute implements _Rute {
       required this.name,
       required this.kode,
       required this.color,
-      required this.latAwal,
-      required this.longAwal,
-      required this.latAkhir,
-      required this.longAkhir});
+      required this.locations});
 
   @override
   final String id;
@@ -230,17 +188,11 @@ class _$_Rute implements _Rute {
   @override
   final String color;
   @override
-  final String latAwal;
-  @override
-  final String longAwal;
-  @override
-  final String latAkhir;
-  @override
-  final String longAkhir;
+  final Polyline locations;
 
   @override
   String toString() {
-    return 'Rute(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, kode: $kode, color: $color, latAwal: $latAwal, longAwal: $longAwal, latAkhir: $latAkhir, longAkhir: $longAkhir)';
+    return 'Rute(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, kode: $kode, color: $color, locations: $locations)';
   }
 
   @override
@@ -256,18 +208,13 @@ class _$_Rute implements _Rute {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.kode, kode) || other.kode == kode) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.latAwal, latAwal) || other.latAwal == latAwal) &&
-            (identical(other.longAwal, longAwal) ||
-                other.longAwal == longAwal) &&
-            (identical(other.latAkhir, latAkhir) ||
-                other.latAkhir == latAkhir) &&
-            (identical(other.longAkhir, longAkhir) ||
-                other.longAkhir == longAkhir));
+            (identical(other.locations, locations) ||
+                other.locations == locations));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, name,
-      kode, color, latAwal, longAwal, latAkhir, longAkhir);
+  int get hashCode => Object.hash(
+      runtimeType, id, createdAt, updatedAt, name, kode, color, locations);
 
   @JsonKey(ignore: true)
   @override
@@ -284,10 +231,7 @@ abstract class _Rute implements Rute {
       required final String name,
       required final String kode,
       required final String color,
-      required final String latAwal,
-      required final String longAwal,
-      required final String latAkhir,
-      required final String longAkhir}) = _$_Rute;
+      required final Polyline locations}) = _$_Rute;
 
   @override
   String get id;
@@ -302,13 +246,7 @@ abstract class _Rute implements Rute {
   @override
   String get color;
   @override
-  String get latAwal;
-  @override
-  String get longAwal;
-  @override
-  String get latAkhir;
-  @override
-  String get longAkhir;
+  Polyline get locations;
   @override
   @JsonKey(ignore: true)
   _$$_RuteCopyWith<_$_Rute> get copyWith => throw _privateConstructorUsedError;

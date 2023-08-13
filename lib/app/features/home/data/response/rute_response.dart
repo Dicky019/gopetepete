@@ -14,12 +14,23 @@ class RuteResponse with _$RuteResponse {
     @JsonKey(name: "name") String? name,
     @JsonKey(name: "kode") String? kode,
     @JsonKey(name: "color") String? color,
-    @JsonKey(name: "latAwal") String? latAwal,
-    @JsonKey(name: "longAwal") String? longAwal,
-    @JsonKey(name: "latAkhir") String? latAkhir,
-    @JsonKey(name: "longAkhir") String? longAkhir,
+    @JsonKey(name: "locations") List<LocationsResponse>? locations,
   }) = _RuteResponse;
 
   factory RuteResponse.fromJson(Map<String, dynamic> json) =>
       _$RuteResponseFromJson(json);
+}
+
+@freezed
+class LocationsResponse with _$LocationsResponse {
+  const factory LocationsResponse({
+    @JsonKey(name: "id") String? id,
+    @JsonKey(name: "latAwal") String? latAwal,
+    @JsonKey(name: "longAwal") String? longAwal,
+    @JsonKey(name: "latAkhir") String? latAkhir,
+    @JsonKey(name: "longAkhir") String? longAkhir,
+  }) = _LocationsResponse;
+
+  factory LocationsResponse.fromJson(Map<String, dynamic> json) =>
+      _$LocationsResponseFromJson(json);
 }

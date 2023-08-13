@@ -20,6 +20,7 @@ class TextProfileWidget extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
+            flex: 4,
             child: Text(
               title,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -33,6 +34,7 @@ class TextProfileWidget extends StatelessWidget {
             child: const VerticalDivider(),
           ),
           Expanded(
+            flex: 6,
             child: Text(
               value,
               style: Theme.of(context)
