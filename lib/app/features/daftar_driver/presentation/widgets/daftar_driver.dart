@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '/app/constants/theme/app_size.dart';
-import '/app/widgets/text_field.dart';
-import '/app/widgets/input_form.dart';
+import '../../../../widgets/form/text_field.dart';
+import '../../../../widgets/form/input_form.dart';
 import '../daftar_driver_controller.dart';
 
 class DaftarDriver extends ConsumerWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants/theme/app_size.dart';
-import 'button.dart';
+import '../../constants/theme/app_size.dart';
+import '../button.dart';
 
 class InputFormWidget extends StatelessWidget {
   const InputFormWidget({

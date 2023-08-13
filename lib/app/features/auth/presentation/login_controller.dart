@@ -6,7 +6,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../main/presentation/home_view.dart';
+import '../../home/presentation/home_view.dart';
 import '../application/auth_service_impl.dart';
 import 'login_state.dart';
 

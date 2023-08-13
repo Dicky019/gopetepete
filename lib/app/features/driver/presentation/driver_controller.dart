@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
-import 'package:geolocator/geolocator.dart';
+import '../domain/model/driver.dart';
 import '../../auth/presentation/login_view.dart';
 import '../data/request/driver_request.dart';
 import 'driver_active/driver_active_view.dart';
@@ -35,6 +35,8 @@ class DriverControllerNotifier extends StateNotifier<DriverState> {
 
   Stream<DocumentSnapshot<DriverLocation>> get streamLocation =>
       _driverService.streamLocation;
+
+  Driver get getDriverLocal => _driverService.getDriverLocal;
 
   Future updatePenumpang(int jumlahPenumpang) async {
     EasyLoading.show(status: "Memuat");
@@ -73,12 +75,9 @@ class DriverControllerNotifier extends StateNotifier<DriverState> {
   }
 
   initActive() {
-    Geolocator.getPositionStream().listen((locationData) {
+    _driverService.getPositionStream.listen((locationData) {
       final latitude = locationData.latitude.toString();
       final longitude = locationData.longitude.toString();
-
-      // log(latitude,name: "latitude");
-      // log(longitude,name: "longitude");
       _driverService.streamLocationDriver(
         latitude,
         longitude,

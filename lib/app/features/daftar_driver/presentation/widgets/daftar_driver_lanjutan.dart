@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/widgets/upload_image.dart';
+import 'package:flutter_application_1/app/widgets/form/image_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../data/request/daftar_driver_request.dart';
 import '/app/constants/theme/app_size.dart';
-import '/app/widgets/input_form.dart';
+import '../../../../widgets/form/input_form.dart';
 import '../daftar_driver_controller.dart';
 
 class DaftarDriverLanjutan extends ConsumerWidget {
@@ -36,7 +36,7 @@ class DaftarDriverLanjutan extends ConsumerWidget {
             Row(
               children: [
                 Expanded(
-                  child: UploadImageWidget(
+                  child: ImageFieldWidget(
                     title: 'Foto',
                     foto: state.foto,
                     onTap: () async {
@@ -46,7 +46,7 @@ class DaftarDriverLanjutan extends ConsumerWidget {
                 ),
                 Gap.w16,
                 Expanded(
-                  child: UploadImageWidget(
+                  child: ImageFieldWidget(
                     title: 'Foto Ktp',
                     foto: state.fotoKtp,
                     onTap: () async {
@@ -56,7 +56,7 @@ class DaftarDriverLanjutan extends ConsumerWidget {
                 ),
               ],
             ),
-            UploadImageWidget(
+            ImageFieldWidget(
               title: 'Foto Mobil',
               foto: state.fotoMobil,
               onTap: () async {

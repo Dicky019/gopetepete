@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../features/auth/domain/model/user.dart';
+import '../features/driver/presentation/driver_profile/driver_profile_view.dart';
 import '../utils/extension/dynamic_extension.dart';
 import '../features/auth/application/auth_service_impl.dart';
 import '../features/auth/presentation/login_view.dart';
@@ -13,7 +14,7 @@ import '../features/daftar_driver/presentation/views/daftar_driver_view.dart';
 // import '../features/driver/data/request/daftar_driver_request.dart';
 import '../features/driver/presentation/driver_verivication/driver_verification_view.dart';
 import '../features/driver/presentation/driver_view.dart';
-import '../features/main/presentation/home_view.dart';
+import '../features/home/presentation/home_view.dart';
 
 ///
 /// for getting routers that are present in the app
@@ -55,6 +56,7 @@ final routerProvider = Provider<GoRouter>(
           
           final isInvalidAuth = invalidAuth([
             DriverActiveView.path,
+            DriverProfileView.path,
           ], state);
 
           if (isInvalidAuth) {
@@ -105,6 +107,10 @@ final routerProvider = Provider<GoRouter>(
             GoRoute(
               path: DriverActiveView.routeName,
               builder: (context, state) => const DriverActiveView(),
+            ),
+            GoRoute(
+              path: DriverProfileView.routeName,
+              builder: (context, state) => const DriverProfileView(),
             ),
           ],
         ),

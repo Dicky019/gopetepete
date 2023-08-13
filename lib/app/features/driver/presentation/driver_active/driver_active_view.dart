@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../widget/driver_active.dart';
+import '../../widget/driver_active_widget.dart';
 import '../driver_view.dart';
 
 class DriverActiveView extends ConsumerWidget {

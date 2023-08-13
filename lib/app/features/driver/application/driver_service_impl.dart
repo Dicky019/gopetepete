@@ -1,25 +1,30 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_application_1/app/features/driver/application/mapper/driver_mapper.dart';
-import 'package:flutter_application_1/app/features/driver/domain/model/driver.dart';
-import 'package:geolocator/geolocator.dart';
+import '/app/services/location/geolocation_service.dart';
 
 import '/app/services/remote/config/result.dart';
 import '../../auth/data/repository/auth_repository_impl.dart';
 import '../data/request/driver_request.dart';
 import '../data/repository/driver_repository_impl.dart';
+import '../domain/model/driver.dart';
+import 'mapper/driver_mapper.dart';
 import 'driver_service.dart';
 
 class DriverServiceImpl implements DriverService {
   final DriverRepositoryImpl _driverRepository;
   final AuthRepositoryImpl _authRepository;
-  final stream = Geolocator.getPositionStream();
-  DriverServiceImpl(this._driverRepository, this._authRepository);
+  final GeolocationService _geolocationService;
+
+  DriverServiceImpl(
+    this._driverRepository,
+    this._authRepository,
+    this._geolocationService,
+  );
 
   @override
   Future<Result<void>> updateLocation() async {
-    final locationData = await _determinePosition();
+    final locationData = await _geolocationService.getLastKnownPosition();
 
     log(locationData.toString(), name: "updateLocation");
 
@@ -52,35 +57,10 @@ class DriverServiceImpl implements DriverService {
     return _authRepository.logout();
   }
 
+  Stream get getPositionStream => _geolocationService.getPositionStream;
+
   @override
-  Future<void> locationPermision() async {
-    bool serviceEnabled;
-    LocationPermission permission;
-
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      return Future.error('Location services are disabled.');
-    }
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        return Future.error('Location permissions are denied');
-      }
-    }
-
-    if (permission == LocationPermission.deniedForever) {
-      return Future.error(
-        'Location permissions are permanently denied, we cannot request permissions.',
-      );
-    }
-  }
-
-  Future<Position?> _determinePosition() async {
-    await locationPermision();
-    return await Geolocator.getLastKnownPosition();
-  }
+  Future<void> locationPermision() => _geolocationService.locationPermision();
 
   @override
   Future<Result<void>> getDriverApi() async {

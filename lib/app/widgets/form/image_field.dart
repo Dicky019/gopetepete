@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/extension/dynamic_extension.dart';
-import 'card.dart';
+import '../../utils/extension/dynamic_extension.dart';
+import '../card.dart';
 
-class UploadImageWidget extends StatelessWidget {
-  const UploadImageWidget({
+class ImageFieldWidget extends StatelessWidget {
+  const ImageFieldWidget({
     Key? key,
     this.foto,
     required this.title,

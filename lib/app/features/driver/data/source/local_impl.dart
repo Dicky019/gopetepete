@@ -8,7 +8,6 @@ class LocalImpl extends Local {
   LocalImpl(this._hiveService);
 
   @override
-  // TODO: implement getDriver
   Driver? get getDriver => _hiveService.getDriver;
 
   @override
