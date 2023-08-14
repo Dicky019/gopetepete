@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../../../driver/data/request/driver_request.dart';
 import '../response/rute_response.dart';
 import '../response/rutes_response.dart';
 import '/app/services/remote/config/result.dart';
@@ -10,7 +13,7 @@ class HomeRepositoryImpl extends HomeRepository {
   HomeRepositoryImpl({required Network network}) : _network = network;
 
   @override
-  Future<Result<String>> getDrivers() {
+  Stream<QuerySnapshot<DriverLocation>> getDrivers() {
     return _network.getDrivers();
   }
 

@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '804627606545',
     projectId: 'skripsi-gopetepete',
     storageBucket: 'skripsi-gopetepete.appspot.com',
+    androidClientId: '804627606545-plffe93l8iiv1gdmj1d3g3sc0kocnupg.apps.googleusercontent.com',
     iosClientId: '804627606545-gl0ka2etcaenmb4u5eu7bmq91q4k0i5r.apps.googleusercontent.com',
     iosBundleId: 'com.go.pete.pete.gopetepete',
   );

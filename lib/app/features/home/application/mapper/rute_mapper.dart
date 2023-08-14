@@ -1,4 +1,6 @@
 
+import 'dart:developer';
+
 import 'package:flutter_color/flutter_color.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
@@ -21,7 +23,7 @@ class HomeMapper {
       success: (rutes) async {
         final resultData = <Rute>[];
         for (RuteResponse rute in (rutes.data ?? [])) {
-          final result = await mapToRute(rute);
+          final result = await mapToRute(rute,resultData.length);
           resultData.add(result);
         }
 
@@ -51,7 +53,7 @@ class HomeMapper {
     );
   }
 
-  static Future<Rute> mapToRute(RuteResponse rute) async {
+  static Future<Rute> mapToRute(RuteResponse rute,[int? index]) async {
     return Rute(
       id: rute.id.toEmpty,
       createdAt: DateTime.parse(rute.createdAt.toEmpty),
@@ -63,6 +65,7 @@ class HomeMapper {
         await listToPoints(rute.locations),
         rute.color.toEmpty,
         rute.id.toEmpty,
+        index,
       ),
     );
   }
@@ -78,6 +81,7 @@ class HomeMapper {
   static Future<List<PointLatLng>> listToPoints(
     List<LocationsResponse>? locations,
   ) async {
+    log(locations.toString(),name: "LocationsResponse");
     final list = <PointLatLng>[];
     for (LocationsResponse location in (locations ?? [])) {
       final awal = PointLatLng(
@@ -88,6 +92,9 @@ class HomeMapper {
         double.parse(location.latAkhir!),
         double.parse(location.longAkhir!),
       );
+
+      log(awal.toString());
+      log(akhir.toString());
 
       final result = await getPolylineResult(awal, akhir);
       list.addAll(result.points);
@@ -112,8 +119,10 @@ class HomeMapper {
     List<PointLatLng> locations,
     String color,
     String id,
+    int? index,
   ) {
     return Polyline(
+      zIndex: index ?? 0,
       polylineId: PolylineId(id),
       points: locations
           .map(

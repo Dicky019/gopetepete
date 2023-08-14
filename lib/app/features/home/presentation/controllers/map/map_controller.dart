@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:developer';
+// import 'dart:developer';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../application/home_service_impl.dart';
-import '/app/utils/extension/dynamic_extension.dart';
 import 'map_state.dart';
 
 class MapControllerNotifier extends StateNotifier<MapState> {
@@ -24,27 +23,42 @@ class MapControllerNotifier extends StateNotifier<MapState> {
   );
 
   void init() async {
-    final result = await _homeService.getRutes();
-    await result.whenOrNull(
-      success: (data) async {
-        log(data.toString(), name: "init");
-        await initLocation();
-        
-        state = state.copyWith(value: AsyncData(data));
-        log(state.toString(), name: "AsyncData");
-      },
-    );
+    // EasyLoading.show(status: "Memuat");
+    await initLocation();
+    final resultDrivers = _homeService.getDrivers();
+    resultDrivers.listen((event) async {
+      final value = event.docs.map((e) => e.data()).toList();
+      // log(value.toString(),name: "resultDrivers");
+      state = state.copyWith(value: AsyncData(value));
+    });
+    // EasyLoading.dismiss();
   }
 
   Future initLocation() async {
     final location = await _homeService.getLastKnownPosition();
-    log(location.toString(), name: "initLocation");
+    // log(location.toString(), name: "initLocation");
 
-    if (location.isNotNull) {
+    if (location != null) {
       initCamera = CameraPosition(
-        target: LatLng(location!.latitude, location.longitude),
-        zoom: 18,
+        target: LatLng(location.latitude, location.longitude),
+        zoom: 16,
       );
+    }
+  }
+
+  Future toMyLocation() async {
+    final location = await _homeService.getLastKnownPosition();
+    // log(location.toString(), name: "initLocation");
+    if (location != null) {
+      final GoogleMapController controller = await mapController.future;
+      final myLocation = CameraPosition(
+        target: LatLng(
+          location.latitude,
+          location.longitude,
+        ),
+        zoom: 16,
+      );
+      controller.animateCamera(CameraUpdate.newCameraPosition(myLocation));
     }
   }
 
@@ -56,7 +70,7 @@ class MapControllerNotifier extends StateNotifier<MapState> {
 }
 
 final mapControllerProvider =
-    StateNotifierProvider.autoDispose<MapControllerNotifier, MapState>((ref) {
+    StateNotifierProvider<MapControllerNotifier, MapState>((ref) {
   return MapControllerNotifier(
     ref.read(homeServiceProvider),
   )..init();

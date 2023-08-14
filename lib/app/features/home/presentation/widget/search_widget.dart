@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../controllers/search/search_controller.dart';
+import '../home_controller.dart';
 
 class SearchWidget extends ConsumerWidget {
   const SearchWidget({super.key});
@@ -14,13 +15,15 @@ class SearchWidget extends ConsumerWidget {
   @override
   Widget build(context, ref) {
     final controller = ref.read(searchControllerProvider.notifier);
-    final state = ref.watch(searchControllerProvider);
+    final homeState = ref.watch(
+      homeControllerProvider.select((value) => value.rutes),
+    );
     return Scaffold(
         appBar: AppBar(
           title: const Text("Search"),
         ),
         body: StateWidget<Rutes>(
-          stream: state.value,
+          stream: homeState,
           data: (rutes) {
             return Column(
               children: [
@@ -44,7 +47,8 @@ class SearchWidget extends ConsumerWidget {
                           )),
                         ),
                         title: Text(rute.name),
-                        subtitle: Text("Jumlah Rute: ${rute.locations.points.length}"),
+                        subtitle: Text(
+                            "Jumlah Rute: ${rute.locations.points.length}"),
                       );
                     },
                     separatorBuilder: (context, index) => const Divider(),

@@ -31,7 +31,7 @@ class SearchControllerNotifier extends StateNotifier<SearchState> {
 }
 
 final searchControllerProvider =
-    StateNotifierProvider.autoDispose<SearchControllerNotifier, SearchState>(
+    StateNotifierProvider<SearchControllerNotifier, SearchState>(
         (ref) {
   return SearchControllerNotifier(
     ref.read(homeServiceProvider),

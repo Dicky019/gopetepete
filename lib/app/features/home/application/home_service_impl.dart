@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../driver/data/request/driver_request.dart';
 import '/app/services/remote/config/result.dart';
 import '/app/services/location/geolocation_service.dart';
 
@@ -31,8 +33,10 @@ class HomeServiceImpl implements HomeService {
     return _homeRepository.getDriver(id);
   }
 
+  
+
   @override
-  Future<Result<String>> getDrivers() {
+    Stream<QuerySnapshot<DriverLocation>> getDrivers() {
     return _homeRepository.getDrivers();
   }
 

@@ -28,8 +28,7 @@ class MapControllerNotifier extends StateNotifier<ProfileState> {
 }
 
 final personControllerProvider =
-    StateNotifierProvider.autoDispose<MapControllerNotifier, ProfileState>(
-        (ref) {
+    StateNotifierProvider<MapControllerNotifier, ProfileState>((ref) {
   return MapControllerNotifier(
     ref.read(authServiceProvider),
   );

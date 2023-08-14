@@ -4,8 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '/app/services/remote/config/config.dart';
-import '/app/utils/extension/string_extension.dart';
-import '/app/utils/extension/dynamic_extension.dart';
 import '../request/user_request.dart';
 
 import '../response/user_response.dart';
@@ -29,11 +27,11 @@ class NetworkImpl extends Network {
     try {
       final response = await _dioClient.get(Endpoint.login);
       if (response['code'] == "404") {
-        log("loginResponse", error: response,name: "loginResponse");
+        log("loginResponse", error: response, name: "loginResponse");
       }
       return Result.success(UserResponse.fromJson(response['data']));
     } catch (e, st) {
-      log("loginResponse", error: e,name: "loginResponse");
+      log("loginResponse", error: e, name: "loginResponse");
       return Result.failure(
         const NetworkExceptions.defaultError("error"),
         st,
@@ -60,16 +58,10 @@ class NetworkImpl extends Network {
 
       // Once signed in, return the UserCredential
       final firebaseUser = await _firebaseAuth.signInWithCredential(credential);
-      if (firebaseUser.user.isNull) {
-        throw Exception("Tidak Ada User");
-      }
-
-      if (firebaseUser.user!.email.isNullOrEmpty) {
-        throw Exception("Tidak Email");
-      }
 
       return Result.success(firebaseUser.user!);
     } on FirebaseAuthException catch (e, st) {
+      log(e.message ?? "kosong", name: "FirebaseAuthException");
       return Result.failure(
         NetworkExceptions.defaultError(e.message ?? "Ada Yang Salah"),
         st,
@@ -83,7 +75,8 @@ class NetworkImpl extends Network {
   }
 
   @override
-  Future<Result<UserResponse>> register({required UserRequest userRequest}) async {
+  Future<Result<UserResponse>> register(
+      {required UserRequest userRequest}) async {
     try {
       log(userRequest.toString(), name: "data");
 
@@ -92,7 +85,7 @@ class NetworkImpl extends Network {
       // log(response.toString(), name: "response");
       return Result.success(UserResponse.fromJson(response['data']));
     } catch (e, st) {
-      log("register message",error: e);
+      log("register message", error: e);
       return Result.failure(
         NetworkExceptions.getDioException(e, st),
         st,
