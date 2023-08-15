@@ -1,6 +1,3 @@
-
-import 'dart:developer';
-
 import 'package:flutter_color/flutter_color.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
@@ -31,7 +28,7 @@ class HomeMapper {
           Rutes(
             code: rutes.code.toEmpty,
             data: resultData,
-            locations: resultData.map((e) => e.locations).toSet(),
+            // locations: resultData.map((e) => e.locations).toSet(),
           ),
         );
       },
@@ -81,7 +78,7 @@ class HomeMapper {
   static Future<List<PointLatLng>> listToPoints(
     List<LocationsResponse>? locations,
   ) async {
-    log(locations.toString(),name: "LocationsResponse");
+    // log(locations.toString(),name: "LocationsResponse");
     final list = <PointLatLng>[];
     for (LocationsResponse location in (locations ?? [])) {
       final awal = PointLatLng(
@@ -92,9 +89,6 @@ class HomeMapper {
         double.parse(location.latAkhir!),
         double.parse(location.longAkhir!),
       );
-
-      log(awal.toString());
-      log(akhir.toString());
 
       final result = await getPolylineResult(awal, akhir);
       list.addAll(result.points);
@@ -124,6 +118,8 @@ class HomeMapper {
     return Polyline(
       zIndex: index ?? 0,
       polylineId: PolylineId(id),
+      endCap: Cap.roundCap,
+      startCap: Cap.roundCap,
       points: locations
           .map(
             (e) => LatLng(e.latitude, e.longitude),

@@ -21,6 +21,7 @@ mixin _$NetworkExceptions {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -43,6 +44,7 @@ mixin _$NetworkExceptions {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -65,6 +67,7 @@ mixin _$NetworkExceptions {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -88,6 +91,7 @@ mixin _$NetworkExceptions {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -110,6 +114,7 @@ mixin _$NetworkExceptions {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -132,6 +137,7 @@ mixin _$NetworkExceptions {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -211,6 +217,7 @@ class _$RequestCancelled implements RequestCancelled {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -236,6 +243,7 @@ class _$RequestCancelled implements RequestCancelled {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -261,6 +269,7 @@ class _$RequestCancelled implements RequestCancelled {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -290,6 +299,7 @@ class _$RequestCancelled implements RequestCancelled {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -315,6 +325,7 @@ class _$RequestCancelled implements RequestCancelled {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -340,6 +351,7 @@ class _$RequestCancelled implements RequestCancelled {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -436,6 +448,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -461,6 +474,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -486,6 +500,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -515,6 +530,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -540,6 +556,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -565,6 +582,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -640,6 +658,7 @@ class _$BadRequest implements BadRequest {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -665,6 +684,7 @@ class _$BadRequest implements BadRequest {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -690,6 +710,7 @@ class _$BadRequest implements BadRequest {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -719,6 +740,7 @@ class _$BadRequest implements BadRequest {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -744,6 +766,7 @@ class _$BadRequest implements BadRequest {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -769,6 +792,7 @@ class _$BadRequest implements BadRequest {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -795,6 +819,241 @@ class _$BadRequest implements BadRequest {
 
 abstract class BadRequest implements NetworkExceptions {
   const factory BadRequest() = _$BadRequest;
+}
+
+/// @nodoc
+abstract class _$$BadResponseCopyWith<$Res> {
+  factory _$$BadResponseCopyWith(
+          _$BadResponse value, $Res Function(_$BadResponse) then) =
+      __$$BadResponseCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String reason});
+}
+
+/// @nodoc
+class __$$BadResponseCopyWithImpl<$Res>
+    extends _$NetworkExceptionsCopyWithImpl<$Res, _$BadResponse>
+    implements _$$BadResponseCopyWith<$Res> {
+  __$$BadResponseCopyWithImpl(
+      _$BadResponse _value, $Res Function(_$BadResponse) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reason = null,
+  }) {
+    return _then(_$BadResponse(
+      null == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BadResponse implements BadResponse {
+  const _$BadResponse(this.reason);
+
+  @override
+  final String reason;
+
+  @override
+  String toString() {
+    return 'NetworkExceptions.badResponse(reason: $reason)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BadResponse &&
+            (identical(other.reason, reason) || other.reason == reason));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, reason);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BadResponseCopyWith<_$BadResponse> get copyWith =>
+      __$$BadResponseCopyWithImpl<_$BadResponse>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() requestCancelled,
+    required TResult Function(String reason) unauthorizedRequest,
+    required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
+    required TResult Function(String reason) notFound,
+    required TResult Function() methodNotAllowed,
+    required TResult Function() notAcceptable,
+    required TResult Function() requestTimeout,
+    required TResult Function() sendTimeout,
+    required TResult Function() conflict,
+    required TResult Function() internalServerError,
+    required TResult Function() notImplemented,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function() formatException,
+    required TResult Function() unableToProcess,
+    required TResult Function(String error) defaultError,
+    required TResult Function() unexpectedError,
+    required TResult Function(Map<String, dynamic> errors) unProcessableEntity,
+  }) {
+    return badResponse(reason);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? requestCancelled,
+    TResult? Function(String reason)? unauthorizedRequest,
+    TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
+    TResult? Function(String reason)? notFound,
+    TResult? Function()? methodNotAllowed,
+    TResult? Function()? notAcceptable,
+    TResult? Function()? requestTimeout,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? conflict,
+    TResult? Function()? internalServerError,
+    TResult? Function()? notImplemented,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? formatException,
+    TResult? Function()? unableToProcess,
+    TResult? Function(String error)? defaultError,
+    TResult? Function()? unexpectedError,
+    TResult? Function(Map<String, dynamic> errors)? unProcessableEntity,
+  }) {
+    return badResponse?.call(reason);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? requestCancelled,
+    TResult Function(String reason)? unauthorizedRequest,
+    TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
+    TResult Function(String reason)? notFound,
+    TResult Function()? methodNotAllowed,
+    TResult Function()? notAcceptable,
+    TResult Function()? requestTimeout,
+    TResult Function()? sendTimeout,
+    TResult Function()? conflict,
+    TResult Function()? internalServerError,
+    TResult Function()? notImplemented,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? noInternetConnection,
+    TResult Function()? formatException,
+    TResult Function()? unableToProcess,
+    TResult Function(String error)? defaultError,
+    TResult Function()? unexpectedError,
+    TResult Function(Map<String, dynamic> errors)? unProcessableEntity,
+    required TResult orElse(),
+  }) {
+    if (badResponse != null) {
+      return badResponse(reason);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
+    required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(NotAcceptable value) notAcceptable,
+    required TResult Function(RequestTimeout value) requestTimeout,
+    required TResult Function(SendTimeout value) sendTimeout,
+    required TResult Function(Conflict value) conflict,
+    required TResult Function(InternalServerError value) internalServerError,
+    required TResult Function(NotImplemented value) notImplemented,
+    required TResult Function(ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(FormatException value) formatException,
+    required TResult Function(UnableToProcess value) unableToProcess,
+    required TResult Function(DefaultError value) defaultError,
+    required TResult Function(UnexpectedError value) unexpectedError,
+    required TResult Function(UnProcessableEntity value) unProcessableEntity,
+  }) {
+    return badResponse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RequestCancelled value)? requestCancelled,
+    TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult? Function(NotAcceptable value)? notAcceptable,
+    TResult? Function(RequestTimeout value)? requestTimeout,
+    TResult? Function(SendTimeout value)? sendTimeout,
+    TResult? Function(Conflict value)? conflict,
+    TResult? Function(InternalServerError value)? internalServerError,
+    TResult? Function(NotImplemented value)? notImplemented,
+    TResult? Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(NoInternetConnection value)? noInternetConnection,
+    TResult? Function(FormatException value)? formatException,
+    TResult? Function(UnableToProcess value)? unableToProcess,
+    TResult? Function(DefaultError value)? defaultError,
+    TResult? Function(UnexpectedError value)? unexpectedError,
+    TResult? Function(UnProcessableEntity value)? unProcessableEntity,
+  }) {
+    return badResponse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
+    TResult Function(NotFound value)? notFound,
+    TResult Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(NotAcceptable value)? notAcceptable,
+    TResult Function(RequestTimeout value)? requestTimeout,
+    TResult Function(SendTimeout value)? sendTimeout,
+    TResult Function(Conflict value)? conflict,
+    TResult Function(InternalServerError value)? internalServerError,
+    TResult Function(NotImplemented value)? notImplemented,
+    TResult Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(FormatException value)? formatException,
+    TResult Function(UnableToProcess value)? unableToProcess,
+    TResult Function(DefaultError value)? defaultError,
+    TResult Function(UnexpectedError value)? unexpectedError,
+    TResult Function(UnProcessableEntity value)? unProcessableEntity,
+    required TResult orElse(),
+  }) {
+    if (badResponse != null) {
+      return badResponse(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BadResponse implements NetworkExceptions {
+  const factory BadResponse(final String reason) = _$BadResponse;
+
+  String get reason;
+  @JsonKey(ignore: true)
+  _$$BadResponseCopyWith<_$BadResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -863,6 +1122,7 @@ class _$NotFound implements NotFound {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -888,6 +1148,7 @@ class _$NotFound implements NotFound {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -913,6 +1174,7 @@ class _$NotFound implements NotFound {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -942,6 +1204,7 @@ class _$NotFound implements NotFound {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -967,6 +1230,7 @@ class _$NotFound implements NotFound {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -992,6 +1256,7 @@ class _$NotFound implements NotFound {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -1066,6 +1331,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -1091,6 +1357,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -1116,6 +1383,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -1145,6 +1413,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -1170,6 +1439,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -1195,6 +1465,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -1264,6 +1535,7 @@ class _$NotAcceptable implements NotAcceptable {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -1289,6 +1561,7 @@ class _$NotAcceptable implements NotAcceptable {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -1314,6 +1587,7 @@ class _$NotAcceptable implements NotAcceptable {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -1343,6 +1617,7 @@ class _$NotAcceptable implements NotAcceptable {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -1368,6 +1643,7 @@ class _$NotAcceptable implements NotAcceptable {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -1393,6 +1669,7 @@ class _$NotAcceptable implements NotAcceptable {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -1462,6 +1739,7 @@ class _$RequestTimeout implements RequestTimeout {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -1487,6 +1765,7 @@ class _$RequestTimeout implements RequestTimeout {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -1512,6 +1791,7 @@ class _$RequestTimeout implements RequestTimeout {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -1541,6 +1821,7 @@ class _$RequestTimeout implements RequestTimeout {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -1566,6 +1847,7 @@ class _$RequestTimeout implements RequestTimeout {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -1591,6 +1873,7 @@ class _$RequestTimeout implements RequestTimeout {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -1660,6 +1943,7 @@ class _$SendTimeout implements SendTimeout {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -1685,6 +1969,7 @@ class _$SendTimeout implements SendTimeout {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -1710,6 +1995,7 @@ class _$SendTimeout implements SendTimeout {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -1739,6 +2025,7 @@ class _$SendTimeout implements SendTimeout {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -1764,6 +2051,7 @@ class _$SendTimeout implements SendTimeout {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -1789,6 +2077,7 @@ class _$SendTimeout implements SendTimeout {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -1857,6 +2146,7 @@ class _$Conflict implements Conflict {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -1882,6 +2172,7 @@ class _$Conflict implements Conflict {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -1907,6 +2198,7 @@ class _$Conflict implements Conflict {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -1936,6 +2228,7 @@ class _$Conflict implements Conflict {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -1961,6 +2254,7 @@ class _$Conflict implements Conflict {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -1986,6 +2280,7 @@ class _$Conflict implements Conflict {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -2055,6 +2350,7 @@ class _$InternalServerError implements InternalServerError {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -2080,6 +2376,7 @@ class _$InternalServerError implements InternalServerError {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -2105,6 +2402,7 @@ class _$InternalServerError implements InternalServerError {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -2134,6 +2432,7 @@ class _$InternalServerError implements InternalServerError {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -2159,6 +2458,7 @@ class _$InternalServerError implements InternalServerError {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -2184,6 +2484,7 @@ class _$InternalServerError implements InternalServerError {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -2253,6 +2554,7 @@ class _$NotImplemented implements NotImplemented {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -2278,6 +2580,7 @@ class _$NotImplemented implements NotImplemented {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -2303,6 +2606,7 @@ class _$NotImplemented implements NotImplemented {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -2332,6 +2636,7 @@ class _$NotImplemented implements NotImplemented {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -2357,6 +2662,7 @@ class _$NotImplemented implements NotImplemented {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -2382,6 +2688,7 @@ class _$NotImplemented implements NotImplemented {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -2451,6 +2758,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -2476,6 +2784,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -2501,6 +2810,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -2530,6 +2840,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -2555,6 +2866,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -2580,6 +2892,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -2649,6 +2962,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -2674,6 +2988,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -2699,6 +3014,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -2728,6 +3044,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -2753,6 +3070,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -2778,6 +3096,7 @@ class _$NoInternetConnection implements NoInternetConnection {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -2847,6 +3166,7 @@ class _$FormatException implements FormatException {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -2872,6 +3192,7 @@ class _$FormatException implements FormatException {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -2897,6 +3218,7 @@ class _$FormatException implements FormatException {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -2926,6 +3248,7 @@ class _$FormatException implements FormatException {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -2951,6 +3274,7 @@ class _$FormatException implements FormatException {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -2976,6 +3300,7 @@ class _$FormatException implements FormatException {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -3045,6 +3370,7 @@ class _$UnableToProcess implements UnableToProcess {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -3070,6 +3396,7 @@ class _$UnableToProcess implements UnableToProcess {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -3095,6 +3422,7 @@ class _$UnableToProcess implements UnableToProcess {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -3124,6 +3452,7 @@ class _$UnableToProcess implements UnableToProcess {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -3149,6 +3478,7 @@ class _$UnableToProcess implements UnableToProcess {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -3174,6 +3504,7 @@ class _$UnableToProcess implements UnableToProcess {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -3269,6 +3600,7 @@ class _$DefaultError implements DefaultError {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -3294,6 +3626,7 @@ class _$DefaultError implements DefaultError {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -3319,6 +3652,7 @@ class _$DefaultError implements DefaultError {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -3348,6 +3682,7 @@ class _$DefaultError implements DefaultError {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -3373,6 +3708,7 @@ class _$DefaultError implements DefaultError {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -3398,6 +3734,7 @@ class _$DefaultError implements DefaultError {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -3472,6 +3809,7 @@ class _$UnexpectedError implements UnexpectedError {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -3497,6 +3835,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -3522,6 +3861,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -3551,6 +3891,7 @@ class _$UnexpectedError implements UnexpectedError {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -3576,6 +3917,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -3601,6 +3943,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,
@@ -3704,6 +4047,7 @@ class _$UnProcessableEntity implements UnProcessableEntity {
     required TResult Function() requestCancelled,
     required TResult Function(String reason) unauthorizedRequest,
     required TResult Function() badRequest,
+    required TResult Function(String reason) badResponse,
     required TResult Function(String reason) notFound,
     required TResult Function() methodNotAllowed,
     required TResult Function() notAcceptable,
@@ -3729,6 +4073,7 @@ class _$UnProcessableEntity implements UnProcessableEntity {
     TResult? Function()? requestCancelled,
     TResult? Function(String reason)? unauthorizedRequest,
     TResult? Function()? badRequest,
+    TResult? Function(String reason)? badResponse,
     TResult? Function(String reason)? notFound,
     TResult? Function()? methodNotAllowed,
     TResult? Function()? notAcceptable,
@@ -3754,6 +4099,7 @@ class _$UnProcessableEntity implements UnProcessableEntity {
     TResult Function()? requestCancelled,
     TResult Function(String reason)? unauthorizedRequest,
     TResult Function()? badRequest,
+    TResult Function(String reason)? badResponse,
     TResult Function(String reason)? notFound,
     TResult Function()? methodNotAllowed,
     TResult Function()? notAcceptable,
@@ -3783,6 +4129,7 @@ class _$UnProcessableEntity implements UnProcessableEntity {
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(BadRequest value) badRequest,
+    required TResult Function(BadResponse value) badResponse,
     required TResult Function(NotFound value) notFound,
     required TResult Function(MethodNotAllowed value) methodNotAllowed,
     required TResult Function(NotAcceptable value) notAcceptable,
@@ -3808,6 +4155,7 @@ class _$UnProcessableEntity implements UnProcessableEntity {
     TResult? Function(RequestCancelled value)? requestCancelled,
     TResult? Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult? Function(BadRequest value)? badRequest,
+    TResult? Function(BadResponse value)? badResponse,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(MethodNotAllowed value)? methodNotAllowed,
     TResult? Function(NotAcceptable value)? notAcceptable,
@@ -3833,6 +4181,7 @@ class _$UnProcessableEntity implements UnProcessableEntity {
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(BadRequest value)? badRequest,
+    TResult Function(BadResponse value)? badResponse,
     TResult Function(NotFound value)? notFound,
     TResult Function(MethodNotAllowed value)? methodNotAllowed,
     TResult Function(NotAcceptable value)? notAcceptable,

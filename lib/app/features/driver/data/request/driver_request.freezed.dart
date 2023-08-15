@@ -219,6 +219,7 @@ mixin _$DriverLocation {
   String get id => throw _privateConstructorUsedError;
   String get lat => throw _privateConstructorUsedError;
   String get long => throw _privateConstructorUsedError;
+  bool get visible => throw _privateConstructorUsedError;
   int get maxPenumpang => throw _privateConstructorUsedError;
   int? get jumlahPenumpang => throw _privateConstructorUsedError;
 
@@ -238,6 +239,7 @@ abstract class $DriverLocationCopyWith<$Res> {
       {String id,
       String lat,
       String long,
+      bool visible,
       int maxPenumpang,
       int? jumlahPenumpang});
 }
@@ -258,6 +260,7 @@ class _$DriverLocationCopyWithImpl<$Res, $Val extends DriverLocation>
     Object? id = null,
     Object? lat = null,
     Object? long = null,
+    Object? visible = null,
     Object? maxPenumpang = null,
     Object? jumlahPenumpang = freezed,
   }) {
@@ -274,6 +277,10 @@ class _$DriverLocationCopyWithImpl<$Res, $Val extends DriverLocation>
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
               as String,
+      visible: null == visible
+          ? _value.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
       maxPenumpang: null == maxPenumpang
           ? _value.maxPenumpang
           : maxPenumpang // ignore: cast_nullable_to_non_nullable
@@ -298,6 +305,7 @@ abstract class _$$_DriverLocationCopyWith<$Res>
       {String id,
       String lat,
       String long,
+      bool visible,
       int maxPenumpang,
       int? jumlahPenumpang});
 }
@@ -316,6 +324,7 @@ class __$$_DriverLocationCopyWithImpl<$Res>
     Object? id = null,
     Object? lat = null,
     Object? long = null,
+    Object? visible = null,
     Object? maxPenumpang = null,
     Object? jumlahPenumpang = freezed,
   }) {
@@ -332,6 +341,10 @@ class __$$_DriverLocationCopyWithImpl<$Res>
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
               as String,
+      visible: null == visible
+          ? _value.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
       maxPenumpang: null == maxPenumpang
           ? _value.maxPenumpang
           : maxPenumpang // ignore: cast_nullable_to_non_nullable
@@ -351,6 +364,7 @@ class _$_DriverLocation implements _DriverLocation {
       {required this.id,
       required this.lat,
       required this.long,
+      required this.visible,
       required this.maxPenumpang,
       required this.jumlahPenumpang});
 
@@ -364,13 +378,15 @@ class _$_DriverLocation implements _DriverLocation {
   @override
   final String long;
   @override
+  final bool visible;
+  @override
   final int maxPenumpang;
   @override
   final int? jumlahPenumpang;
 
   @override
   String toString() {
-    return 'DriverLocation(id: $id, lat: $lat, long: $long, maxPenumpang: $maxPenumpang, jumlahPenumpang: $jumlahPenumpang)';
+    return 'DriverLocation(id: $id, lat: $lat, long: $long, visible: $visible, maxPenumpang: $maxPenumpang, jumlahPenumpang: $jumlahPenumpang)';
   }
 
   @override
@@ -381,6 +397,7 @@ class _$_DriverLocation implements _DriverLocation {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.long, long) || other.long == long) &&
+            (identical(other.visible, visible) || other.visible == visible) &&
             (identical(other.maxPenumpang, maxPenumpang) ||
                 other.maxPenumpang == maxPenumpang) &&
             (identical(other.jumlahPenumpang, jumlahPenumpang) ||
@@ -389,8 +406,8 @@ class _$_DriverLocation implements _DriverLocation {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, lat, long, maxPenumpang, jumlahPenumpang);
+  int get hashCode => Object.hash(
+      runtimeType, id, lat, long, visible, maxPenumpang, jumlahPenumpang);
 
   @JsonKey(ignore: true)
   @override
@@ -411,6 +428,7 @@ abstract class _DriverLocation implements DriverLocation {
       {required final String id,
       required final String lat,
       required final String long,
+      required final bool visible,
       required final int maxPenumpang,
       required final int? jumlahPenumpang}) = _$_DriverLocation;
 
@@ -423,6 +441,8 @@ abstract class _DriverLocation implements DriverLocation {
   String get lat;
   @override
   String get long;
+  @override
+  bool get visible;
   @override
   int get maxPenumpang;
   @override

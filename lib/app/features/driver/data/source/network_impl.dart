@@ -36,11 +36,16 @@ class NetworkImpl extends Network {
     Map<String, dynamic> driverLocation,
   ) async {
     try {
-      await _firestoreDriver.doc(id).update(driverLocation);
+      if ((await _firestoreDriver.doc(id).get()).exists) {
+        log("dsd",name: "updateLocation _firestoreDriver");
+        await _firestoreDriver.doc(id).update(driverLocation);
+      } else {
+        await _firestoreDriver.doc(id).set(driverLocation);
+      }
 
       return const Result.success("Succses");
     } catch (e, st) {
-      log("Ada Yang Salah", name: "updateLocation");
+      log("Ada Yang Salah", name: "updateLocation _firestoreDriver");
       return Result.failure(
         const NetworkExceptions.defaultError("Ada Yang Salah"),
         st,
@@ -57,7 +62,7 @@ class NetworkImpl extends Network {
 
       return const Result.success("Succses");
     } catch (e, st) {
-      log("Ada Yang Salah", name: "updateLocation");
+      log("Ada Yang Salah", name: "updatePenumpang _firestoreDriver");
       return Result.failure(
         const NetworkExceptions.defaultError("Ada Yang Salah"),
         st,
@@ -79,3 +84,6 @@ class NetworkImpl extends Network {
         .snapshots();
   }
 }
+
+// Halte STMIK Dipanegara Makassar, Tamalanrea Indah, Kec. Tamalanrea, Kota Makassar, Sulawesi Selatan, Indonesia
+// 

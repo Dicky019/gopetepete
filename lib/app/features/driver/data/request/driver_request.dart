@@ -23,6 +23,7 @@ class DriverLocation with _$DriverLocation {
     required String id,
     required String lat,
     required String long,
+    required bool visible,
     required int maxPenumpang,
     required int? jumlahPenumpang,
   }) = _DriverLocation;

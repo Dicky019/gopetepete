@@ -26,15 +26,20 @@ class DriverServiceImpl implements DriverService {
   Future<Result<void>> updateLocation() async {
     final locationData = await _geolocationService.getLastKnownPosition();
 
-    log(locationData.toString(), name: "updateLocation");
+    log(locationData.toString(),
+        name: "updateLocation _geolocationService.getLastKnownPosition");
 
     final driverLocation = DriverLocation(
       id: getDriverLocal.id,
       lat: locationData?.latitude.toString() ?? "",
       long: locationData?.longitude.toString() ?? "",
       maxPenumpang: getDriverLocal.maxPenumpang,
+      visible: true,
       jumlahPenumpang: 0,
     );
+
+    log(driverLocation.toString(),
+        name: "updateLocation _geolocationService.getLastKnownPosition");
 
     return _driverRepository.updateLocation(
       getDriverLocal.id,
@@ -51,9 +56,17 @@ class DriverServiceImpl implements DriverService {
     }
   }
 
+  Future<bool> nonActive() async {
+    await _driverRepository.updateLocation(getDriverLocal.id, {
+      "visible": false,
+    });
+    return true;
+  }
+
   @override
-  Future<void> logout() {
-    _driverRepository.deleteDriver();
+  Future<void> logout() async {
+    nonActive();
+    await _driverRepository.deleteDriver();
     return _authRepository.logout();
   }
 

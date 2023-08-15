@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Rutes {
   String get code => throw _privateConstructorUsedError;
   List<Rute> get data => throw _privateConstructorUsedError;
-  Set<Polyline> get locations => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RutesCopyWith<Rutes> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +28,7 @@ abstract class $RutesCopyWith<$Res> {
   factory $RutesCopyWith(Rutes value, $Res Function(Rutes) then) =
       _$RutesCopyWithImpl<$Res, Rutes>;
   @useResult
-  $Res call({String code, List<Rute> data, Set<Polyline> locations});
+  $Res call({String code, List<Rute> data});
 }
 
 /// @nodoc
@@ -47,7 +46,6 @@ class _$RutesCopyWithImpl<$Res, $Val extends Rutes>
   $Res call({
     Object? code = null,
     Object? data = null,
-    Object? locations = null,
   }) {
     return _then(_value.copyWith(
       code: null == code
@@ -58,10 +56,6 @@ class _$RutesCopyWithImpl<$Res, $Val extends Rutes>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Rute>,
-      locations: null == locations
-          ? _value.locations
-          : locations // ignore: cast_nullable_to_non_nullable
-              as Set<Polyline>,
     ) as $Val);
   }
 }
@@ -72,7 +66,7 @@ abstract class _$$_RutesCopyWith<$Res> implements $RutesCopyWith<$Res> {
       __$$_RutesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String code, List<Rute> data, Set<Polyline> locations});
+  $Res call({String code, List<Rute> data});
 }
 
 /// @nodoc
@@ -86,7 +80,6 @@ class __$$_RutesCopyWithImpl<$Res> extends _$RutesCopyWithImpl<$Res, _$_Rutes>
   $Res call({
     Object? code = null,
     Object? data = null,
-    Object? locations = null,
   }) {
     return _then(_$_Rutes(
       code: null == code
@@ -97,10 +90,6 @@ class __$$_RutesCopyWithImpl<$Res> extends _$RutesCopyWithImpl<$Res, _$_Rutes>
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<Rute>,
-      locations: null == locations
-          ? _value._locations
-          : locations // ignore: cast_nullable_to_non_nullable
-              as Set<Polyline>,
     ));
   }
 }
@@ -108,12 +97,8 @@ class __$$_RutesCopyWithImpl<$Res> extends _$RutesCopyWithImpl<$Res, _$_Rutes>
 /// @nodoc
 
 class _$_Rutes implements _Rutes {
-  const _$_Rutes(
-      {required this.code,
-      required final List<Rute> data,
-      required final Set<Polyline> locations})
-      : _data = data,
-        _locations = locations;
+  const _$_Rutes({required this.code, required final List<Rute> data})
+      : _data = data;
 
   @override
   final String code;
@@ -125,17 +110,9 @@ class _$_Rutes implements _Rutes {
     return EqualUnmodifiableListView(_data);
   }
 
-  final Set<Polyline> _locations;
-  @override
-  Set<Polyline> get locations {
-    if (_locations is EqualUnmodifiableSetView) return _locations;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableSetView(_locations);
-  }
-
   @override
   String toString() {
-    return 'Rutes(code: $code, data: $data, locations: $locations)';
+    return 'Rutes(code: $code, data: $data)';
   }
 
   @override
@@ -144,17 +121,12 @@ class _$_Rutes implements _Rutes {
         (other.runtimeType == runtimeType &&
             other is _$_Rutes &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
-            const DeepCollectionEquality()
-                .equals(other._locations, _locations));
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      const DeepCollectionEquality().hash(_data),
-      const DeepCollectionEquality().hash(_locations));
+      runtimeType, code, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -165,16 +137,12 @@ class _$_Rutes implements _Rutes {
 
 abstract class _Rutes implements Rutes {
   const factory _Rutes(
-      {required final String code,
-      required final List<Rute> data,
-      required final Set<Polyline> locations}) = _$_Rutes;
+      {required final String code, required final List<Rute> data}) = _$_Rutes;
 
   @override
   String get code;
   @override
   List<Rute> get data;
-  @override
-  Set<Polyline> get locations;
   @override
   @JsonKey(ignore: true)
   _$$_RutesCopyWith<_$_Rutes> get copyWith =>

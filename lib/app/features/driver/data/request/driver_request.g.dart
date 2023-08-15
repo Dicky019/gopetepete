@@ -29,6 +29,7 @@ _$_DriverLocation _$$_DriverLocationFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       lat: json['lat'] as String,
       long: json['long'] as String,
+      visible: json['visible'] as bool,
       maxPenumpang: json['maxPenumpang'] as int,
       jumlahPenumpang: json['jumlahPenumpang'] as int?,
     );
@@ -38,6 +39,7 @@ Map<String, dynamic> _$$_DriverLocationToJson(_$_DriverLocation instance) =>
       'id': instance.id,
       'lat': instance.lat,
       'long': instance.long,
+      'visible': instance.visible,
       'maxPenumpang': instance.maxPenumpang,
       'jumlahPenumpang': instance.jumlahPenumpang,
     };

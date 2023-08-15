@@ -1,9 +1,9 @@
-import 'package:flutter_application_1/app/features/home/domain/model/rutes.dart';
+import '../domain/model/rute.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class HomeState {
   final AsyncValue<int> value;
-  final AsyncValue<Rutes> rutes;
+  final AsyncValue<List<Rute>> rutes;
 
   const HomeState({
     this.value = const AsyncData(0),
@@ -12,7 +12,7 @@ class HomeState {
 
   HomeState copyWith({
     AsyncValue<int>? value,
-    AsyncValue<Rutes>? rutes,
+    AsyncValue<List<Rute>>? rutes,
   }) {
     return HomeState(
       value: value ?? this.value,

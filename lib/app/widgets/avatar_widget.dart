@@ -14,8 +14,8 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardProfilWidget(
-      size: 124.w,
-      border: (124 / 2).r,
+      size: 160.w,
+      border: (160 / 2).r,
       child: Padding(
         padding: const EdgeInsets.all(8.0).w,
         child: CircleAvatar(

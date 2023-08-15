@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'app/features/auth/application/auth_service_impl.dart';
@@ -20,7 +21,8 @@ import 'app/services/remote/config/dio_client.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -51,7 +53,9 @@ Future<void> main() async {
 
   // authService
   final authService = AuthServiceImpl(authRepository);
-  await authService.initLogin();  
+  await authService.initLogin(); 
+
+  // FlutterNativeSplash.remove(); 
 
   configLoading();
 

@@ -19,6 +19,13 @@ class DriverControllerNotifier extends StateNotifier<DriverState> {
 
   final DriverServiceImpl _driverService;
 
+  Future<bool> nonActive() {
+    EasyLoading.show();
+    final result =  _driverService.nonActive();
+    EasyLoading.dismiss();
+    return result;
+  }
+
   Future init() async {
     EasyLoading.show(status: "Memuat");
     final driver = await _driverService.getDriverApi();

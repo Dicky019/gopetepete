@@ -15,6 +15,8 @@ class NetworkExceptions with _$NetworkExceptions {
 
   const factory NetworkExceptions.badRequest() = BadRequest;
 
+  const factory NetworkExceptions.badResponse(String reason) = BadResponse;
+
   const factory NetworkExceptions.notFound(String reason) = NotFound;
 
   const factory NetworkExceptions.methodNotAllowed() = MethodNotAllowed;
@@ -79,6 +81,9 @@ class NetworkExceptions with _$NetworkExceptions {
             case DioExceptionType.badResponse:
               switch (error.response?.statusCode) {
                 case 400:
+                  return NetworkExceptions.badResponse(
+                    '${error.response?.data['error']['message']}',
+                  );
                 case 401:
                 case 403:
                   return NetworkExceptions.unauthorizedRequest(
@@ -137,6 +142,7 @@ class NetworkExceptions with _$NetworkExceptions {
 
   static String getErrorMessage(NetworkExceptions error) {
     return error.when(
+      badResponse: (reason) => reason,
       notImplemented: () {
         return "Not Implemented";
       },

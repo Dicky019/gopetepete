@@ -63,7 +63,7 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
   }
 
   // form lanjutan
-    final keyForm = GlobalKey<FormState>();
+  final keyForm = GlobalKey<FormState>();
   final ImagePicker picker = ImagePicker();
 
   Future<void> getImage(FotoEnum image) async {
@@ -86,12 +86,8 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
     }
   }
 
-  void daftarDriver(
-    DaftarDriverFormAwal driverFormAwal,
-    {
-      required BuildContext context
-    }
-  ) async {
+  void daftarDriver(DaftarDriverFormAwal driverFormAwal,
+      {required BuildContext context}) async {
     EasyLoading.show(status: "Memuat");
     state = state.copyWith(value: const AsyncLoading());
     final driverFormAkhir = DaftarDriverFormAkhir(
@@ -106,11 +102,14 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
       success: (data) {
         state = state.copyWith(value: const AsyncData(null));
         EasyLoading.showSuccess("Berhasil");
-        // if (data == "200") {
-          context.go(DriverVerificationView.routeName);
-        // }
+        log("daftarDriver , Berhasil", name: "daftarDriver.when");
+        context.go(DriverVerificationView.routeName);
       },
       failure: (error, stackTrace) {
+        error.whenOrNull(
+          badResponse: (reason) => EasyLoading.showError(reason),
+          notFound: (reason) => EasyLoading.showError(reason),
+        );
         state = state.copyWith(value: AsyncError(error, stackTrace));
       },
     );

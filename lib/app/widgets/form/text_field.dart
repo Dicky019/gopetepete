@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app/utils/extension/string_extension.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/theme/app_color.dart';
+import '/app/utils/extension/string_extension.dart';
+
+// final controllerNotifier = StateProvider<String>((ref) => "");
 
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
@@ -35,7 +38,7 @@ class TextFieldWidget extends StatelessWidget {
     return null;
   }
 
-  static inputDecoration(String hintText, bool isSearch) => InputDecoration(
+  static inputDecoration(String hintText) => InputDecoration(
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
           borderSide: BorderSide(
@@ -45,26 +48,67 @@ class TextFieldWidget extends StatelessWidget {
         ),
         focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
-          borderSide:
-              BorderSide(width: 2, color: AppColor.secondary // Color Primary,
-                  ),
+          borderSide: BorderSide(
+            width: 2, color: AppColor.secondary, // Color Primary,
+          ),
         ),
         hintText: hintText,
         hintStyle: const TextStyle(
           color: Colors.black,
         ),
-        suffixIcon: isSearch == true ? const Icon(Icons.search) : null,
+      );
+
+  static inputDecorationSearch(
+    TextEditingController controller,
+    BuildContext context,
+    String hintText,
+  ) =>
+      InputDecoration(
+        fillColor: Theme.of(context).focusColor,
+        filled: true,
+        border: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(12)).r,
+          borderSide: BorderSide(
+            width: 1.w,
+            color: AppColor.secondary,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(12)).r,
+          borderSide: BorderSide(
+            width: 2.w, color: AppColor.secondary, // Color Primary,
+          ),
+        ),
+        hintText: hintText,
+        hintStyle: TextStyle(
+          color: Theme.of(context).primaryColor,
+        ),
+        suffixIcon: IconButton(
+          onPressed: () {
+            controller.clear();
+          },
+          icon: const Icon(
+            Icons.close,
+            color: AppColor.secondary,
+          ),
+        ),
       );
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return TextFormField(
       controller: controller,
       validator: validator ?? _getValidation,
       onTap: onClick,
-      onChanged: onChange,
+      onChanged: (v) => {
+        if (onChange != null) {onChange!(v)}
+      },
       readOnly: onClick != null,
-      decoration: inputDecoration(hintText, _isSearch),
+      decoration: _isSearch
+          ? inputDecorationSearch(controller, context, hintText)
+          : inputDecoration(hintText),
     );
   }
 }
