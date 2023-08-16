@@ -55,7 +55,7 @@ Future<void> main() async {
   final authService = AuthServiceImpl(authRepository);
   await authService.initLogin(); 
 
-  // FlutterNativeSplash.remove(); 
+  FlutterNativeSplash.remove(); 
 
   configLoading();
 

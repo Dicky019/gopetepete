@@ -35,6 +35,7 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<void> logout() async {
+    await _network.logout();
     await _local.deleteUser();
     await _local.deleteEmail();
     await _local.deleteToken();

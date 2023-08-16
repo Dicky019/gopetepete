@@ -19,6 +19,7 @@ class NetworkImpl extends Network {
 
   Future<Result<void>> logout() async {
     await _firebaseAuth.signOut();
+    await GoogleSignIn().signOut();
     return const Result.success(null);
   }
 
