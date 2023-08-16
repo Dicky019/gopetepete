@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_application_1/app/features/home/data/response/rutes_response.dart';
 
 import '../../../driver/data/request/driver_request.dart';
+import '../../../driver/data/response/driver_response.dart';
 import '../response/rute_response.dart';
 import '/app/services/remote/config/config.dart';
 import 'network.dart';
@@ -49,10 +50,10 @@ class NetworkImpl extends Network {
   }
 
   @override
-  Future<Result<String>> getDriver(String id) async {
+  Future<Result<DriverResponse>> getDriver(String id) async {
     try {
       final response = await _dioClient.get("${Endpoint.driver}/$id");
-      return Result.success(response['data']);
+      return Result.success(DriverResponse.fromJson(response['data']));
     } catch (e, st) {
       return Result.failure(
         NetworkExceptions.getDioException(e, st),
@@ -62,7 +63,7 @@ class NetworkImpl extends Network {
   }
 
   @override
-  Stream<QuerySnapshot<DriverLocation>> getDrivers() {
+  Stream<QuerySnapshot<DriverLocation>> streamDrivers() {
     return _firestoreDriver.snapshots();
   }
 }

@@ -18,14 +18,10 @@ class DriverVerificationView extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Verifikasi"),
-        actions: [
-          IconButton(
-            onPressed: () => controller.logout(context),
-            icon: const Icon(Icons.logout),
-          )
-        ],
       ),
-      body: const DriverVerificationWidget(),
+      body: DriverVerificationWidget(
+        logout: () => controller.logout(context),
+      ),
     );
   }
 }

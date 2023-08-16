@@ -80,16 +80,17 @@ class TextFieldWidget extends StatelessWidget {
           ),
         ),
         hintText: hintText,
-        hintStyle: TextStyle(
-          color: Theme.of(context).primaryColor,
-        ),
+        hintStyle: Theme.of(context)
+            .textTheme
+            .titleLarge
+            ?.copyWith(fontWeight: FontWeight.w300),
         suffixIcon: IconButton(
           onPressed: () {
             controller.clear();
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.close,
-            color: AppColor.secondary,
+            color: Theme.of(context).colorScheme.error,
           ),
         ),
       );
@@ -105,6 +106,10 @@ class TextFieldWidget extends StatelessWidget {
       onChanged: (v) => {
         if (onChange != null) {onChange!(v)}
       },
+      style:  Theme.of(context)
+            .textTheme
+            .titleLarge
+            ?.copyWith(fontWeight: FontWeight.w300),
       readOnly: onClick != null,
       decoration: _isSearch
           ? inputDecorationSearch(controller, context, hintText)

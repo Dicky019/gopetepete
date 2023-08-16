@@ -27,9 +27,6 @@ class NetworkImpl extends Network {
   Future<Result<UserResponse>> loginResponse() async {
     try {
       final response = await _dioClient.get(Endpoint.login);
-      if (response['code'] == "404") {
-        log("loginResponse", error: response, name: "loginResponse");
-      }
       return Result.success(UserResponse.fromJson(response['data']));
     } catch (e, st) {
       log("loginResponse", error: e, name: "loginResponse");

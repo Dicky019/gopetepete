@@ -4,7 +4,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../application/home_service_impl.dart';
 import '../domain/model/rute.dart';
-import 'widget/search_widget.dart';
 import 'widget/map_widget.dart';
 import 'widget/person_widget.dart';
 import 'home_state.dart';
@@ -17,7 +16,6 @@ class HomeControllerNotifier extends StateNotifier<HomeState> {
 
   final listHomeWidget = [
     const MapWidget(),
-    const SearchWidget(),
     const PersonWidget(),
   ];
 

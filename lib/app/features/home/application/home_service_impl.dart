@@ -3,6 +3,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../driver/data/request/driver_request.dart';
+import '../../driver/application/mapper/driver_mapper.dart';
+import '../../driver/domain/model/driver.dart';
 import '/app/services/remote/config/result.dart';
 import '/app/services/location/geolocation_service.dart';
 
@@ -23,21 +25,24 @@ class HomeServiceImpl implements HomeService {
     return _geolocationService.locationPermision();
   }
 
+  Stream<Position?> get getPositionStream {
+    return _geolocationService.getPositionStream;
+  }
+
   Future<Position?> getLastKnownPosition() async {
     await locationPermision();
     return await _geolocationService.getLastKnownPosition();
   }
 
   @override
-  Future<Result<String>> getDriver(String id) {
-    return _homeRepository.getDriver(id);
+  Future<Result<Driver>> getDriver(String id) async {
+    final response = await _homeRepository.getDriver(id);
+    return DriverMapper.mapToUserResult(response);
   }
 
-  
-
   @override
-    Stream<QuerySnapshot<DriverLocation>> getDrivers() {
-    return _homeRepository.getDrivers();
+  Stream<QuerySnapshot<DriverLocation>> streamDrivers() {
+    return _homeRepository.streamDrivers();
   }
 
   @override

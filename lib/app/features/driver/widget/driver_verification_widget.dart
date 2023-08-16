@@ -5,7 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/gen/assets.gen.dart';
 
 class DriverVerificationWidget extends StatelessWidget {
-  const DriverVerificationWidget({Key? key}) : super(key: key);
+  final VoidCallback logout;
+  const DriverVerificationWidget({Key? key, required this.logout})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class DriverVerificationWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: ButtonWidget(
             text: "Logout",
-            onTap: () {},
+            onTap: logout,
           ),
         )
       ],
