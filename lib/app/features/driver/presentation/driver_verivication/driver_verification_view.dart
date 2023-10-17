@@ -21,6 +21,7 @@ class DriverVerificationView extends ConsumerWidget {
       ),
       body: DriverVerificationWidget(
         logout: () => controller.logout(context),
+        cekLogin: () => controller.cekLogin(context),
       ),
     );
   }

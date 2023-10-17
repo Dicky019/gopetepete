@@ -12,6 +12,10 @@ abstract class DaftarDriverRepository {
     required DaftarDriverFormAkhir driverFormAkhir,
   });
 
+  Future<Result<String>> cekDriver({
+    required DaftarDriverFormAwal daftarDriverRequest,
+  });
+
   // Future<void> saveUser(User user);
 
   // User? get getUser;

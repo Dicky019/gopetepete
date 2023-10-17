@@ -22,8 +22,10 @@ class DaftarDriverServiceImpl implements DaftarDriverService {
       driverFormAkhir: driverFormAkhir,
     );
 
-    final response =
-        DaftarDriverMapper.daftarDriverRequestMapTo(driverFormAwal, image);
+    final response = DaftarDriverMapper.daftarDriverRequestMapTo(
+      driverFormAwal,
+      image,
+    );
 
     return await response.when(
       success: (daftarDriverRequest) async {
@@ -39,6 +41,21 @@ class DaftarDriverServiceImpl implements DaftarDriverService {
           },
           failure: (error, stackTrace) => Result.failure(error, stackTrace),
         );
+      },
+      failure: (error, stackTrace) {
+        return Result.failure(error, stackTrace);
+      },
+    );
+  }
+
+  @override
+  Future<Result<void>> cekDriver(DaftarDriverFormAwal driverFormAwal) async {
+    final response = await _daftarDriverRepository.cekDriver(
+      daftarDriverRequest: driverFormAwal,
+    );
+    return await response.when(
+      success: (daftarDriverRequest) {
+        return const Result.success(null);
       },
       failure: (error, stackTrace) {
         return Result.failure(error, stackTrace);

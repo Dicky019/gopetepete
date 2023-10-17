@@ -6,4 +6,7 @@ abstract class DaftarDriverService {
     DaftarDriverFormAwal driverFormAwal,
     DaftarDriverFormAkhir driverFormAkhir,
   );
+  Future<Result<void>> cekDriver(
+    DaftarDriverFormAwal driverFormAwal,
+  );
 }

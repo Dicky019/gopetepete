@@ -43,7 +43,10 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
   String get noPlatMobil => noPlatC.text;
   int get maxPenumpang => int.tryParse(maxPenumpangC.text) ?? 0;
 
-  toLanjutan(BuildContext context) {
+  toLanjutan(BuildContext context) async {
+    EasyLoading.show(status: "Memuat");
+    state = state.copyWith(value: const AsyncLoading());
+
     final DaftarDriverFormAwal driverFormAwal = DaftarDriverFormAwal(
       name: username,
       nik: nik,
@@ -56,10 +59,29 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
       maxPenumpang: maxPenumpang,
     );
 
-    context.push(
-      DaftarDriverLanjutanView.path,
-      extra: driverFormAwal,
+    final daftarDriver = await _driverService.cekDriver(driverFormAwal);
+
+    daftarDriver.when(
+      success: (data) {
+        state = state.copyWith(value: const AsyncData(null));
+        // EasyLoading.showSuccess("Berhasil");
+        EasyLoading.dismiss();
+        context.push(
+          DaftarDriverLanjutanView.path,
+          extra: driverFormAwal,
+        );
+      },
+      failure: (error, stackTrace) {
+        error.whenOrNull(
+          badResponse: (reason) => EasyLoading.showError(reason),
+          notFound: (reason) => EasyLoading.showError(reason),
+          defaultError: (reason) => EasyLoading.showError(reason),
+        );
+        state = state.copyWith(value: AsyncError(error, stackTrace));
+      },
     );
+    EasyLoading.dismiss();
+    state = state.copyWith(value: const AsyncData(null));
   }
 
   // form lanjutan
@@ -86,8 +108,10 @@ class DaftarDriverControllerNotifier extends StateNotifier<DaftarDriverState> {
     }
   }
 
-  void daftarDriver(DaftarDriverFormAwal driverFormAwal,
-      {required BuildContext context}) async {
+  void daftarDriver(
+    DaftarDriverFormAwal driverFormAwal, {
+    required BuildContext context,
+  }) async {
     EasyLoading.show(status: "Memuat");
     state = state.copyWith(value: const AsyncLoading());
     final driverFormAkhir = DaftarDriverFormAkhir(

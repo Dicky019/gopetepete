@@ -6,7 +6,9 @@ import '/gen/assets.gen.dart';
 
 class DriverVerificationWidget extends StatelessWidget {
   final VoidCallback logout;
-  const DriverVerificationWidget({Key? key, required this.logout})
+  final VoidCallback cekLogin;
+  const DriverVerificationWidget(
+      {Key? key, required this.logout, required this.cekLogin})
       : super(key: key);
 
   @override
@@ -21,6 +23,15 @@ class DriverVerificationWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.titleLarge,
         ),
         Gap.h32,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: ButtonWidget(
+            text: "Cek Login",
+            onTap: cekLogin,
+            isPrimary: false,
+          ),
+        ),
+        Gap.h20,
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: ButtonWidget(

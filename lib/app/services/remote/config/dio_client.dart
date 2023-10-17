@@ -169,6 +169,7 @@ class DioClient {
 
   Future<T?> get<T>(
     String uri, {
+    data,
     Map<String, dynamic>? queryParameters,
     Options? options,
     CancelToken? cancelToken,
@@ -177,6 +178,7 @@ class DioClient {
     try {
       var response = await _dio.get<T>(
         uri,
+        data: data,
         queryParameters: queryParameters,
         options: options,
         cancelToken: cancelToken,
@@ -194,5 +196,5 @@ class DioClient {
 }
 
 final dioClientProvider = Provider<DioClient>((_) {
-  throw UnimplementedError("dioClientProvider"); 
+  throw UnimplementedError("dioClientProvider");
 });

@@ -25,6 +25,13 @@ class DaftarDriverRepositoryImpl implements DaftarDriverRepository {
   }
 
   @override
+  Future<Result<String>> cekDriver({
+    required DaftarDriverFormAwal daftarDriverRequest,
+  }) {
+    return _network.cekDriver(daftarDriverRequest: daftarDriverRequest);
+  }
+
+  @override
   Future<Result<DaftarDriverImageResponse>> uploadImage({
     required String email,
     required DaftarDriverFormAkhir driverFormAkhir,

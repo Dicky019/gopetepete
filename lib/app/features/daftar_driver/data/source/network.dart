@@ -13,4 +13,8 @@ abstract class Network {
     required File image,
     required String imageName,
   });
+
+  Future<Result<String>> cekDriver({
+    required DaftarDriverFormAwal daftarDriverRequest,
+  });
 }

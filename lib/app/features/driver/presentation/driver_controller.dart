@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/app/features/auth/application/auth_service_impl.dart';
+import 'package:flutter_application_1/app/features/driver/presentation/driver_view.dart';
 import '../domain/model/driver.dart';
 import '../../auth/presentation/login_view.dart';
 import '../data/request/driver_request.dart';
@@ -15,13 +17,15 @@ import '../application/driver_service_impl.dart';
 import 'driver_state.dart';
 
 class DriverControllerNotifier extends StateNotifier<DriverState> {
-  DriverControllerNotifier(this._driverService) : super(const DriverState());
+  DriverControllerNotifier(this._driverService, this._authService)
+      : super(const DriverState());
 
   final DriverServiceImpl _driverService;
+  final AuthServiceImpl _authService;
 
   Future<bool> nonActive() {
     EasyLoading.show();
-    final result =  _driverService.nonActive();
+    final result = _driverService.nonActive();
     EasyLoading.dismiss();
     return result;
   }
@@ -37,6 +41,30 @@ class DriverControllerNotifier extends StateNotifier<DriverState> {
       },
     );
     await _driverService.locationPermision();
+    EasyLoading.dismiss();
+  }
+
+  Future cekLogin(BuildContext context) async {
+    EasyLoading.show(status: "Memuat");
+    final result = await _authService.cekLogin();
+    result.when(
+      success: (data) {
+        if (data.status) {
+          context.replace(
+            DriverView.routeName,
+          );
+          return;
+        }
+        EasyLoading.showSuccess("Akun Anda Belum Active");
+      },
+      failure: (error, stackTrace) {
+        error.mapOrNull(
+          defaultError: (value) => EasyLoading.showError(
+            value.error,
+          ),
+        );
+      },
+    );
     EasyLoading.dismiss();
   }
 
@@ -105,6 +133,7 @@ final driverControllerProvider =
     StateNotifierProvider.autoDispose<DriverControllerNotifier, DriverState>(
   (ref) => DriverControllerNotifier(
     ref.read(driverServiceProvider),
+    ref.read(authServiceProvider),
   ),
 );
 

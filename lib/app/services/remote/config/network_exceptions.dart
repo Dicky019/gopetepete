@@ -82,7 +82,7 @@ class NetworkExceptions with _$NetworkExceptions {
               switch (error.response?.statusCode) {
                 case 400:
                   return NetworkExceptions.badResponse(
-                    '${error.response?.data['error']['message']}',
+                    '${error.response?.data['error']['message'] ?? "Ada Yang Salah"}',
                   );
                 case 401:
                 case 403:

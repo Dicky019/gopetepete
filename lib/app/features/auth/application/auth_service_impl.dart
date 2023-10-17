@@ -81,6 +81,33 @@ class AuthServiceImpl implements AuthService {
 
     log("getCurrentUser Null");
   }
+
+  Future<Result<User>> cekLogin() async {
+    final registerResult = await _authRepository.register(
+      userRequest: UserRequest(
+        email: getCurrentUser?.email ?? "",
+        name: getCurrentUser?.name ?? "",
+        image: getCurrentUser?.image ?? "",
+      ),
+    );
+
+    return await registerResult.when(
+      success: (userResponse) async {
+        final user = AuthenticationMapper.mapToUser(userResponse);
+        await _authRepository.saveUser(user);
+        await _authRepository.saveUserToken(userResponse.accessToken ?? "");
+        return Result.success(user);
+      },
+      failure: (error, stackTrace) async {
+        error.whenOrNull(
+          notFound: (reason) => log(reason),
+          unauthorizedRequest: (reason) => log(reason),
+        );
+        await _authRepository.logout();
+        return Result.failure(error, stackTrace);
+      },
+    );
+  }
 }
 
 final authServiceProvider = Provider<AuthServiceImpl>((_) {

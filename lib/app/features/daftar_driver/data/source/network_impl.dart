@@ -51,4 +51,22 @@ class NetworkImpl extends Network {
       );
     }
   }
+
+  @override
+  Future<Result<String>> cekDriver({
+    required DaftarDriverFormAwal daftarDriverRequest,
+  }) async {
+    try {
+      final response = await _dioClient.put(
+        Endpoint.driver,
+        data: daftarDriverRequest.toJson(),
+      );
+      return Result.success(response["data"]);
+    } catch (error, stackTrace) {
+      return Result.failure(
+        NetworkExceptions.getDioException(error, stackTrace),
+        stackTrace,
+      );
+    }
+  }
 }
