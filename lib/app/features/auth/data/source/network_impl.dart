@@ -41,6 +41,7 @@ class NetworkImpl extends Network {
   Future<Result<User>> loginFirebaseGoogle() async {
     try {
       await _firebaseAuth.signOut();
+      await GoogleSignIn().signOut();
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
