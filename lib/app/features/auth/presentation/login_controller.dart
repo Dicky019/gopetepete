@@ -48,7 +48,7 @@ class LoginControllerNotifier extends StateNotifier<LoginState> {
     state = state.copyWith(
       value: const AsyncData(null),
     );
-    EasyLoading.dismiss();
+    // EasyLoading.dismiss();
   }
 
   void logout() => _authenticationService.logout();
