@@ -31,10 +31,13 @@ class LoginControllerNotifier extends StateNotifier<LoginState> {
       },
       failure: (error, stackTrace) {
         EasyLoading.showError("Ada yang salah");
-        error.whenOrNull(notFound: (reason) {
-          log(reason.isEmpty ? "kosong" : reason, name: "failure");
-          EasyLoading.showError(reason);
-        });
+        error.whenOrNull(
+          notFound: (reason) {
+            log(reason.isEmpty ? "kosong" : reason, name: "failure");
+            EasyLoading.showError(reason);
+          },
+          defaultError: (error) => EasyLoading.showError(error),
+        );
         state = state.copyWith(
           value: AsyncValue.error(error, stackTrace),
         );
