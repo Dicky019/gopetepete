@@ -141,9 +141,10 @@ class _$DriverCopyWithImpl<$Res, $Val extends Driver>
 }
 
 /// @nodoc
-abstract class _$$_DriverCopyWith<$Res> implements $DriverCopyWith<$Res> {
-  factory _$$_DriverCopyWith(_$_Driver value, $Res Function(_$_Driver) then) =
-      __$$_DriverCopyWithImpl<$Res>;
+abstract class _$$DriverImplCopyWith<$Res> implements $DriverCopyWith<$Res> {
+  factory _$$DriverImplCopyWith(
+          _$DriverImpl value, $Res Function(_$DriverImpl) then) =
+      __$$DriverImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -164,10 +165,11 @@ abstract class _$$_DriverCopyWith<$Res> implements $DriverCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DriverCopyWithImpl<$Res>
-    extends _$DriverCopyWithImpl<$Res, _$_Driver>
-    implements _$$_DriverCopyWith<$Res> {
-  __$$_DriverCopyWithImpl(_$_Driver _value, $Res Function(_$_Driver) _then)
+class __$$DriverImplCopyWithImpl<$Res>
+    extends _$DriverCopyWithImpl<$Res, _$DriverImpl>
+    implements _$$DriverImplCopyWith<$Res> {
+  __$$DriverImplCopyWithImpl(
+      _$DriverImpl _value, $Res Function(_$DriverImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -185,7 +187,7 @@ class __$$_DriverCopyWithImpl<$Res>
     Object? fotoMobil = null,
     Object? user = null,
   }) {
-    return _then(_$_Driver(
+    return _then(_$DriverImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -236,8 +238,8 @@ class __$$_DriverCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Driver implements _Driver {
-  const _$_Driver(
+class _$DriverImpl implements _Driver {
+  const _$DriverImpl(
       {required this.id,
       required this.namaLengkap,
       required this.alamat,
@@ -250,8 +252,8 @@ class _$_Driver implements _Driver {
       required this.fotoMobil,
       required this.user});
 
-  factory _$_Driver.fromJson(Map<String, dynamic> json) =>
-      _$$_DriverFromJson(json);
+  factory _$DriverImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriverImplFromJson(json);
 
   @override
   final String id;
@@ -285,7 +287,7 @@ class _$_Driver implements _Driver {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Driver &&
+            other is _$DriverImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.namaLengkap, namaLengkap) ||
                 other.namaLengkap == namaLengkap) &&
@@ -311,12 +313,12 @@ class _$_Driver implements _Driver {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriverCopyWith<_$_Driver> get copyWith =>
-      __$$_DriverCopyWithImpl<_$_Driver>(this, _$identity);
+  _$$DriverImplCopyWith<_$DriverImpl> get copyWith =>
+      __$$DriverImplCopyWithImpl<_$DriverImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriverToJson(
+    return _$$DriverImplToJson(
       this,
     );
   }
@@ -334,9 +336,9 @@ abstract class _Driver implements Driver {
       required final int maxPenumpang,
       required final String fotoKtp,
       required final String fotoMobil,
-      required final User user}) = _$_Driver;
+      required final User user}) = _$DriverImpl;
 
-  factory _Driver.fromJson(Map<String, dynamic> json) = _$_Driver.fromJson;
+  factory _Driver.fromJson(Map<String, dynamic> json) = _$DriverImpl.fromJson;
 
   @override
   String get id;
@@ -362,6 +364,6 @@ abstract class _Driver implements Driver {
   User get user;
   @override
   @JsonKey(ignore: true)
-  _$$_DriverCopyWith<_$_Driver> get copyWith =>
+  _$$DriverImplCopyWith<_$DriverImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

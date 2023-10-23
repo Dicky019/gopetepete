@@ -113,11 +113,11 @@ class _$UserResponseCopyWithImpl<$Res, $Val extends UserResponse>
 }
 
 /// @nodoc
-abstract class _$$_UserResponseCopyWith<$Res>
+abstract class _$$UserResponseImplCopyWith<$Res>
     implements $UserResponseCopyWith<$Res> {
-  factory _$$_UserResponseCopyWith(
-          _$_UserResponse value, $Res Function(_$_UserResponse) then) =
-      __$$_UserResponseCopyWithImpl<$Res>;
+  factory _$$UserResponseImplCopyWith(
+          _$UserResponseImpl value, $Res Function(_$UserResponseImpl) then) =
+      __$$UserResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_UserResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserResponseCopyWithImpl<$Res>
-    extends _$UserResponseCopyWithImpl<$Res, _$_UserResponse>
-    implements _$$_UserResponseCopyWith<$Res> {
-  __$$_UserResponseCopyWithImpl(
-      _$_UserResponse _value, $Res Function(_$_UserResponse) _then)
+class __$$UserResponseImplCopyWithImpl<$Res>
+    extends _$UserResponseCopyWithImpl<$Res, _$UserResponseImpl>
+    implements _$$UserResponseImplCopyWith<$Res> {
+  __$$UserResponseImplCopyWithImpl(
+      _$UserResponseImpl _value, $Res Function(_$UserResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -149,7 +149,7 @@ class __$$_UserResponseCopyWithImpl<$Res>
     Object? image = freezed,
     Object? accessToken = freezed,
   }) {
-    return _then(_$_UserResponse(
+    return _then(_$UserResponseImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -184,8 +184,8 @@ class __$$_UserResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserResponse implements _UserResponse {
-  const _$_UserResponse(
+class _$UserResponseImpl implements _UserResponse {
+  const _$UserResponseImpl(
       {@JsonKey(name: "id") this.id,
       @JsonKey(name: "name") this.name,
       @JsonKey(name: "email") this.email,
@@ -194,8 +194,8 @@ class _$_UserResponse implements _UserResponse {
       @JsonKey(name: "image") this.image,
       @JsonKey(name: "accessToken") this.accessToken});
 
-  factory _$_UserResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_UserResponseFromJson(json);
+  factory _$UserResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserResponseImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -229,7 +229,7 @@ class _$_UserResponse implements _UserResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserResponse &&
+            other is _$UserResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
@@ -248,12 +248,12 @@ class _$_UserResponse implements _UserResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserResponseCopyWith<_$_UserResponse> get copyWith =>
-      __$$_UserResponseCopyWithImpl<_$_UserResponse>(this, _$identity);
+  _$$UserResponseImplCopyWith<_$UserResponseImpl> get copyWith =>
+      __$$UserResponseImplCopyWithImpl<_$UserResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserResponseToJson(
+    return _$$UserResponseImplToJson(
       this,
     );
   }
@@ -268,10 +268,10 @@ abstract class _UserResponse implements UserResponse {
           @JsonKey(name: "role") final String? role,
           @JsonKey(name: "image") final String? image,
           @JsonKey(name: "accessToken") final String? accessToken}) =
-      _$_UserResponse;
+      _$UserResponseImpl;
 
   factory _UserResponse.fromJson(Map<String, dynamic> json) =
-      _$_UserResponse.fromJson;
+      _$UserResponseImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -296,6 +296,6 @@ abstract class _UserResponse implements UserResponse {
   String? get accessToken;
   @override
   @JsonKey(ignore: true)
-  _$$_UserResponseCopyWith<_$_UserResponse> get copyWith =>
+  _$$UserResponseImplCopyWith<_$UserResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -61,18 +61,21 @@ class _$RutesCopyWithImpl<$Res, $Val extends Rutes>
 }
 
 /// @nodoc
-abstract class _$$_RutesCopyWith<$Res> implements $RutesCopyWith<$Res> {
-  factory _$$_RutesCopyWith(_$_Rutes value, $Res Function(_$_Rutes) then) =
-      __$$_RutesCopyWithImpl<$Res>;
+abstract class _$$RutesImplCopyWith<$Res> implements $RutesCopyWith<$Res> {
+  factory _$$RutesImplCopyWith(
+          _$RutesImpl value, $Res Function(_$RutesImpl) then) =
+      __$$RutesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String code, List<Rute> data});
 }
 
 /// @nodoc
-class __$$_RutesCopyWithImpl<$Res> extends _$RutesCopyWithImpl<$Res, _$_Rutes>
-    implements _$$_RutesCopyWith<$Res> {
-  __$$_RutesCopyWithImpl(_$_Rutes _value, $Res Function(_$_Rutes) _then)
+class __$$RutesImplCopyWithImpl<$Res>
+    extends _$RutesCopyWithImpl<$Res, _$RutesImpl>
+    implements _$$RutesImplCopyWith<$Res> {
+  __$$RutesImplCopyWithImpl(
+      _$RutesImpl _value, $Res Function(_$RutesImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -81,7 +84,7 @@ class __$$_RutesCopyWithImpl<$Res> extends _$RutesCopyWithImpl<$Res, _$_Rutes>
     Object? code = null,
     Object? data = null,
   }) {
-    return _then(_$_Rutes(
+    return _then(_$RutesImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -96,8 +99,8 @@ class __$$_RutesCopyWithImpl<$Res> extends _$RutesCopyWithImpl<$Res, _$_Rutes>
 
 /// @nodoc
 
-class _$_Rutes implements _Rutes {
-  const _$_Rutes({required this.code, required final List<Rute> data})
+class _$RutesImpl implements _Rutes {
+  const _$RutesImpl({required this.code, required final List<Rute> data})
       : _data = data;
 
   @override
@@ -119,7 +122,7 @@ class _$_Rutes implements _Rutes {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Rutes &&
+            other is _$RutesImpl &&
             (identical(other.code, code) || other.code == code) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
@@ -131,13 +134,14 @@ class _$_Rutes implements _Rutes {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RutesCopyWith<_$_Rutes> get copyWith =>
-      __$$_RutesCopyWithImpl<_$_Rutes>(this, _$identity);
+  _$$RutesImplCopyWith<_$RutesImpl> get copyWith =>
+      __$$RutesImplCopyWithImpl<_$RutesImpl>(this, _$identity);
 }
 
 abstract class _Rutes implements Rutes {
   const factory _Rutes(
-      {required final String code, required final List<Rute> data}) = _$_Rutes;
+      {required final String code,
+      required final List<Rute> data}) = _$RutesImpl;
 
   @override
   String get code;
@@ -145,6 +149,6 @@ abstract class _Rutes implements Rutes {
   List<Rute> get data;
   @override
   @JsonKey(ignore: true)
-  _$$_RutesCopyWith<_$_Rutes> get copyWith =>
+  _$$RutesImplCopyWith<_$RutesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

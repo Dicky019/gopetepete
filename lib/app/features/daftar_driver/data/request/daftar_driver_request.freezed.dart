@@ -136,11 +136,11 @@ class _$DaftarDriverRequestCopyWithImpl<$Res, $Val extends DaftarDriverRequest>
 }
 
 /// @nodoc
-abstract class _$$_DaftarDriverRequestCopyWith<$Res>
+abstract class _$$DaftarDriverRequestImplCopyWith<$Res>
     implements $DaftarDriverRequestCopyWith<$Res> {
-  factory _$$_DaftarDriverRequestCopyWith(_$_DaftarDriverRequest value,
-          $Res Function(_$_DaftarDriverRequest) then) =
-      __$$_DaftarDriverRequestCopyWithImpl<$Res>;
+  factory _$$DaftarDriverRequestImplCopyWith(_$DaftarDriverRequestImpl value,
+          $Res Function(_$DaftarDriverRequestImpl) then) =
+      __$$DaftarDriverRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -160,11 +160,11 @@ abstract class _$$_DaftarDriverRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DaftarDriverRequestCopyWithImpl<$Res>
-    extends _$DaftarDriverRequestCopyWithImpl<$Res, _$_DaftarDriverRequest>
-    implements _$$_DaftarDriverRequestCopyWith<$Res> {
-  __$$_DaftarDriverRequestCopyWithImpl(_$_DaftarDriverRequest _value,
-      $Res Function(_$_DaftarDriverRequest) _then)
+class __$$DaftarDriverRequestImplCopyWithImpl<$Res>
+    extends _$DaftarDriverRequestCopyWithImpl<$Res, _$DaftarDriverRequestImpl>
+    implements _$$DaftarDriverRequestImplCopyWith<$Res> {
+  __$$DaftarDriverRequestImplCopyWithImpl(_$DaftarDriverRequestImpl _value,
+      $Res Function(_$DaftarDriverRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -181,7 +181,7 @@ class __$$_DaftarDriverRequestCopyWithImpl<$Res>
     Object? fotoMobil = null,
     Object? user = null,
   }) {
-    return _then(_$_DaftarDriverRequest(
+    return _then(_$DaftarDriverRequestImpl(
       namaLengkap: null == namaLengkap
           ? _value.namaLengkap
           : namaLengkap // ignore: cast_nullable_to_non_nullable
@@ -228,8 +228,8 @@ class __$$_DaftarDriverRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DaftarDriverRequest implements _DaftarDriverRequest {
-  const _$_DaftarDriverRequest(
+class _$DaftarDriverRequestImpl implements _DaftarDriverRequest {
+  const _$DaftarDriverRequestImpl(
       {required this.namaLengkap,
       required this.alamat,
       required this.nik,
@@ -241,8 +241,8 @@ class _$_DaftarDriverRequest implements _DaftarDriverRequest {
       required this.fotoMobil,
       required this.user});
 
-  factory _$_DaftarDriverRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DaftarDriverRequestFromJson(json);
+  factory _$DaftarDriverRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DaftarDriverRequestImplFromJson(json);
 
   @override
   final String namaLengkap;
@@ -274,7 +274,7 @@ class _$_DaftarDriverRequest implements _DaftarDriverRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DaftarDriverRequest &&
+            other is _$DaftarDriverRequestImpl &&
             (identical(other.namaLengkap, namaLengkap) ||
                 other.namaLengkap == namaLengkap) &&
             (identical(other.alamat, alamat) || other.alamat == alamat) &&
@@ -299,13 +299,13 @@ class _$_DaftarDriverRequest implements _DaftarDriverRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DaftarDriverRequestCopyWith<_$_DaftarDriverRequest> get copyWith =>
-      __$$_DaftarDriverRequestCopyWithImpl<_$_DaftarDriverRequest>(
+  _$$DaftarDriverRequestImplCopyWith<_$DaftarDriverRequestImpl> get copyWith =>
+      __$$DaftarDriverRequestImplCopyWithImpl<_$DaftarDriverRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DaftarDriverRequestToJson(
+    return _$$DaftarDriverRequestImplToJson(
       this,
     );
   }
@@ -322,10 +322,10 @@ abstract class _DaftarDriverRequest implements DaftarDriverRequest {
       required final int maxPenumpang,
       required final String fotoKtp,
       required final String fotoMobil,
-      required final DaftarDriverUser user}) = _$_DaftarDriverRequest;
+      required final DaftarDriverUser user}) = _$DaftarDriverRequestImpl;
 
   factory _DaftarDriverRequest.fromJson(Map<String, dynamic> json) =
-      _$_DaftarDriverRequest.fromJson;
+      _$DaftarDriverRequestImpl.fromJson;
 
   @override
   String get namaLengkap;
@@ -349,7 +349,7 @@ abstract class _DaftarDriverRequest implements DaftarDriverRequest {
   DaftarDriverUser get user;
   @override
   @JsonKey(ignore: true)
-  _$$_DaftarDriverRequestCopyWith<_$_DaftarDriverRequest> get copyWith =>
+  _$$DaftarDriverRequestImplCopyWith<_$DaftarDriverRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -459,11 +459,11 @@ class _$DaftarDriverFormAwalCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DaftarDriverFormAwalCopyWith<$Res>
+abstract class _$$DaftarDriverFormAwalImplCopyWith<$Res>
     implements $DaftarDriverFormAwalCopyWith<$Res> {
-  factory _$$_DaftarDriverFormAwalCopyWith(_$_DaftarDriverFormAwal value,
-          $Res Function(_$_DaftarDriverFormAwal) then) =
-      __$$_DaftarDriverFormAwalCopyWithImpl<$Res>;
+  factory _$$DaftarDriverFormAwalImplCopyWith(_$DaftarDriverFormAwalImpl value,
+          $Res Function(_$DaftarDriverFormAwalImpl) then) =
+      __$$DaftarDriverFormAwalImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -479,11 +479,11 @@ abstract class _$$_DaftarDriverFormAwalCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DaftarDriverFormAwalCopyWithImpl<$Res>
-    extends _$DaftarDriverFormAwalCopyWithImpl<$Res, _$_DaftarDriverFormAwal>
-    implements _$$_DaftarDriverFormAwalCopyWith<$Res> {
-  __$$_DaftarDriverFormAwalCopyWithImpl(_$_DaftarDriverFormAwal _value,
-      $Res Function(_$_DaftarDriverFormAwal) _then)
+class __$$DaftarDriverFormAwalImplCopyWithImpl<$Res>
+    extends _$DaftarDriverFormAwalCopyWithImpl<$Res, _$DaftarDriverFormAwalImpl>
+    implements _$$DaftarDriverFormAwalImplCopyWith<$Res> {
+  __$$DaftarDriverFormAwalImplCopyWithImpl(_$DaftarDriverFormAwalImpl _value,
+      $Res Function(_$DaftarDriverFormAwalImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -499,7 +499,7 @@ class __$$_DaftarDriverFormAwalCopyWithImpl<$Res>
     Object? noPlatMobil = null,
     Object? maxPenumpang = null,
   }) {
-    return _then(_$_DaftarDriverFormAwal(
+    return _then(_$DaftarDriverFormAwalImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -542,8 +542,8 @@ class __$$_DaftarDriverFormAwalCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DaftarDriverFormAwal implements _DaftarDriverFormAwal {
-  const _$_DaftarDriverFormAwal(
+class _$DaftarDriverFormAwalImpl implements _DaftarDriverFormAwal {
+  const _$DaftarDriverFormAwalImpl(
       {required this.name,
       required this.nik,
       required this.nokk,
@@ -554,8 +554,8 @@ class _$_DaftarDriverFormAwal implements _DaftarDriverFormAwal {
       required this.noPlatMobil,
       required this.maxPenumpang});
 
-  factory _$_DaftarDriverFormAwal.fromJson(Map<String, dynamic> json) =>
-      _$$_DaftarDriverFormAwalFromJson(json);
+  factory _$DaftarDriverFormAwalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DaftarDriverFormAwalImplFromJson(json);
 
   @override
   final String name;
@@ -585,7 +585,7 @@ class _$_DaftarDriverFormAwal implements _DaftarDriverFormAwal {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DaftarDriverFormAwal &&
+            other is _$DaftarDriverFormAwalImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.nik, nik) || other.nik == nik) &&
             (identical(other.nokk, nokk) || other.nokk == nokk) &&
@@ -608,13 +608,14 @@ class _$_DaftarDriverFormAwal implements _DaftarDriverFormAwal {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DaftarDriverFormAwalCopyWith<_$_DaftarDriverFormAwal> get copyWith =>
-      __$$_DaftarDriverFormAwalCopyWithImpl<_$_DaftarDriverFormAwal>(
-          this, _$identity);
+  _$$DaftarDriverFormAwalImplCopyWith<_$DaftarDriverFormAwalImpl>
+      get copyWith =>
+          __$$DaftarDriverFormAwalImplCopyWithImpl<_$DaftarDriverFormAwalImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DaftarDriverFormAwalToJson(
+    return _$$DaftarDriverFormAwalImplToJson(
       this,
     );
   }
@@ -630,10 +631,10 @@ abstract class _DaftarDriverFormAwal implements DaftarDriverFormAwal {
       required final String email,
       required final String alamat,
       required final String noPlatMobil,
-      required final int maxPenumpang}) = _$_DaftarDriverFormAwal;
+      required final int maxPenumpang}) = _$DaftarDriverFormAwalImpl;
 
   factory _DaftarDriverFormAwal.fromJson(Map<String, dynamic> json) =
-      _$_DaftarDriverFormAwal.fromJson;
+      _$DaftarDriverFormAwalImpl.fromJson;
 
   @override
   String get name;
@@ -655,8 +656,8 @@ abstract class _DaftarDriverFormAwal implements DaftarDriverFormAwal {
   int get maxPenumpang;
   @override
   @JsonKey(ignore: true)
-  _$$_DaftarDriverFormAwalCopyWith<_$_DaftarDriverFormAwal> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DaftarDriverFormAwalImplCopyWith<_$DaftarDriverFormAwalImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -715,22 +716,24 @@ class _$DaftarDriverFormAkhirCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DaftarDriverFormAkhirCopyWith<$Res>
+abstract class _$$DaftarDriverFormAkhirImplCopyWith<$Res>
     implements $DaftarDriverFormAkhirCopyWith<$Res> {
-  factory _$$_DaftarDriverFormAkhirCopyWith(_$_DaftarDriverFormAkhir value,
-          $Res Function(_$_DaftarDriverFormAkhir) then) =
-      __$$_DaftarDriverFormAkhirCopyWithImpl<$Res>;
+  factory _$$DaftarDriverFormAkhirImplCopyWith(
+          _$DaftarDriverFormAkhirImpl value,
+          $Res Function(_$DaftarDriverFormAkhirImpl) then) =
+      __$$DaftarDriverFormAkhirImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({File image, File fotoKtp, File fotoMobil});
 }
 
 /// @nodoc
-class __$$_DaftarDriverFormAkhirCopyWithImpl<$Res>
-    extends _$DaftarDriverFormAkhirCopyWithImpl<$Res, _$_DaftarDriverFormAkhir>
-    implements _$$_DaftarDriverFormAkhirCopyWith<$Res> {
-  __$$_DaftarDriverFormAkhirCopyWithImpl(_$_DaftarDriverFormAkhir _value,
-      $Res Function(_$_DaftarDriverFormAkhir) _then)
+class __$$DaftarDriverFormAkhirImplCopyWithImpl<$Res>
+    extends _$DaftarDriverFormAkhirCopyWithImpl<$Res,
+        _$DaftarDriverFormAkhirImpl>
+    implements _$$DaftarDriverFormAkhirImplCopyWith<$Res> {
+  __$$DaftarDriverFormAkhirImplCopyWithImpl(_$DaftarDriverFormAkhirImpl _value,
+      $Res Function(_$DaftarDriverFormAkhirImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -740,7 +743,7 @@ class __$$_DaftarDriverFormAkhirCopyWithImpl<$Res>
     Object? fotoKtp = null,
     Object? fotoMobil = null,
   }) {
-    return _then(_$_DaftarDriverFormAkhir(
+    return _then(_$DaftarDriverFormAkhirImpl(
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -759,8 +762,8 @@ class __$$_DaftarDriverFormAkhirCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DaftarDriverFormAkhir implements _DaftarDriverFormAkhir {
-  const _$_DaftarDriverFormAkhir(
+class _$DaftarDriverFormAkhirImpl implements _DaftarDriverFormAkhir {
+  const _$DaftarDriverFormAkhirImpl(
       {required this.image, required this.fotoKtp, required this.fotoMobil});
 
   @override
@@ -779,7 +782,7 @@ class _$_DaftarDriverFormAkhir implements _DaftarDriverFormAkhir {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DaftarDriverFormAkhir &&
+            other is _$DaftarDriverFormAkhirImpl &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.fotoKtp, fotoKtp) || other.fotoKtp == fotoKtp) &&
             (identical(other.fotoMobil, fotoMobil) ||
@@ -792,16 +795,16 @@ class _$_DaftarDriverFormAkhir implements _DaftarDriverFormAkhir {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DaftarDriverFormAkhirCopyWith<_$_DaftarDriverFormAkhir> get copyWith =>
-      __$$_DaftarDriverFormAkhirCopyWithImpl<_$_DaftarDriverFormAkhir>(
-          this, _$identity);
+  _$$DaftarDriverFormAkhirImplCopyWith<_$DaftarDriverFormAkhirImpl>
+      get copyWith => __$$DaftarDriverFormAkhirImplCopyWithImpl<
+          _$DaftarDriverFormAkhirImpl>(this, _$identity);
 }
 
 abstract class _DaftarDriverFormAkhir implements DaftarDriverFormAkhir {
   const factory _DaftarDriverFormAkhir(
       {required final File image,
       required final File fotoKtp,
-      required final File fotoMobil}) = _$_DaftarDriverFormAkhir;
+      required final File fotoMobil}) = _$DaftarDriverFormAkhirImpl;
 
   @override
   File get image;
@@ -811,8 +814,8 @@ abstract class _DaftarDriverFormAkhir implements DaftarDriverFormAkhir {
   File get fotoMobil;
   @override
   @JsonKey(ignore: true)
-  _$$_DaftarDriverFormAkhirCopyWith<_$_DaftarDriverFormAkhir> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DaftarDriverFormAkhirImplCopyWith<_$DaftarDriverFormAkhirImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 DaftarDriverUser _$DaftarDriverUserFromJson(Map<String, dynamic> json) {
@@ -875,22 +878,22 @@ class _$DaftarDriverUserCopyWithImpl<$Res, $Val extends DaftarDriverUser>
 }
 
 /// @nodoc
-abstract class _$$_DaftarDriverUserCopyWith<$Res>
+abstract class _$$DaftarDriverUserImplCopyWith<$Res>
     implements $DaftarDriverUserCopyWith<$Res> {
-  factory _$$_DaftarDriverUserCopyWith(
-          _$_DaftarDriverUser value, $Res Function(_$_DaftarDriverUser) then) =
-      __$$_DaftarDriverUserCopyWithImpl<$Res>;
+  factory _$$DaftarDriverUserImplCopyWith(_$DaftarDriverUserImpl value,
+          $Res Function(_$DaftarDriverUserImpl) then) =
+      __$$DaftarDriverUserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String email, String image});
 }
 
 /// @nodoc
-class __$$_DaftarDriverUserCopyWithImpl<$Res>
-    extends _$DaftarDriverUserCopyWithImpl<$Res, _$_DaftarDriverUser>
-    implements _$$_DaftarDriverUserCopyWith<$Res> {
-  __$$_DaftarDriverUserCopyWithImpl(
-      _$_DaftarDriverUser _value, $Res Function(_$_DaftarDriverUser) _then)
+class __$$DaftarDriverUserImplCopyWithImpl<$Res>
+    extends _$DaftarDriverUserCopyWithImpl<$Res, _$DaftarDriverUserImpl>
+    implements _$$DaftarDriverUserImplCopyWith<$Res> {
+  __$$DaftarDriverUserImplCopyWithImpl(_$DaftarDriverUserImpl _value,
+      $Res Function(_$DaftarDriverUserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -900,7 +903,7 @@ class __$$_DaftarDriverUserCopyWithImpl<$Res>
     Object? email = null,
     Object? image = null,
   }) {
-    return _then(_$_DaftarDriverUser(
+    return _then(_$DaftarDriverUserImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -919,12 +922,12 @@ class __$$_DaftarDriverUserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DaftarDriverUser implements _DaftarDriverUser {
-  const _$_DaftarDriverUser(
+class _$DaftarDriverUserImpl implements _DaftarDriverUser {
+  const _$DaftarDriverUserImpl(
       {required this.name, required this.email, required this.image});
 
-  factory _$_DaftarDriverUser.fromJson(Map<String, dynamic> json) =>
-      _$$_DaftarDriverUserFromJson(json);
+  factory _$DaftarDriverUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DaftarDriverUserImplFromJson(json);
 
   @override
   final String name;
@@ -942,7 +945,7 @@ class _$_DaftarDriverUser implements _DaftarDriverUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DaftarDriverUser &&
+            other is _$DaftarDriverUserImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.image, image) || other.image == image));
@@ -955,12 +958,13 @@ class _$_DaftarDriverUser implements _DaftarDriverUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DaftarDriverUserCopyWith<_$_DaftarDriverUser> get copyWith =>
-      __$$_DaftarDriverUserCopyWithImpl<_$_DaftarDriverUser>(this, _$identity);
+  _$$DaftarDriverUserImplCopyWith<_$DaftarDriverUserImpl> get copyWith =>
+      __$$DaftarDriverUserImplCopyWithImpl<_$DaftarDriverUserImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DaftarDriverUserToJson(
+    return _$$DaftarDriverUserImplToJson(
       this,
     );
   }
@@ -970,10 +974,10 @@ abstract class _DaftarDriverUser implements DaftarDriverUser {
   const factory _DaftarDriverUser(
       {required final String name,
       required final String email,
-      required final String image}) = _$_DaftarDriverUser;
+      required final String image}) = _$DaftarDriverUserImpl;
 
   factory _DaftarDriverUser.fromJson(Map<String, dynamic> json) =
-      _$_DaftarDriverUser.fromJson;
+      _$DaftarDriverUserImpl.fromJson;
 
   @override
   String get name;
@@ -983,6 +987,6 @@ abstract class _DaftarDriverUser implements DaftarDriverUser {
   String get image;
   @override
   @JsonKey(ignore: true)
-  _$$_DaftarDriverUserCopyWith<_$_DaftarDriverUser> get copyWith =>
+  _$$DaftarDriverUserImplCopyWith<_$DaftarDriverUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -82,22 +82,24 @@ class _$DriverLocationRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DriverLocationRequestCopyWith<$Res>
+abstract class _$$DriverLocationRequestImplCopyWith<$Res>
     implements $DriverLocationRequestCopyWith<$Res> {
-  factory _$$_DriverLocationRequestCopyWith(_$_DriverLocationRequest value,
-          $Res Function(_$_DriverLocationRequest) then) =
-      __$$_DriverLocationRequestCopyWithImpl<$Res>;
+  factory _$$DriverLocationRequestImplCopyWith(
+          _$DriverLocationRequestImpl value,
+          $Res Function(_$DriverLocationRequestImpl) then) =
+      __$$DriverLocationRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String lat, String long, int maxPenumpang});
 }
 
 /// @nodoc
-class __$$_DriverLocationRequestCopyWithImpl<$Res>
-    extends _$DriverLocationRequestCopyWithImpl<$Res, _$_DriverLocationRequest>
-    implements _$$_DriverLocationRequestCopyWith<$Res> {
-  __$$_DriverLocationRequestCopyWithImpl(_$_DriverLocationRequest _value,
-      $Res Function(_$_DriverLocationRequest) _then)
+class __$$DriverLocationRequestImplCopyWithImpl<$Res>
+    extends _$DriverLocationRequestCopyWithImpl<$Res,
+        _$DriverLocationRequestImpl>
+    implements _$$DriverLocationRequestImplCopyWith<$Res> {
+  __$$DriverLocationRequestImplCopyWithImpl(_$DriverLocationRequestImpl _value,
+      $Res Function(_$DriverLocationRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +110,7 @@ class __$$_DriverLocationRequestCopyWithImpl<$Res>
     Object? long = null,
     Object? maxPenumpang = null,
   }) {
-    return _then(_$_DriverLocationRequest(
+    return _then(_$DriverLocationRequestImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -131,15 +133,15 @@ class __$$_DriverLocationRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriverLocationRequest implements _DriverLocationRequest {
-  const _$_DriverLocationRequest(
+class _$DriverLocationRequestImpl implements _DriverLocationRequest {
+  const _$DriverLocationRequestImpl(
       {required this.id,
       required this.lat,
       required this.long,
       required this.maxPenumpang});
 
-  factory _$_DriverLocationRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DriverLocationRequestFromJson(json);
+  factory _$DriverLocationRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriverLocationRequestImplFromJson(json);
 
   @override
   final String id;
@@ -159,7 +161,7 @@ class _$_DriverLocationRequest implements _DriverLocationRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriverLocationRequest &&
+            other is _$DriverLocationRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.long, long) || other.long == long) &&
@@ -174,13 +176,13 @@ class _$_DriverLocationRequest implements _DriverLocationRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriverLocationRequestCopyWith<_$_DriverLocationRequest> get copyWith =>
-      __$$_DriverLocationRequestCopyWithImpl<_$_DriverLocationRequest>(
-          this, _$identity);
+  _$$DriverLocationRequestImplCopyWith<_$DriverLocationRequestImpl>
+      get copyWith => __$$DriverLocationRequestImplCopyWithImpl<
+          _$DriverLocationRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriverLocationRequestToJson(
+    return _$$DriverLocationRequestImplToJson(
       this,
     );
   }
@@ -191,10 +193,10 @@ abstract class _DriverLocationRequest implements DriverLocationRequest {
       {required final String id,
       required final String lat,
       required final String long,
-      required final int maxPenumpang}) = _$_DriverLocationRequest;
+      required final int maxPenumpang}) = _$DriverLocationRequestImpl;
 
   factory _DriverLocationRequest.fromJson(Map<String, dynamic> json) =
-      _$_DriverLocationRequest.fromJson;
+      _$DriverLocationRequestImpl.fromJson;
 
   @override
   String get id;
@@ -206,8 +208,8 @@ abstract class _DriverLocationRequest implements DriverLocationRequest {
   int get maxPenumpang;
   @override
   @JsonKey(ignore: true)
-  _$$_DriverLocationRequestCopyWith<_$_DriverLocationRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DriverLocationRequestImplCopyWith<_$DriverLocationRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 DriverLocation _$DriverLocationFromJson(Map<String, dynamic> json) {
@@ -219,6 +221,8 @@ mixin _$DriverLocation {
   String get id => throw _privateConstructorUsedError;
   String get lat => throw _privateConstructorUsedError;
   String get long => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  String get platNomor => throw _privateConstructorUsedError;
   bool get visible => throw _privateConstructorUsedError;
   int get maxPenumpang => throw _privateConstructorUsedError;
   int? get jumlahPenumpang => throw _privateConstructorUsedError;
@@ -239,6 +243,8 @@ abstract class $DriverLocationCopyWith<$Res> {
       {String id,
       String lat,
       String long,
+      String image,
+      String platNomor,
       bool visible,
       int maxPenumpang,
       int? jumlahPenumpang});
@@ -260,6 +266,8 @@ class _$DriverLocationCopyWithImpl<$Res, $Val extends DriverLocation>
     Object? id = null,
     Object? lat = null,
     Object? long = null,
+    Object? image = null,
+    Object? platNomor = null,
     Object? visible = null,
     Object? maxPenumpang = null,
     Object? jumlahPenumpang = freezed,
@@ -276,6 +284,14 @@ class _$DriverLocationCopyWithImpl<$Res, $Val extends DriverLocation>
       long: null == long
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      platNomor: null == platNomor
+          ? _value.platNomor
+          : platNomor // ignore: cast_nullable_to_non_nullable
               as String,
       visible: null == visible
           ? _value.visible
@@ -294,28 +310,30 @@ class _$DriverLocationCopyWithImpl<$Res, $Val extends DriverLocation>
 }
 
 /// @nodoc
-abstract class _$$_DriverLocationCopyWith<$Res>
+abstract class _$$DriverLocationImplCopyWith<$Res>
     implements $DriverLocationCopyWith<$Res> {
-  factory _$$_DriverLocationCopyWith(
-          _$_DriverLocation value, $Res Function(_$_DriverLocation) then) =
-      __$$_DriverLocationCopyWithImpl<$Res>;
+  factory _$$DriverLocationImplCopyWith(_$DriverLocationImpl value,
+          $Res Function(_$DriverLocationImpl) then) =
+      __$$DriverLocationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       String lat,
       String long,
+      String image,
+      String platNomor,
       bool visible,
       int maxPenumpang,
       int? jumlahPenumpang});
 }
 
 /// @nodoc
-class __$$_DriverLocationCopyWithImpl<$Res>
-    extends _$DriverLocationCopyWithImpl<$Res, _$_DriverLocation>
-    implements _$$_DriverLocationCopyWith<$Res> {
-  __$$_DriverLocationCopyWithImpl(
-      _$_DriverLocation _value, $Res Function(_$_DriverLocation) _then)
+class __$$DriverLocationImplCopyWithImpl<$Res>
+    extends _$DriverLocationCopyWithImpl<$Res, _$DriverLocationImpl>
+    implements _$$DriverLocationImplCopyWith<$Res> {
+  __$$DriverLocationImplCopyWithImpl(
+      _$DriverLocationImpl _value, $Res Function(_$DriverLocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -324,11 +342,13 @@ class __$$_DriverLocationCopyWithImpl<$Res>
     Object? id = null,
     Object? lat = null,
     Object? long = null,
+    Object? image = null,
+    Object? platNomor = null,
     Object? visible = null,
     Object? maxPenumpang = null,
     Object? jumlahPenumpang = freezed,
   }) {
-    return _then(_$_DriverLocation(
+    return _then(_$DriverLocationImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -340,6 +360,14 @@ class __$$_DriverLocationCopyWithImpl<$Res>
       long: null == long
           ? _value.long
           : long // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      platNomor: null == platNomor
+          ? _value.platNomor
+          : platNomor // ignore: cast_nullable_to_non_nullable
               as String,
       visible: null == visible
           ? _value.visible
@@ -359,17 +387,19 @@ class __$$_DriverLocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriverLocation implements _DriverLocation {
-  const _$_DriverLocation(
+class _$DriverLocationImpl implements _DriverLocation {
+  const _$DriverLocationImpl(
       {required this.id,
       required this.lat,
       required this.long,
+      required this.image,
+      required this.platNomor,
       required this.visible,
       required this.maxPenumpang,
       required this.jumlahPenumpang});
 
-  factory _$_DriverLocation.fromJson(Map<String, dynamic> json) =>
-      _$$_DriverLocationFromJson(json);
+  factory _$DriverLocationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriverLocationImplFromJson(json);
 
   @override
   final String id;
@@ -377,6 +407,10 @@ class _$_DriverLocation implements _DriverLocation {
   final String lat;
   @override
   final String long;
+  @override
+  final String image;
+  @override
+  final String platNomor;
   @override
   final bool visible;
   @override
@@ -386,17 +420,20 @@ class _$_DriverLocation implements _DriverLocation {
 
   @override
   String toString() {
-    return 'DriverLocation(id: $id, lat: $lat, long: $long, visible: $visible, maxPenumpang: $maxPenumpang, jumlahPenumpang: $jumlahPenumpang)';
+    return 'DriverLocation(id: $id, lat: $lat, long: $long, image: $image, platNomor: $platNomor, visible: $visible, maxPenumpang: $maxPenumpang, jumlahPenumpang: $jumlahPenumpang)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriverLocation &&
+            other is _$DriverLocationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.long, long) || other.long == long) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.platNomor, platNomor) ||
+                other.platNomor == platNomor) &&
             (identical(other.visible, visible) || other.visible == visible) &&
             (identical(other.maxPenumpang, maxPenumpang) ||
                 other.maxPenumpang == maxPenumpang) &&
@@ -406,18 +443,19 @@ class _$_DriverLocation implements _DriverLocation {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, lat, long, visible, maxPenumpang, jumlahPenumpang);
+  int get hashCode => Object.hash(runtimeType, id, lat, long, image, platNomor,
+      visible, maxPenumpang, jumlahPenumpang);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriverLocationCopyWith<_$_DriverLocation> get copyWith =>
-      __$$_DriverLocationCopyWithImpl<_$_DriverLocation>(this, _$identity);
+  _$$DriverLocationImplCopyWith<_$DriverLocationImpl> get copyWith =>
+      __$$DriverLocationImplCopyWithImpl<_$DriverLocationImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriverLocationToJson(
+    return _$$DriverLocationImplToJson(
       this,
     );
   }
@@ -428,12 +466,14 @@ abstract class _DriverLocation implements DriverLocation {
       {required final String id,
       required final String lat,
       required final String long,
+      required final String image,
+      required final String platNomor,
       required final bool visible,
       required final int maxPenumpang,
-      required final int? jumlahPenumpang}) = _$_DriverLocation;
+      required final int? jumlahPenumpang}) = _$DriverLocationImpl;
 
   factory _DriverLocation.fromJson(Map<String, dynamic> json) =
-      _$_DriverLocation.fromJson;
+      _$DriverLocationImpl.fromJson;
 
   @override
   String get id;
@@ -442,6 +482,10 @@ abstract class _DriverLocation implements DriverLocation {
   @override
   String get long;
   @override
+  String get image;
+  @override
+  String get platNomor;
+  @override
   bool get visible;
   @override
   int get maxPenumpang;
@@ -449,6 +493,6 @@ abstract class _DriverLocation implements DriverLocation {
   int? get jumlahPenumpang;
   @override
   @JsonKey(ignore: true)
-  _$$_DriverLocationCopyWith<_$_DriverLocation> get copyWith =>
+  _$$DriverLocationImplCopyWith<_$DriverLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

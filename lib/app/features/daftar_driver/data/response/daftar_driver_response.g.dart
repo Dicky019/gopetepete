@@ -6,24 +6,25 @@ part of 'daftar_driver_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DaftarDriverResponse _$$_DaftarDriverResponseFromJson(
+_$DaftarDriverResponseImpl _$$DaftarDriverResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_DaftarDriverResponse(
+    _$DaftarDriverResponseImpl(
       code: json['code'] as String?,
       data: json['data'] == null
           ? null
           : DaftarDriverData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DaftarDriverResponseToJson(
-        _$_DaftarDriverResponse instance) =>
+Map<String, dynamic> _$$DaftarDriverResponseImplToJson(
+        _$DaftarDriverResponseImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
       'data': instance.data,
     };
 
-_$_DaftarDriverData _$$_DaftarDriverDataFromJson(Map<String, dynamic> json) =>
-    _$_DaftarDriverData(
+_$DaftarDriverDataImpl _$$DaftarDriverDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DaftarDriverDataImpl(
       id: json['id'] as String?,
       namaLengkap: json['namaLengkap'] as String?,
       alamat: json['alamat'] as String?,
@@ -42,7 +43,8 @@ _$_DaftarDriverData _$$_DaftarDriverDataFromJson(Map<String, dynamic> json) =>
           : UserResponse.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DaftarDriverDataToJson(_$_DaftarDriverData instance) =>
+Map<String, dynamic> _$$DaftarDriverDataImplToJson(
+        _$DaftarDriverDataImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'namaLengkap': instance.namaLengkap,

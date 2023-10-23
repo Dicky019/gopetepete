@@ -34,6 +34,8 @@ class DriverServiceImpl implements DriverService {
       lat: locationData?.latitude.toString() ?? "",
       long: locationData?.longitude.toString() ?? "",
       maxPenumpang: getDriverLocal.maxPenumpang,
+      platNomor: getDriverLocal.noPlatMobil,
+      image: getDriverLocal.fotoKtp,
       visible: true,
       jumlahPenumpang: 0,
     );

@@ -112,11 +112,11 @@ class _$RuteResponseCopyWithImpl<$Res, $Val extends RuteResponse>
 }
 
 /// @nodoc
-abstract class _$$_RuteResponseCopyWith<$Res>
+abstract class _$$RuteResponseImplCopyWith<$Res>
     implements $RuteResponseCopyWith<$Res> {
-  factory _$$_RuteResponseCopyWith(
-          _$_RuteResponse value, $Res Function(_$_RuteResponse) then) =
-      __$$_RuteResponseCopyWithImpl<$Res>;
+  factory _$$RuteResponseImplCopyWith(
+          _$RuteResponseImpl value, $Res Function(_$RuteResponseImpl) then) =
+      __$$RuteResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -130,11 +130,11 @@ abstract class _$$_RuteResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RuteResponseCopyWithImpl<$Res>
-    extends _$RuteResponseCopyWithImpl<$Res, _$_RuteResponse>
-    implements _$$_RuteResponseCopyWith<$Res> {
-  __$$_RuteResponseCopyWithImpl(
-      _$_RuteResponse _value, $Res Function(_$_RuteResponse) _then)
+class __$$RuteResponseImplCopyWithImpl<$Res>
+    extends _$RuteResponseCopyWithImpl<$Res, _$RuteResponseImpl>
+    implements _$$RuteResponseImplCopyWith<$Res> {
+  __$$RuteResponseImplCopyWithImpl(
+      _$RuteResponseImpl _value, $Res Function(_$RuteResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -148,7 +148,7 @@ class __$$_RuteResponseCopyWithImpl<$Res>
     Object? color = freezed,
     Object? locations = freezed,
   }) {
-    return _then(_$_RuteResponse(
+    return _then(_$RuteResponseImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -183,8 +183,8 @@ class __$$_RuteResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RuteResponse implements _RuteResponse {
-  const _$_RuteResponse(
+class _$RuteResponseImpl implements _RuteResponse {
+  const _$RuteResponseImpl(
       {@JsonKey(name: "id") this.id,
       @JsonKey(name: "createdAt") this.createdAt,
       @JsonKey(name: "updatedAt") this.updatedAt,
@@ -194,8 +194,8 @@ class _$_RuteResponse implements _RuteResponse {
       @JsonKey(name: "locations") final List<LocationsResponse>? locations})
       : _locations = locations;
 
-  factory _$_RuteResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_RuteResponseFromJson(json);
+  factory _$RuteResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RuteResponseImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -235,7 +235,7 @@ class _$_RuteResponse implements _RuteResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RuteResponse &&
+            other is _$RuteResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -256,12 +256,12 @@ class _$_RuteResponse implements _RuteResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RuteResponseCopyWith<_$_RuteResponse> get copyWith =>
-      __$$_RuteResponseCopyWithImpl<_$_RuteResponse>(this, _$identity);
+  _$$RuteResponseImplCopyWith<_$RuteResponseImpl> get copyWith =>
+      __$$RuteResponseImplCopyWithImpl<_$RuteResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RuteResponseToJson(
+    return _$$RuteResponseImplToJson(
       this,
     );
   }
@@ -276,10 +276,10 @@ abstract class _RuteResponse implements RuteResponse {
       @JsonKey(name: "kode") final String? kode,
       @JsonKey(name: "color") final String? color,
       @JsonKey(name: "locations")
-      final List<LocationsResponse>? locations}) = _$_RuteResponse;
+      final List<LocationsResponse>? locations}) = _$RuteResponseImpl;
 
   factory _RuteResponse.fromJson(Map<String, dynamic> json) =
-      _$_RuteResponse.fromJson;
+      _$RuteResponseImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -304,7 +304,7 @@ abstract class _RuteResponse implements RuteResponse {
   List<LocationsResponse>? get locations;
   @override
   @JsonKey(ignore: true)
-  _$$_RuteResponseCopyWith<_$_RuteResponse> get copyWith =>
+  _$$RuteResponseImplCopyWith<_$RuteResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -390,11 +390,11 @@ class _$LocationsResponseCopyWithImpl<$Res, $Val extends LocationsResponse>
 }
 
 /// @nodoc
-abstract class _$$_LocationsResponseCopyWith<$Res>
+abstract class _$$LocationsResponseImplCopyWith<$Res>
     implements $LocationsResponseCopyWith<$Res> {
-  factory _$$_LocationsResponseCopyWith(_$_LocationsResponse value,
-          $Res Function(_$_LocationsResponse) then) =
-      __$$_LocationsResponseCopyWithImpl<$Res>;
+  factory _$$LocationsResponseImplCopyWith(_$LocationsResponseImpl value,
+          $Res Function(_$LocationsResponseImpl) then) =
+      __$$LocationsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -406,11 +406,11 @@ abstract class _$$_LocationsResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LocationsResponseCopyWithImpl<$Res>
-    extends _$LocationsResponseCopyWithImpl<$Res, _$_LocationsResponse>
-    implements _$$_LocationsResponseCopyWith<$Res> {
-  __$$_LocationsResponseCopyWithImpl(
-      _$_LocationsResponse _value, $Res Function(_$_LocationsResponse) _then)
+class __$$LocationsResponseImplCopyWithImpl<$Res>
+    extends _$LocationsResponseCopyWithImpl<$Res, _$LocationsResponseImpl>
+    implements _$$LocationsResponseImplCopyWith<$Res> {
+  __$$LocationsResponseImplCopyWithImpl(_$LocationsResponseImpl _value,
+      $Res Function(_$LocationsResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -422,7 +422,7 @@ class __$$_LocationsResponseCopyWithImpl<$Res>
     Object? latAkhir = freezed,
     Object? longAkhir = freezed,
   }) {
-    return _then(_$_LocationsResponse(
+    return _then(_$LocationsResponseImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -449,16 +449,16 @@ class __$$_LocationsResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_LocationsResponse implements _LocationsResponse {
-  const _$_LocationsResponse(
+class _$LocationsResponseImpl implements _LocationsResponse {
+  const _$LocationsResponseImpl(
       {@JsonKey(name: "id") this.id,
       @JsonKey(name: "latAwal") this.latAwal,
       @JsonKey(name: "longAwal") this.longAwal,
       @JsonKey(name: "latAkhir") this.latAkhir,
       @JsonKey(name: "longAkhir") this.longAkhir});
 
-  factory _$_LocationsResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_LocationsResponseFromJson(json);
+  factory _$LocationsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocationsResponseImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -485,7 +485,7 @@ class _$_LocationsResponse implements _LocationsResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LocationsResponse &&
+            other is _$LocationsResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.latAwal, latAwal) || other.latAwal == latAwal) &&
             (identical(other.longAwal, longAwal) ||
@@ -504,13 +504,13 @@ class _$_LocationsResponse implements _LocationsResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LocationsResponseCopyWith<_$_LocationsResponse> get copyWith =>
-      __$$_LocationsResponseCopyWithImpl<_$_LocationsResponse>(
+  _$$LocationsResponseImplCopyWith<_$LocationsResponseImpl> get copyWith =>
+      __$$LocationsResponseImplCopyWithImpl<_$LocationsResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LocationsResponseToJson(
+    return _$$LocationsResponseImplToJson(
       this,
     );
   }
@@ -523,10 +523,10 @@ abstract class _LocationsResponse implements LocationsResponse {
           @JsonKey(name: "longAwal") final String? longAwal,
           @JsonKey(name: "latAkhir") final String? latAkhir,
           @JsonKey(name: "longAkhir") final String? longAkhir}) =
-      _$_LocationsResponse;
+      _$LocationsResponseImpl;
 
   factory _LocationsResponse.fromJson(Map<String, dynamic> json) =
-      _$_LocationsResponse.fromJson;
+      _$LocationsResponseImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -545,6 +545,6 @@ abstract class _LocationsResponse implements LocationsResponse {
   String? get longAkhir;
   @override
   @JsonKey(ignore: true)
-  _$$_LocationsResponseCopyWith<_$_LocationsResponse> get copyWith =>
+  _$$LocationsResponseImplCopyWith<_$LocationsResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -158,11 +158,11 @@ class _$DriverResponseCopyWithImpl<$Res, $Val extends DriverResponse>
 }
 
 /// @nodoc
-abstract class _$$_DriverResponseCopyWith<$Res>
+abstract class _$$DriverResponseImplCopyWith<$Res>
     implements $DriverResponseCopyWith<$Res> {
-  factory _$$_DriverResponseCopyWith(
-          _$_DriverResponse value, $Res Function(_$_DriverResponse) then) =
-      __$$_DriverResponseCopyWithImpl<$Res>;
+  factory _$$DriverResponseImplCopyWith(_$DriverResponseImpl value,
+          $Res Function(_$DriverResponseImpl) then) =
+      __$$DriverResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -183,11 +183,11 @@ abstract class _$$_DriverResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DriverResponseCopyWithImpl<$Res>
-    extends _$DriverResponseCopyWithImpl<$Res, _$_DriverResponse>
-    implements _$$_DriverResponseCopyWith<$Res> {
-  __$$_DriverResponseCopyWithImpl(
-      _$_DriverResponse _value, $Res Function(_$_DriverResponse) _then)
+class __$$DriverResponseImplCopyWithImpl<$Res>
+    extends _$DriverResponseCopyWithImpl<$Res, _$DriverResponseImpl>
+    implements _$$DriverResponseImplCopyWith<$Res> {
+  __$$DriverResponseImplCopyWithImpl(
+      _$DriverResponseImpl _value, $Res Function(_$DriverResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -205,7 +205,7 @@ class __$$_DriverResponseCopyWithImpl<$Res>
     Object? fotoMobil = freezed,
     Object? user = freezed,
   }) {
-    return _then(_$_DriverResponse(
+    return _then(_$DriverResponseImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -256,8 +256,8 @@ class __$$_DriverResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DriverResponse implements _DriverResponse {
-  const _$_DriverResponse(
+class _$DriverResponseImpl implements _DriverResponse {
+  const _$DriverResponseImpl(
       {@JsonKey(name: "id") this.id,
       @JsonKey(name: "namaLengkap") this.namaLengkap,
       @JsonKey(name: "alamat") this.alamat,
@@ -270,8 +270,8 @@ class _$_DriverResponse implements _DriverResponse {
       @JsonKey(name: "fotoMobil") this.fotoMobil,
       @JsonKey(name: "user") this.user});
 
-  factory _$_DriverResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_DriverResponseFromJson(json);
+  factory _$DriverResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DriverResponseImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -316,7 +316,7 @@ class _$_DriverResponse implements _DriverResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DriverResponse &&
+            other is _$DriverResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.namaLengkap, namaLengkap) ||
                 other.namaLengkap == namaLengkap) &&
@@ -342,12 +342,13 @@ class _$_DriverResponse implements _DriverResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DriverResponseCopyWith<_$_DriverResponse> get copyWith =>
-      __$$_DriverResponseCopyWithImpl<_$_DriverResponse>(this, _$identity);
+  _$$DriverResponseImplCopyWith<_$DriverResponseImpl> get copyWith =>
+      __$$DriverResponseImplCopyWithImpl<_$DriverResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DriverResponseToJson(
+    return _$$DriverResponseImplToJson(
       this,
     );
   }
@@ -365,10 +366,10 @@ abstract class _DriverResponse implements DriverResponse {
       @JsonKey(name: "maxPenumpang") final int? maxPenumpang,
       @JsonKey(name: "fotoKtp") final String? fotoKtp,
       @JsonKey(name: "fotoMobil") final String? fotoMobil,
-      @JsonKey(name: "user") final UserResponse? user}) = _$_DriverResponse;
+      @JsonKey(name: "user") final UserResponse? user}) = _$DriverResponseImpl;
 
   factory _DriverResponse.fromJson(Map<String, dynamic> json) =
-      _$_DriverResponse.fromJson;
+      _$DriverResponseImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -405,6 +406,6 @@ abstract class _DriverResponse implements DriverResponse {
   UserResponse? get user;
   @override
   @JsonKey(ignore: true)
-  _$$_DriverResponseCopyWith<_$_DriverResponse> get copyWith =>
+  _$$DriverResponseImplCopyWith<_$DriverResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

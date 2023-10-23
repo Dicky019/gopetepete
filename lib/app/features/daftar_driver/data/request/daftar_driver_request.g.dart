@@ -6,9 +6,9 @@ part of 'daftar_driver_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DaftarDriverRequest _$$_DaftarDriverRequestFromJson(
+_$DaftarDriverRequestImpl _$$DaftarDriverRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_DaftarDriverRequest(
+    _$DaftarDriverRequestImpl(
       namaLengkap: json['namaLengkap'] as String,
       alamat: json['alamat'] as String,
       nik: json['nik'] as String,
@@ -21,8 +21,8 @@ _$_DaftarDriverRequest _$$_DaftarDriverRequestFromJson(
       user: DaftarDriverUser.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DaftarDriverRequestToJson(
-        _$_DaftarDriverRequest instance) =>
+Map<String, dynamic> _$$DaftarDriverRequestImplToJson(
+        _$DaftarDriverRequestImpl instance) =>
     <String, dynamic>{
       'namaLengkap': instance.namaLengkap,
       'alamat': instance.alamat,
@@ -36,9 +36,9 @@ Map<String, dynamic> _$$_DaftarDriverRequestToJson(
       'user': instance.user,
     };
 
-_$_DaftarDriverFormAwal _$$_DaftarDriverFormAwalFromJson(
+_$DaftarDriverFormAwalImpl _$$DaftarDriverFormAwalImplFromJson(
         Map<String, dynamic> json) =>
-    _$_DaftarDriverFormAwal(
+    _$DaftarDriverFormAwalImpl(
       name: json['name'] as String,
       nik: json['nik'] as String,
       nokk: json['nokk'] as String,
@@ -50,8 +50,8 @@ _$_DaftarDriverFormAwal _$$_DaftarDriverFormAwalFromJson(
       maxPenumpang: json['maxPenumpang'] as int,
     );
 
-Map<String, dynamic> _$$_DaftarDriverFormAwalToJson(
-        _$_DaftarDriverFormAwal instance) =>
+Map<String, dynamic> _$$DaftarDriverFormAwalImplToJson(
+        _$DaftarDriverFormAwalImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'nik': instance.nik,
@@ -64,14 +64,16 @@ Map<String, dynamic> _$$_DaftarDriverFormAwalToJson(
       'maxPenumpang': instance.maxPenumpang,
     };
 
-_$_DaftarDriverUser _$$_DaftarDriverUserFromJson(Map<String, dynamic> json) =>
-    _$_DaftarDriverUser(
+_$DaftarDriverUserImpl _$$DaftarDriverUserImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DaftarDriverUserImpl(
       name: json['name'] as String,
       email: json['email'] as String,
       image: json['image'] as String,
     );
 
-Map<String, dynamic> _$$_DaftarDriverUserToJson(_$_DaftarDriverUser instance) =>
+Map<String, dynamic> _$$DaftarDriverUserImplToJson(
+        _$DaftarDriverUserImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'email': instance.email,

@@ -6,8 +6,8 @@ part of 'driver_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DriverResponse _$$_DriverResponseFromJson(Map<String, dynamic> json) =>
-    _$_DriverResponse(
+_$DriverResponseImpl _$$DriverResponseImplFromJson(Map<String, dynamic> json) =>
+    _$DriverResponseImpl(
       id: json['id'] as String?,
       namaLengkap: json['namaLengkap'] as String?,
       alamat: json['alamat'] as String?,
@@ -23,7 +23,8 @@ _$_DriverResponse _$$_DriverResponseFromJson(Map<String, dynamic> json) =>
           : UserResponse.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DriverResponseToJson(_$_DriverResponse instance) =>
+Map<String, dynamic> _$$DriverResponseImplToJson(
+        _$DriverResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'namaLengkap': instance.namaLengkap,

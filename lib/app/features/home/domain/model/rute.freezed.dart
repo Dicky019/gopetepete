@@ -98,9 +98,10 @@ class _$RuteCopyWithImpl<$Res, $Val extends Rute>
 }
 
 /// @nodoc
-abstract class _$$_RuteCopyWith<$Res> implements $RuteCopyWith<$Res> {
-  factory _$$_RuteCopyWith(_$_Rute value, $Res Function(_$_Rute) then) =
-      __$$_RuteCopyWithImpl<$Res>;
+abstract class _$$RuteImplCopyWith<$Res> implements $RuteCopyWith<$Res> {
+  factory _$$RuteImplCopyWith(
+          _$RuteImpl value, $Res Function(_$RuteImpl) then) =
+      __$$RuteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -114,9 +115,10 @@ abstract class _$$_RuteCopyWith<$Res> implements $RuteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RuteCopyWithImpl<$Res> extends _$RuteCopyWithImpl<$Res, _$_Rute>
-    implements _$$_RuteCopyWith<$Res> {
-  __$$_RuteCopyWithImpl(_$_Rute _value, $Res Function(_$_Rute) _then)
+class __$$RuteImplCopyWithImpl<$Res>
+    extends _$RuteCopyWithImpl<$Res, _$RuteImpl>
+    implements _$$RuteImplCopyWith<$Res> {
+  __$$RuteImplCopyWithImpl(_$RuteImpl _value, $Res Function(_$RuteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -130,7 +132,7 @@ class __$$_RuteCopyWithImpl<$Res> extends _$RuteCopyWithImpl<$Res, _$_Rute>
     Object? color = null,
     Object? locations = null,
   }) {
-    return _then(_$_Rute(
+    return _then(_$RuteImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -165,8 +167,8 @@ class __$$_RuteCopyWithImpl<$Res> extends _$RuteCopyWithImpl<$Res, _$_Rute>
 
 /// @nodoc
 
-class _$_Rute implements _Rute {
-  const _$_Rute(
+class _$RuteImpl implements _Rute {
+  const _$RuteImpl(
       {required this.id,
       required this.createdAt,
       required this.updatedAt,
@@ -199,7 +201,7 @@ class _$_Rute implements _Rute {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Rute &&
+            other is _$RuteImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -219,8 +221,8 @@ class _$_Rute implements _Rute {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RuteCopyWith<_$_Rute> get copyWith =>
-      __$$_RuteCopyWithImpl<_$_Rute>(this, _$identity);
+  _$$RuteImplCopyWith<_$RuteImpl> get copyWith =>
+      __$$RuteImplCopyWithImpl<_$RuteImpl>(this, _$identity);
 }
 
 abstract class _Rute implements Rute {
@@ -231,7 +233,7 @@ abstract class _Rute implements Rute {
       required final String name,
       required final String kode,
       required final String color,
-      required final Polyline locations}) = _$_Rute;
+      required final Polyline locations}) = _$RuteImpl;
 
   @override
   String get id;
@@ -249,5 +251,6 @@ abstract class _Rute implements Rute {
   Polyline get locations;
   @override
   @JsonKey(ignore: true)
-  _$$_RuteCopyWith<_$_Rute> get copyWith => throw _privateConstructorUsedError;
+  _$$RuteImplCopyWith<_$RuteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

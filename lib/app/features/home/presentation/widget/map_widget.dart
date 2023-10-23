@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app/constants/theme/app_size.dart';
-import 'package:flutter_application_1/gen/assets.gen.dart';
+// import 'package:flutter_application_1/gen/assets.gen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -176,13 +176,13 @@ class DriversWidget extends ConsumerWidget {
                     ),
                     child: ListTile(
                       leading: CircleAvatar(
-                        child: Assets.images.car.image(),
+                        child: Image.network(driver.image),
                       ),
                       title: Text(
                         "Penumpang ${driver.jumlahPenumpang ?? 0} / ${driver.maxPenumpang} Max",
                       ),
                       subtitle: Text(
-                        "Jarak $distaceText",
+                        "${driver.platNomor} - Jarak $distaceText",
                       ),
                       trailing: IconButton(
                         onPressed: () {

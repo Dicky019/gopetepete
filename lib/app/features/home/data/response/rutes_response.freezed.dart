@@ -72,11 +72,11 @@ class _$RutesResponseCopyWithImpl<$Res, $Val extends RutesResponse>
 }
 
 /// @nodoc
-abstract class _$$_RutesResponseCopyWith<$Res>
+abstract class _$$RutesResponseImplCopyWith<$Res>
     implements $RutesResponseCopyWith<$Res> {
-  factory _$$_RutesResponseCopyWith(
-          _$_RutesResponse value, $Res Function(_$_RutesResponse) then) =
-      __$$_RutesResponseCopyWithImpl<$Res>;
+  factory _$$RutesResponseImplCopyWith(
+          _$RutesResponseImpl value, $Res Function(_$RutesResponseImpl) then) =
+      __$$RutesResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,11 +85,11 @@ abstract class _$$_RutesResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RutesResponseCopyWithImpl<$Res>
-    extends _$RutesResponseCopyWithImpl<$Res, _$_RutesResponse>
-    implements _$$_RutesResponseCopyWith<$Res> {
-  __$$_RutesResponseCopyWithImpl(
-      _$_RutesResponse _value, $Res Function(_$_RutesResponse) _then)
+class __$$RutesResponseImplCopyWithImpl<$Res>
+    extends _$RutesResponseCopyWithImpl<$Res, _$RutesResponseImpl>
+    implements _$$RutesResponseImplCopyWith<$Res> {
+  __$$RutesResponseImplCopyWithImpl(
+      _$RutesResponseImpl _value, $Res Function(_$RutesResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$_RutesResponseCopyWithImpl<$Res>
     Object? code = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$_RutesResponse(
+    return _then(_$RutesResponseImpl(
       code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -113,14 +113,14 @@ class __$$_RutesResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RutesResponse implements _RutesResponse {
-  const _$_RutesResponse(
+class _$RutesResponseImpl implements _RutesResponse {
+  const _$RutesResponseImpl(
       {@JsonKey(name: "code") this.code,
       @JsonKey(name: "data") final List<RuteResponse>? data})
       : _data = data;
 
-  factory _$_RutesResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_RutesResponseFromJson(json);
+  factory _$RutesResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RutesResponseImplFromJson(json);
 
   @override
   @JsonKey(name: "code")
@@ -145,7 +145,7 @@ class _$_RutesResponse implements _RutesResponse {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RutesResponse &&
+            other is _$RutesResponseImpl &&
             (identical(other.code, code) || other.code == code) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
@@ -158,12 +158,12 @@ class _$_RutesResponse implements _RutesResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RutesResponseCopyWith<_$_RutesResponse> get copyWith =>
-      __$$_RutesResponseCopyWithImpl<_$_RutesResponse>(this, _$identity);
+  _$$RutesResponseImplCopyWith<_$RutesResponseImpl> get copyWith =>
+      __$$RutesResponseImplCopyWithImpl<_$RutesResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RutesResponseToJson(
+    return _$$RutesResponseImplToJson(
       this,
     );
   }
@@ -173,10 +173,10 @@ abstract class _RutesResponse implements RutesResponse {
   const factory _RutesResponse(
           {@JsonKey(name: "code") final String? code,
           @JsonKey(name: "data") final List<RuteResponse>? data}) =
-      _$_RutesResponse;
+      _$RutesResponseImpl;
 
   factory _RutesResponse.fromJson(Map<String, dynamic> json) =
-      _$_RutesResponse.fromJson;
+      _$RutesResponseImpl.fromJson;
 
   @override
   @JsonKey(name: "code")
@@ -186,6 +186,6 @@ abstract class _RutesResponse implements RutesResponse {
   List<RuteResponse>? get data;
   @override
   @JsonKey(ignore: true)
-  _$$_RutesResponseCopyWith<_$_RutesResponse> get copyWith =>
+  _$$RutesResponseImplCopyWith<_$RutesResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,8 +6,8 @@ part of 'rute_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RuteResponse _$$_RuteResponseFromJson(Map<String, dynamic> json) =>
-    _$_RuteResponse(
+_$RuteResponseImpl _$$RuteResponseImplFromJson(Map<String, dynamic> json) =>
+    _$RuteResponseImpl(
       id: json['id'] as String?,
       createdAt: json['createdAt'] as String?,
       updatedAt: json['updatedAt'] as String?,
@@ -19,7 +19,7 @@ _$_RuteResponse _$$_RuteResponseFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_RuteResponseToJson(_$_RuteResponse instance) =>
+Map<String, dynamic> _$$RuteResponseImplToJson(_$RuteResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'createdAt': instance.createdAt,
@@ -30,8 +30,9 @@ Map<String, dynamic> _$$_RuteResponseToJson(_$_RuteResponse instance) =>
       'locations': instance.locations,
     };
 
-_$_LocationsResponse _$$_LocationsResponseFromJson(Map<String, dynamic> json) =>
-    _$_LocationsResponse(
+_$LocationsResponseImpl _$$LocationsResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LocationsResponseImpl(
       id: json['id'] as String?,
       latAwal: json['latAwal'] as String?,
       longAwal: json['longAwal'] as String?,
@@ -39,8 +40,8 @@ _$_LocationsResponse _$$_LocationsResponseFromJson(Map<String, dynamic> json) =>
       longAkhir: json['longAkhir'] as String?,
     );
 
-Map<String, dynamic> _$$_LocationsResponseToJson(
-        _$_LocationsResponse instance) =>
+Map<String, dynamic> _$$LocationsResponseImplToJson(
+        _$LocationsResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'latAwal': instance.latAwal,
