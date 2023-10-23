@@ -30,6 +30,7 @@ class LoginControllerNotifier extends StateNotifier<LoginState> {
         EasyLoading.showSuccess("Berhasil");
       },
       failure: (error, stackTrace) {
+        EasyLoading.showError("Ada yang salah");
         error.whenOrNull(notFound: (reason) {
           log(reason.isEmpty ? "kosong" : reason, name: "failure");
           EasyLoading.showError(reason);
@@ -48,7 +49,7 @@ class LoginControllerNotifier extends StateNotifier<LoginState> {
     state = state.copyWith(
       value: const AsyncData(null),
     );
-    // EasyLoading.dismiss();
+    EasyLoading.dismiss();
   }
 
   void logout() => _authenticationService.logout();
